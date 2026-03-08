@@ -3,6 +3,9 @@
 import { useMemo, useState } from "react";
 
 import { NewsCard } from "@/components/cards/news-card";
+import { EmptyState } from "@/components/feedback/empty-state";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type { Hero, News } from "@/lib/content/schemas";
 
@@ -45,6 +48,26 @@ export function NewsFeed({
     });
   }, [category, heroSlug, news, query, softOnly]);
 
+  const activeFilters = useMemo(
+    () =>
+      [
+        query.trim() ? `Query: ${query.trim()}` : null,
+        heroSlug !== "all"
+          ? `Hero: ${heroes.find((hero) => hero.slug === heroSlug)?.name ?? heroSlug}`
+          : null,
+        category !== "all" ? `Category: ${category.replace(/-/g, " ")}` : null,
+        softOnly ? "SOFT only" : null,
+      ].filter(Boolean) as string[],
+    [category, heroSlug, heroes, query, softOnly],
+  );
+
+  function resetFilters() {
+    setQuery("");
+    setHeroSlug("all");
+    setCategory("all");
+    setSoftOnly(defaultSoftOnly);
+  }
+
   return (
     <div className="space-y-8">
       <div className="grid gap-4 rounded-[32px] border border-white/10 bg-white/4 p-5 lg:grid-cols-[2fr_repeat(3,minmax(0,1fr))]">
@@ -52,6 +75,7 @@ export function NewsFeed({
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Search news"
+          aria-label="Search news"
         />
         <select
           value={heroSlug}
@@ -86,17 +110,54 @@ export function NewsFeed({
           />
         </label>
       </div>
-      <div className="grid gap-5 lg:grid-cols-2">
-        {filtered.map((story, index) => (
-          <NewsCard
-            key={story.slug}
-            story={story}
-            heroName={heroes.find((hero) => hero.slug === story.heroSlug)?.name}
-            large={index === 0}
-          />
-        ))}
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-[28px] border border-white/10 bg-black/20 px-4 py-3 text-sm text-slate-400">
+        <p>
+          Showing <span className="text-white">{filtered.length}</span> of{" "}
+          <span className="text-white">{news.length}</span> stories.
+        </p>
+        {activeFilters.length ? (
+          <div className="flex flex-wrap gap-2">
+            {activeFilters.map((filter) => (
+              <Badge key={filter} variant={filter === "SOFT only" ? "soft" : "default"}>
+                {filter}
+              </Badge>
+            ))}
+          </div>
+        ) : null}
       </div>
+      {filtered.length ? (
+        <div className="grid gap-5 lg:grid-cols-2">
+          {filtered.map((story, index) => (
+            <NewsCard
+              key={story.slug}
+              story={story}
+              heroName={heroes.find((hero) => hero.slug === story.heroSlug)?.name}
+              large={index === 0}
+            />
+          ))}
+        </div>
+      ) : (
+        <EmptyState
+          eyebrow="News Feed"
+          title="No story matches the active cut."
+          description="Clear the current filters or disable the SOFT-only lens to reveal the wider editorial stream again."
+          tone={softOnly ? "soft" : "default"}
+          meta={
+            activeFilters.length
+              ? activeFilters.map((filter) => (
+                  <Badge key={filter} variant={filter === "SOFT only" ? "soft" : "default"}>
+                    {filter}
+                  </Badge>
+                ))
+              : undefined
+          }
+          actions={
+            <Button type="button" variant="secondary" onClick={resetFilters}>
+              Reset feed filters
+            </Button>
+          }
+        />
+      )}
     </div>
   );
 }
-

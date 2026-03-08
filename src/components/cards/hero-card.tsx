@@ -14,9 +14,9 @@ export function HeroCard({
 }) {
   return (
     <Link href={`/heroes/${hero.slug}`} className="group block cursor-pointer">
-      <Card className="relative overflow-hidden border-white/8 transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300/25">
+      <Card className="motion-card relative overflow-hidden border-white/8 transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300/25">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-[1.02]"
+          className="motion-card-media absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-[1.02]"
           style={{
             backgroundImage: `url(${hero.cover})`,
           }}

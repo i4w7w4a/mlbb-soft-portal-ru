@@ -8,6 +8,7 @@ import { ArrowUpRight, LoaderCircle, Plus, Save, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { EmptyState } from "@/components/feedback/empty-state";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -246,35 +247,56 @@ export function HeroesManager({
               </div>
             </div>
             <div className="max-h-[42rem] space-y-3 overflow-y-auto pr-1">
-              {visibleHeroes.map((hero) => (
-                <button
-                  key={hero.slug}
-                  type="button"
-                  onClick={() => setSelectedHeroSlug(hero.slug)}
-                  className={cn(
-                    "w-full rounded-[28px] border px-4 py-4 text-left transition-colors",
-                    hero.slug === selectedHeroSlug
-                      ? "border-cyan-300/30 bg-cyan-300/10"
-                      : "border-white/8 bg-white/4 hover:border-white/16",
-                  )}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <p className="font-display text-2xl text-white">{hero.name}</p>
-                      <p className="mt-1 text-sm text-slate-400">{hero.title}</p>
+              {visibleHeroes.length ? (
+                visibleHeroes.map((hero) => (
+                  <button
+                    key={hero.slug}
+                    type="button"
+                    onClick={() => setSelectedHeroSlug(hero.slug)}
+                    className={cn(
+                      "w-full rounded-[28px] border px-4 py-4 text-left transition-colors",
+                      hero.slug === selectedHeroSlug
+                        ? "border-cyan-300/30 bg-cyan-300/10"
+                        : "border-white/8 bg-white/4 hover:border-white/16",
+                    )}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="font-display text-2xl text-white">{hero.name}</p>
+                        <p className="mt-1 text-sm text-slate-400">{hero.title}</p>
+                      </div>
+                      <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-slate-300">
+                        {storyCountByHero[hero.slug] ?? 0} stories
+                      </span>
                     </div>
-                    <span className="rounded-full border border-white/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-slate-300">
-                      {storyCountByHero[hero.slug] ?? 0} stories
-                    </span>
-                  </div>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {hero.role.map((role) => (
-                      <Badge key={`${hero.slug}-${role}`}>{role}</Badge>
-                    ))}
-                    {hero.isSoftFeatured ? <Badge variant="soft">SOFT</Badge> : null}
-                  </div>
-                </button>
-              ))}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {hero.role.map((role) => (
+                        <Badge key={`${hero.slug}-${role}`}>{role}</Badge>
+                      ))}
+                      {hero.isSoftFeatured ? <Badge variant="soft">SOFT</Badge> : null}
+                    </div>
+                  </button>
+                ))
+              ) : (
+                <EmptyState
+                  eyebrow="Hero roster"
+                  title="No hero matches the operator filter."
+                  description="Clear the current search or role filter to repopulate the roster panel."
+                  actions={
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      onClick={() => {
+                        setQuery("");
+                        setRoleFilter("all");
+                      }}
+                    >
+                      Reset roster filters
+                    </Button>
+                  }
+                  className="border-white/8 bg-black/20"
+                />
+              )}
             </div>
           </Card>
 
@@ -560,7 +582,27 @@ export function HeroesManager({
                 </div>
               </div>
             </Card>
-          ) : null}
+          ) : (
+            <EmptyState
+              eyebrow="Hero editor"
+              title="Pick a hero to open the JSON profile."
+              description="The editor will hydrate once a roster entry is selected. If the roster is filtered down to nothing, reset it from the left panel first."
+              tone="soft"
+              actions={
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => {
+                    setQuery("");
+                    setRoleFilter("all");
+                    setSelectedHeroSlug(heroes[0]?.slug ?? "");
+                  }}
+                >
+                  Restore roster
+                </Button>
+              }
+            />
+          )}
         </div>
       </TabsContent>
 

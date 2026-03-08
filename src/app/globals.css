@@ -41,6 +41,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .portal-shell {
   background:
     radial-gradient(circle at 14% 10%, rgba(101, 230, 255, 0.12), transparent 24%),
@@ -241,6 +247,23 @@ a {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .motion-card,
+  .motion-card-media {
+    transform: none !important;
+  }
+
+  .portal-shell,
+  .soft-header-bar,
+  .soft-home-hero,
+  .soft-home-filters,
+  .soft-home-lead,
+  .soft-home-priority,
+  .soft-hero-surface,
+  .soft-story-surface,
+  .soft-article-body {
+    transition: none !important;
   }
 }
 

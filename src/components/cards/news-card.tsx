@@ -15,9 +15,9 @@ export function NewsCard({
 }) {
   return (
     <Link href={`/news/${story.slug}`} className="group block cursor-pointer">
-      <Card className="relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-white/20">
+      <Card className="motion-card relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-white/20">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-35 transition-transform duration-500 group-hover:scale-[1.02]"
+          className="motion-card-media absolute inset-0 bg-cover bg-center opacity-35 transition-transform duration-500 group-hover:scale-[1.02]"
           style={{
             backgroundImage: `url(${story.cover})`,
           }}
