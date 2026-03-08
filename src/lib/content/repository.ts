@@ -18,6 +18,7 @@ import {
   type TaxonomyCategory,
   type TaxonomyTag,
 } from "@/lib/content/schemas";
+import { rankSearchContent } from "@/lib/search";
 
 const DEFAULT_CONTENT_ROOT = path.join(process.cwd(), "content");
 
@@ -293,36 +294,18 @@ export function createContentRepository(options?: { contentRoot?: string }) {
   }
 
   async function searchContent(query: string) {
-    const normalized = query.trim().toLowerCase();
     const [heroes, news, taxonomy] = await Promise.all([
       getAllHeroes(),
       getAllNews(),
       getTaxonomy(),
     ]);
 
-    if (!normalized) {
-      return {
-        heroes: heroes.slice(0, 6),
-        news: news.slice(0, 8),
-        tags: taxonomy.tags.slice(0, 8),
-      };
-    }
-
-    return {
-      heroes: heroes.filter((hero) =>
-        `${hero.name} ${hero.title} ${hero.excerpt} ${hero.tags.join(" ")}`
-          .toLowerCase()
-          .includes(normalized),
-      ),
-      news: news.filter((story) =>
-        `${story.title} ${story.excerpt} ${story.tags.join(" ")} ${story.category}`
-          .toLowerCase()
-          .includes(normalized),
-      ),
-      tags: taxonomy.tags.filter((tag) =>
-        `${tag.label} ${tag.slug}`.toLowerCase().includes(normalized),
-      ),
-    };
+    return rankSearchContent({
+      query,
+      heroes,
+      news,
+      tags: taxonomy.tags,
+    });
   }
 
   async function getPortalSnapshot() {

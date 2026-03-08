@@ -1,6 +1,6 @@
 import { SearchOverview } from "@/components/explorers/search-overview";
 import { SectionHeading } from "@/components/layout/section-heading";
-import { searchContent } from "@/lib/content/repository";
+import { getAllHeroes, getTaxonomy, searchContent } from "@/lib/content/repository";
 import { createSearchMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -15,10 +15,15 @@ export async function generateMetadata({
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const { q = "" } = await searchParams;
-  const results = await searchContent(q);
+  const rawParams = await searchParams;
+  const q = Array.isArray(rawParams.q) ? rawParams.q[0] ?? "" : rawParams.q ?? "";
+  const [results, heroes, taxonomy] = await Promise.all([
+    searchContent(q),
+    getAllHeroes(),
+    getTaxonomy(),
+  ]);
 
   return (
     <div className="mx-auto flex w-[min(100%-1.5rem,88rem)] flex-col gap-10">
@@ -27,7 +32,14 @@ export default async function SearchPage({
         title={q ? `Results for "${q}"` : "Search across heroes, stories and tags."}
         description="A fast entry point into the whole content graph."
       />
-      <SearchOverview heroes={results.heroes} news={results.news} tags={results.tags} />
+      <SearchOverview
+        query={q}
+        heroes={results.heroes}
+        news={results.news}
+        tags={results.tags}
+        catalogHeroes={heroes}
+        catalogTags={taxonomy.tags}
+      />
     </div>
   );
 }

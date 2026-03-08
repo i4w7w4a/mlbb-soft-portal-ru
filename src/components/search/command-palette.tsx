@@ -1,5 +1,6 @@
 "use client";
 
+import type { Route } from "next";
 import {
   useDeferredValue,
   useEffect,
@@ -8,6 +9,7 @@ import {
   useState,
 } from "react";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { ArrowUpRight, Search } from "lucide-react";
 
 import {
@@ -20,6 +22,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import type { Hero, News } from "@/lib/content/schemas";
+import { rankSearchContent } from "@/lib/search";
 import { cn } from "@/lib/utils";
 
 function isEditableTarget(target: EventTarget | null) {
@@ -44,34 +47,43 @@ export function CommandPalette({
   news: News[];
   className?: string;
 }) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
   const inputRef = useRef<HTMLInputElement>(null);
+  const currentSearchQuery = searchParams.get("q")?.trim() ?? "";
+  const normalizedQuery = query.trim();
 
-  const normalized = deferredQuery.trim().toLowerCase();
-  const results = normalized
-    ? {
-        heroes: heroes.filter((hero) =>
-          `${hero.name} ${hero.title} ${hero.tags.join(" ")}`.toLowerCase().includes(normalized),
-        ),
-        news: news.filter((story) =>
-          `${story.title} ${story.excerpt} ${story.tags.join(" ")}`
-            .toLowerCase()
-            .includes(normalized),
-        ),
-      }
-    : {
-        heroes: heroes.slice(0, 5),
-        news: news.slice(0, 5),
-      };
+  const results = rankSearchContent({
+    query: deferredQuery,
+    heroes,
+    news,
+    tags: [],
+  });
 
   const totalResults = results.heroes.length + results.news.length;
+
+  function openFullSearch() {
+    const targetQuery = query.trim() || currentSearchQuery;
+    const href = targetQuery
+      ? (`/search?q=${encodeURIComponent(targetQuery)}` as Route)
+      : ("/search" as Route);
+
+    setOpen(false);
+    window.location.assign(href);
+  }
+
   const handleOpenChange = (nextOpen: boolean) => {
+    if (nextOpen) {
+      setQuery(pathname.startsWith("/search") ? currentSearchQuery : "");
+    }
+
     setOpen(nextOpen);
 
     if (!nextOpen) {
-      setQuery("");
+      setQuery(pathname.startsWith("/search") ? currentSearchQuery : "");
     }
   };
 
@@ -140,11 +152,17 @@ export function CommandPalette({
               ref={inputRef}
               value={query}
               onChange={(event) => setQuery(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  openFullSearch();
+                }
+              }}
               placeholder="Try Aamon, jungle tempo, SOFT, patch..."
               aria-label="Search the portal"
             />
             <div className="flex items-center justify-between text-xs uppercase tracking-[0.22em] text-slate-500">
-              <span>{normalized ? `Results: ${totalResults}` : "Curated quick entry"}</span>
+              <span>{normalizedQuery ? `Results: ${totalResults}` : "Curated quick entry"}</span>
               <span className="hidden sm:inline">Press / from anywhere</span>
             </div>
           </div>
@@ -194,18 +212,33 @@ export function CommandPalette({
               </div>
             </div>
           </div>
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Signals</p>
+            <div className="flex flex-wrap gap-2">
+              {["SOFT", "Patch", "Jungle", "Meta", "Aamon", "Xavier"].map((signal) => (
+                <button
+                  key={signal}
+                  type="button"
+                  onClick={() => setQuery(signal)}
+                  className="rounded-full border border-white/10 bg-white/4 px-3 py-2 text-xs uppercase tracking-[0.22em] text-slate-300 transition-colors hover:border-cyan-300/24 hover:text-white"
+                >
+                  {signal}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/8 pt-4">
             <p className="text-sm leading-6 text-slate-400">
               Use full search when you want grouped results, filters, and deeper browsing.
             </p>
-            <Link
-              href={`/search?q=${encodeURIComponent(query.trim())}`}
-              onClick={() => setOpen(false)}
+            <button
+              type="button"
+              onClick={openFullSearch}
               className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100 transition-colors duration-200 hover:bg-cyan-300/16 hover:text-cyan-50"
             >
               Open full search
               <ArrowUpRight className="size-4" />
-            </Link>
+            </button>
           </div>
         </div>
       </DialogContent>

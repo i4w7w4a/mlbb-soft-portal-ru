@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 import { ArrowRight, Menu, Sparkles } from "lucide-react";
 
 import { CommandPalette } from "@/components/search/command-palette";
@@ -79,7 +80,9 @@ export function SiteHeader({
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="hidden xl:block">
-              <CommandPalette heroes={heroes} news={news} className="min-w-[19rem]" />
+              <Suspense>
+                <CommandPalette heroes={heroes} news={news} className="min-w-[19rem]" />
+              </Suspense>
             </div>
             <div className="flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/8 px-3 py-2 sm:px-4">
               <span className="font-display text-xs tracking-[0.24em] text-cyan-100 sm:text-sm">
@@ -155,7 +158,9 @@ export function SiteHeader({
           </div>
         </div>
         <div className="mt-3 xl:hidden">
-          <CommandPalette heroes={heroes} news={news} />
+          <Suspense>
+            <CommandPalette heroes={heroes} news={news} />
+          </Suspense>
         </div>
       </div>
     </header>
