@@ -62,7 +62,9 @@ export default async function NewsArticlePage({
 
   return (
     <div className="mx-auto flex w-[min(100%-1.5rem,74rem)] flex-col gap-10">
-      <Card className="relative overflow-hidden space-y-6 p-8 md:p-10">
+      <Card
+        className={`soft-story-surface relative overflow-hidden space-y-6 p-8 md:p-10 ${story.isSoft ? "soft-accent-surface" : ""}`}
+      >
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
@@ -99,7 +101,7 @@ export default async function NewsArticlePage({
         </div>
       </Card>
 
-      <article className="article-shell rounded-[32px] border border-white/8 bg-white/4 px-6 py-8 md:px-12 md:py-10">
+      <article className="article-shell soft-article-body rounded-[32px] border border-white/8 bg-white/4 px-6 py-8 md:px-12 md:py-10">
         <Markdown remarkPlugins={[remarkGfm]}>{story.contentMarkdown}</Markdown>
       </article>
 

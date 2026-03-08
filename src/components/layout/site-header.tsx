@@ -42,7 +42,7 @@ export function SiteHeader({
 
   return (
     <header className="sticky top-4 z-40 mx-auto w-[min(100%-1.5rem,88rem)]">
-      <div className="rounded-[2rem] border border-white/10 bg-black/55 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:px-5">
+      <div className="soft-header-bar rounded-[2rem] border border-white/10 bg-black/55 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:px-5">
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-3">
             <Link href="/" className="flex min-w-0 items-center gap-3 rounded-full px-2 py-1">

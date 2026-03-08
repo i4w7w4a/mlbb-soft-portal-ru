@@ -58,7 +58,9 @@ export default async function HeroPage({
 
   return (
     <div className="mx-auto flex w-[min(100%-1.5rem,88rem)] flex-col gap-10">
-      <Card className="relative overflow-hidden p-8 md:p-10">
+      <Card
+        className={`soft-hero-surface relative overflow-hidden p-8 md:p-10 ${hero.isSoftFeatured ? "soft-accent-surface" : ""}`}
+      >
         <div
           className="absolute inset-0 bg-cover bg-center opacity-44"
           style={{
@@ -161,7 +163,7 @@ export default async function HeroPage({
       </section>
 
       {softStories.length ? (
-        <section className="space-y-6">
+        <section className="soft-hero-rail space-y-6">
           <SectionHeading
             eyebrow="SOFT Rail"
             title={`${hero.name} inside SOFT`}

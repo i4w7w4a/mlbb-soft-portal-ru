@@ -1,12 +1,14 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { usePathname } from "next/navigation";
 import { type ReactNode } from "react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { useSoftMode } from "@/components/providers/soft-mode-provider";
 import type { Hero, News } from "@/lib/content/schemas";
+import { cn } from "@/lib/utils";
 
 export function PublicShell({
   heroes,
@@ -19,9 +21,14 @@ export function PublicShell({
 }) {
   const { enabled, setEnabled } = useSoftMode();
   const reduceMotion = useReducedMotion();
+  const pathname = usePathname();
+  const routeKey = pathname === "/" ? "home" : pathname.startsWith("/heroes/") ? "hero" : pathname.startsWith("/news/") ? "news" : pathname.startsWith("/soft") ? "soft" : "default";
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(101,230,255,0.12),transparent_24%),radial-gradient(circle_at_20%_20%,rgba(134,148,255,0.18),transparent_26%),#050913] text-white">
+    <div
+      data-route={routeKey}
+      className={cn("portal-shell min-h-screen overflow-x-clip text-white", enabled && "portal-shell--soft")}
+    >
       <SiteHeader heroes={heroes} news={news} softEnabled={enabled} onSoftToggle={setEnabled} />
       <motion.main
         initial={reduceMotion ? undefined : { opacity: 0, y: 18 }}

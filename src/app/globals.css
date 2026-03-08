@@ -41,6 +41,116 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.portal-shell {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(101, 230, 255, 0.12), transparent 24%),
+    radial-gradient(circle at 84% 14%, rgba(134, 148, 255, 0.12), transparent 22%),
+    #050913;
+  transition:
+    background 220ms ease,
+    color 220ms ease;
+}
+
+.portal-shell[data-route="home"] {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(101, 230, 255, 0.14), transparent 24%),
+    radial-gradient(circle at 84% 12%, rgba(244, 132, 255, 0.12), transparent 20%),
+    linear-gradient(180deg, #060b15, #050913);
+}
+
+.portal-shell[data-route="hero"] {
+  background:
+    radial-gradient(circle at 78% 10%, rgba(101, 230, 255, 0.12), transparent 22%),
+    radial-gradient(circle at 16% 20%, rgba(245, 195, 107, 0.08), transparent 22%),
+    linear-gradient(180deg, #060b15, #050913);
+}
+
+.portal-shell[data-route="news"] {
+  background:
+    radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.08), transparent 18%),
+    radial-gradient(circle at 18% 18%, rgba(134, 148, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, #060b15, #050913);
+}
+
+.portal-shell[data-route="soft"] {
+  background:
+    radial-gradient(circle at 14% 12%, rgba(101, 230, 255, 0.2), transparent 20%),
+    radial-gradient(circle at 84% 12%, rgba(244, 132, 255, 0.16), transparent 18%),
+    linear-gradient(180deg, #06111b, #050913);
+}
+
+.soft-header-bar,
+.soft-home-hero,
+.soft-home-filters,
+.soft-home-lead,
+.soft-home-priority,
+.soft-hero-surface,
+.soft-story-surface,
+.soft-article-body {
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.soft-lens-active,
+.soft-accent-surface {
+  border-color: rgba(101, 230, 255, 0.18) !important;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(101, 230, 255, 0.08);
+}
+
+[data-soft-mode="on"] .portal-shell[data-route="home"] {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(101, 230, 255, 0.22), transparent 22%),
+    radial-gradient(circle at 84% 12%, rgba(244, 132, 255, 0.18), transparent 18%),
+    linear-gradient(180deg, #041019, #050913);
+}
+
+[data-soft-mode="on"] .portal-shell[data-route="hero"] {
+  background:
+    radial-gradient(circle at 78% 10%, rgba(101, 230, 255, 0.22), transparent 20%),
+    radial-gradient(circle at 18% 18%, rgba(245, 195, 107, 0.12), transparent 18%),
+    linear-gradient(180deg, #041019, #050913);
+}
+
+[data-soft-mode="on"] .portal-shell[data-route="news"] {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(101, 230, 255, 0.18), transparent 18%),
+    radial-gradient(circle at 18% 18%, rgba(244, 132, 255, 0.14), transparent 20%),
+    linear-gradient(180deg, #041019, #050913);
+}
+
+[data-soft-mode="on"] .soft-header-bar {
+  border-color: rgba(101, 230, 255, 0.18);
+  background: rgba(5, 18, 30, 0.72);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(101, 230, 255, 0.06);
+}
+
+[data-soft-mode="on"] .soft-home-hero,
+[data-soft-mode="on"] .soft-home-filters,
+[data-soft-mode="on"] .soft-home-lead,
+[data-soft-mode="on"] .soft-home-priority,
+[data-soft-mode="on"] .soft-hero-surface,
+[data-soft-mode="on"] .soft-story-surface {
+  border-color: rgba(101, 230, 255, 0.16);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(101, 230, 255, 0.08);
+}
+
+[data-soft-mode="on"] .soft-article-body {
+  border-color: rgba(101, 230, 255, 0.14);
+  background: linear-gradient(180deg, rgba(8, 18, 29, 0.92), rgba(4, 9, 17, 0.96));
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(101, 230, 255, 0.06);
+}
+
 a {
   text-decoration: none;
 }
@@ -99,6 +209,13 @@ a {
   border-left: 2px solid rgba(101, 230, 255, 0.5);
   padding-left: 1.25rem;
   color: #e9faff;
+}
+
+[data-soft-mode="on"] .soft-article-body blockquote {
+  border-left-color: rgba(101, 230, 255, 0.72);
+  background: rgba(101, 230, 255, 0.08);
+  border-radius: 0 1.5rem 1.5rem 0;
+  padding: 1rem 1.25rem;
 }
 
 .article-shell code {

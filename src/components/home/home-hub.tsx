@@ -175,6 +175,7 @@ export function HomeHub({
   const filterOptions = useMemo(() => buildHomeFilters(heroes, latestNews), [heroes, latestNews]);
   const activeFilter =
     filterOptions.find((filter) => filter.id === deferredFilterId) ?? filterOptions[0];
+  const isSoftLens = activeFilter.id === "soft";
 
   const filterCounts = useMemo(
     () =>
@@ -220,7 +221,12 @@ export function HomeHub({
   return (
     <div className="mx-auto flex w-[min(100%-1.5rem,88rem)] flex-col gap-16">
       <section className="grid gap-6 xl:grid-cols-[1.35fr_0.9fr]">
-        <Card className="relative overflow-hidden p-8 md:p-10">
+        <Card
+          className={cn(
+            "soft-home-hero relative overflow-hidden p-8 md:p-10",
+            isSoftLens && "soft-lens-active",
+          )}
+        >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(101,230,255,0.24),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(244,132,255,0.16),transparent_24%),linear-gradient(180deg,rgba(6,9,20,0),rgba(6,9,20,0.35))]" />
           <div className="relative space-y-8">
             <Badge variant="soft" className="w-fit">Editorial Hub</Badge>
@@ -288,7 +294,12 @@ export function HomeHub({
           title="Switch the homepage lens before you drop into the feed."
           description="These chips rebalance hero universes, latest reads, and editorial collections around a sharper signal."
         />
-        <Card className="relative overflow-hidden p-6 md:p-7">
+        <Card
+          className={cn(
+            "soft-home-filters relative overflow-hidden p-6 md:p-7",
+            isSoftLens && "soft-lens-active",
+          )}
+        >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(101,230,255,0.14),transparent_32%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.08),transparent_24%)]" />
           <div className="relative grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
             <div className="space-y-5">
@@ -344,7 +355,12 @@ export function HomeHub({
       </section>
 
       <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <Card className="relative overflow-hidden p-7 md:p-8">
+        <Card
+          className={cn(
+            "soft-home-lead relative overflow-hidden p-7 md:p-8",
+            (isSoftLens || primaryStory?.isSoft) && "soft-lens-active",
+          )}
+        >
           <div className="absolute inset-0 opacity-90" style={{ background: primaryStory?.isSoft ? "radial-gradient(circle at top right, rgba(101,230,255,0.18), transparent 38%)" : "radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 28%)" }} />
           <div className="relative space-y-6">
             <div className="flex flex-wrap items-center gap-3">
@@ -468,7 +484,12 @@ export function HomeHub({
             </div>
           </Card>
           <div className="grid gap-5">
-            <Card className="space-y-4 border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,rgba(101,230,255,0.18),transparent_35%),linear-gradient(180deg,rgba(10,17,30,0.95),rgba(5,9,18,0.96))]">
+            <Card
+              className={cn(
+                "soft-home-priority space-y-4 border-cyan-300/15 bg-[radial-gradient(circle_at_top_right,rgba(101,230,255,0.18),transparent_35%),linear-gradient(180deg,rgba(10,17,30,0.95),rgba(5,9,18,0.96))]",
+                isSoftLens && "soft-lens-active",
+              )}
+            >
               <Badge variant="soft" className="w-fit">SOFT Priority</Badge>
               <p className="font-display text-3xl text-white">Premium reads stay elevated under every lens.</p>
               <div className="space-y-3">
