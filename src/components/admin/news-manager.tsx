@@ -27,7 +27,8 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { newsSchema, type Hero, type News } from "@/lib/content/schemas";
+import { parsePortalBundle } from "@/lib/content/bundle";
+import { type Hero, type News } from "@/lib/content/schemas";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -41,33 +42,20 @@ const selectClassName =
 function parseImportInput(value: string) {
   if (!value.trim()) {
     return {
-      stories: null,
-      error: "Paste a JSON array of stories or a full export snapshot to import.",
+      bundle: null,
+      error: "Paste a story array or a full portal bundle to import.",
     };
   }
 
   try {
     const raw = JSON.parse(value) as unknown;
-    const entries = Array.isArray(raw)
-      ? raw
-      : raw && typeof raw === "object" && Array.isArray((raw as { news?: unknown[] }).news)
-        ? (raw as { news: unknown[] }).news
-        : null;
-
-    if (!entries) {
-      return {
-        stories: null,
-        error: "Expected either an array of news items or an object with a news field.",
-      };
-    }
-
     return {
-      stories: entries.map((entry) => newsSchema.parse(entry)),
+      bundle: parsePortalBundle(raw),
       error: null,
     };
   } catch (error) {
     return {
-      stories: null,
+      bundle: null,
       error: error instanceof Error ? error.message : "Import payload is invalid.",
     };
   }
@@ -80,6 +68,28 @@ function downloadFile(blob: Blob, fileName: string) {
   link.download = fileName;
   link.click();
   window.URL.revokeObjectURL(url);
+}
+
+function formatImportSummary(imported: {
+  heroes?: number;
+  news?: number;
+  tags?: number;
+  categories?: number;
+  siteSettings?: number;
+  softConfig?: number;
+  latestIndex?: number;
+}) {
+  return [
+    imported.heroes ? `${imported.heroes} heroes` : null,
+    imported.news ? `${imported.news} stories` : null,
+    imported.tags ? `${imported.tags} tags` : null,
+    imported.categories ? `${imported.categories} categories` : null,
+    imported.siteSettings ? "site settings" : null,
+    imported.softConfig ? "SOFT config" : null,
+    imported.latestIndex ? "latest index" : null,
+  ]
+    .filter(Boolean)
+    .join(", ");
 }
 
 export function NewsManager({
@@ -138,6 +148,21 @@ export function NewsManager({
   );
 
   const importPreview = useMemo(() => parseImportInput(importValue), [importValue]);
+  const importSummary = useMemo(() => {
+    if (!importPreview.bundle) {
+      return null;
+    }
+
+    return {
+      heroes: importPreview.bundle.heroes.length,
+      stories: importPreview.bundle.news.length,
+      tags: importPreview.bundle.taxonomy?.tags.length ?? 0,
+      categories: importPreview.bundle.taxonomy?.categories.length ?? 0,
+      siteSettings: importPreview.bundle.site ? 1 : 0,
+      softConfig: importPreview.bundle.site ? 1 : 0,
+      latestIndex: importPreview.bundle.latestIndex ? 1 : 0,
+    };
+  }, [importPreview.bundle]);
 
   function refreshNewsList() {
     startRefresh(() => {
@@ -185,12 +210,14 @@ export function NewsManager({
       const response = await fetch("/api/admin/export");
 
       if (!response.ok) {
-        throw new Error("Failed to export current news snapshot.");
+        throw new Error("Failed to export current content bundle.");
       }
 
       const blob = await response.blob();
       downloadFile(blob, `portal-export-${new Date().toISOString().slice(0, 10)}.json`);
-      setMessage("Export downloaded. The same snapshot format can be pasted back into import.");
+      setMessage(
+        "Export downloaded. The same bundle can be pasted back into import to round-trip heroes, stories, taxonomy, and site config.",
+      );
     } catch (nextError) {
       setError(nextError instanceof Error ? nextError.message : "Failed to export snapshot.");
     } finally {
@@ -201,7 +228,7 @@ export function NewsManager({
   async function handleImport() {
     resetFeedback();
 
-    if (!importPreview.stories) {
+    if (!importPreview.bundle) {
       setError(importPreview.error ?? "Import payload is invalid.");
       return;
     }
@@ -209,27 +236,38 @@ export function NewsManager({
     setBusyAction("import");
 
     try {
-      const response = await fetch("/api/admin/news/import", {
+      const response = await fetch("/api/admin/import", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ news: importPreview.stories }),
+        body: JSON.stringify(importPreview.bundle),
       });
-      const data = (await response.json()) as { error?: string; imported?: number };
+      const data = (await response.json()) as {
+        error?: string;
+        imported?: {
+          heroes?: number;
+          news?: number;
+          tags?: number;
+          categories?: number;
+          siteSettings?: number;
+          softConfig?: number;
+          latestIndex?: number;
+        };
+      };
 
       if (!response.ok) {
-        throw new Error(data.error ?? "Failed to import stories.");
+        throw new Error(data.error ?? "Failed to import content bundle.");
       }
 
       setMessage(
-        `Imported ${data.imported ?? importPreview.stories.length} stories into the content layer.`,
+        `Imported ${formatImportSummary(data.imported ?? {}) || "content"} into the content layer.`,
       );
       setImportDialogOpen(false);
       setImportValue("");
       refreshNewsList();
     } catch (nextError) {
-      setError(nextError instanceof Error ? nextError.message : "Failed to import stories.");
+      setError(nextError instanceof Error ? nextError.message : "Failed to import content bundle.");
     } finally {
       setBusyAction(null);
     }
@@ -283,8 +321,7 @@ export function NewsManager({
                 Operate editorial output without leaving the queue
               </p>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-                Duplicate draft variants, round-trip JSON exports, and bulk import stories
-                from exported snapshots or raw arrays.
+                Duplicate draft variants, round-trip full content bundles, and bulk import raw stories or whole-portal snapshots from the same operator queue.
               </p>
             </div>
           </div>
@@ -305,9 +342,9 @@ export function NewsManager({
               </DialogTrigger>
               <DialogContent className="max-h-[85vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle>Bulk import stories</DialogTitle>
+                  <DialogTitle>Bulk import content bundle</DialogTitle>
                   <DialogDescription>
-                    Paste a JSON array of stories or the full payload downloaded from export.
+                    Paste a story array for quick news-only ingest or the full exported bundle for heroes, taxonomy, site settings, SOFT config, and editorial indexes.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
@@ -316,7 +353,7 @@ export function NewsManager({
                     <Textarea
                       id="import-json"
                       className="min-h-[22rem] font-mono text-sm"
-                      placeholder='[{ "slug": "new-story", "heroSlug": "aamon", ... }]'
+                      placeholder='{"heroes":[...],"news":[...],"taxonomy":{"tags":[...],"categories":[...]},"site":{"settings":{...},"soft":{...}},"latestIndex":{...}}'
                       value={importValue}
                       onChange={(event) => setImportValue(event.target.value)}
                     />
@@ -331,7 +368,7 @@ export function NewsManager({
                         ) : (
                           <FileJson className="size-4" />
                         )}
-                        Validate and import
+                        Validate and import bundle
                       </Button>
                       <Button
                         type="button"
@@ -349,40 +386,71 @@ export function NewsManager({
                     <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
                       Parsed preview
                     </p>
-                    {importPreview.stories ? (
+                    {importPreview.bundle && importSummary ? (
                       <>
-                        <div className="grid gap-3 sm:grid-cols-3">
+                        <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-2">
+                          <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
+                            <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                              Heroes
+                            </p>
+                            <p className="mt-2 font-display text-3xl text-white">
+                              {importSummary.heroes}
+                            </p>
+                          </div>
                           <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
                             <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
                               Stories
                             </p>
                             <p className="mt-2 font-display text-3xl text-white">
-                              {importPreview.stories.length}
+                              {importSummary.stories}
                             </p>
                           </div>
                           <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
                             <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                              Drafts
+                              Tags
                             </p>
                             <p className="mt-2 font-display text-3xl text-white">
-                              {
-                                importPreview.stories.filter(
-                                  (story) => story.status === "draft",
-                                ).length
-                              }
+                              {importSummary.tags}
                             </p>
                           </div>
                           <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
                             <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                              SOFT
+                              Categories
                             </p>
                             <p className="mt-2 font-display text-3xl text-white">
-                              {importPreview.stories.filter((story) => story.isSoft).length}
+                              {importSummary.categories}
+                            </p>
+                          </div>
+                          <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
+                            <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                              Site config
+                            </p>
+                            <p className="mt-2 font-display text-3xl text-white">
+                              {importSummary.siteSettings ? "Yes" : "No"}
+                            </p>
+                          </div>
+                          <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
+                            <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                              Editorial index
+                            </p>
+                            <p className="mt-2 font-display text-3xl text-white">
+                              {importSummary.latestIndex ? "Yes" : "No"}
                             </p>
                           </div>
                         </div>
                         <div className="space-y-3">
-                          {importPreview.stories.slice(0, 4).map((story) => (
+                          {importPreview.bundle.heroes.slice(0, 2).map((hero) => (
+                            <div
+                              key={hero.slug}
+                              className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3"
+                            >
+                              <p className="text-sm font-medium text-white">{hero.name}</p>
+                              <p className="mt-1 text-xs uppercase tracking-[0.24em] text-slate-500">
+                                Hero · {hero.role.join(" / ")}
+                              </p>
+                            </div>
+                          ))}
+                          {importPreview.bundle.news.slice(0, 3).map((story) => (
                             <div
                               key={story.id}
                               className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3"
@@ -393,6 +461,15 @@ export function NewsManager({
                               </p>
                             </div>
                           ))}
+                          {!importPreview.bundle.heroes.length &&
+                          !importPreview.bundle.news.length &&
+                          (importPreview.bundle.taxonomy ||
+                            importPreview.bundle.site ||
+                            importPreview.bundle.latestIndex) ? (
+                            <div className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3 text-sm leading-6 text-slate-300">
+                              This bundle is config-first. Import will update taxonomy, site settings, SOFT config, and editorial indexes without adding new hero or story files.
+                            </div>
+                          ) : null}
                         </div>
                       </>
                     ) : (
@@ -579,7 +656,7 @@ export function NewsManager({
               </Button>
               <Button type="button" onClick={() => setImportDialogOpen(true)}>
                 <Upload className="size-4" />
-                Import stories
+                Import bundle
               </Button>
             </div>
           </Card>

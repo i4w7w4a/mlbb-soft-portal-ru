@@ -160,6 +160,10 @@ export function createContentRepository(options?: { contentRoot?: string }) {
     return loadSoftConfig();
   }
 
+  async function getLatestIndex() {
+    return loadLatestIndex();
+  }
+
   async function getTaxonomy() {
     return loadTaxonomy();
   }
@@ -347,6 +351,7 @@ export function createContentRepository(options?: { contentRoot?: string }) {
   return {
     getSiteSettings,
     getSoftConfig,
+    getLatestIndex,
     getTaxonomy,
     getAllHeroes,
     getFeaturedHeroes,
@@ -374,6 +379,7 @@ const repository = createContentRepository();
 export const {
   getSiteSettings,
   getSoftConfig,
+  getLatestIndex,
   getTaxonomy,
   getAllHeroes,
   getFeaturedHeroes,

@@ -1,30 +1,37 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { z } from "zod";
 
 import {
+  parsePortalBundle,
+  siteBundleSchema,
+  taxonomyPayloadSchema,
+  type PortalBundle,
+  type SiteBundle,
+  type TaxonomyPayload,
+} from "@/lib/content/bundle";
+import {
   heroSchema,
+  latestIndexSchema,
   newsSchema,
-  taxonomyCategorySchema,
-  taxonomyTagSchema,
   type Hero,
+  type LatestIndex,
   type News,
-  type TaxonomyCategory,
-  type TaxonomyTag,
 } from "@/lib/content/schemas";
-import { getAllNews, getHeroBySlug } from "@/lib/content/repository";
-import { slugify } from "@/lib/utils";
+import {
+  getAllHeroes,
+  getAllNews,
+  getHeroBySlug,
+  getLatestIndex,
+  getSiteSettings,
+  getSoftConfig,
+  getTaxonomy,
+} from "@/lib/content/repository";
+import { slugify, unique } from "@/lib/utils";
 
 const HERO_ROOT = path.join(process.cwd(), "content", "heroes");
 const TAXONOMY_ROOT = path.join(process.cwd(), "content", "taxonomy");
-const newsImportSnapshotSchema = z.object({
-  exportedAt: z.string().optional(),
-  news: z.array(newsSchema),
-});
-const taxonomyPayloadSchema = z.object({
-  tags: z.array(taxonomyTagSchema),
-  categories: z.array(taxonomyCategorySchema),
-});
+const SITE_ROOT = path.join(process.cwd(), "content", "site");
+const NEWS_ROOT = path.join(process.cwd(), "content", "news");
 
 function createJsonOutput(value: unknown) {
   return `${JSON.stringify(value, null, 2)}\n`;
@@ -54,24 +61,141 @@ function createUniqueCopyValue(source: string, taken: Set<string>) {
 
 export interface PortalExportSnapshot {
   exportedAt: string;
+  heroes: Hero[];
   news: News[];
-}
-
-export interface TaxonomyPayload {
-  tags: TaxonomyTag[];
-  categories: TaxonomyCategory[];
+  taxonomy: TaxonomyPayload;
+  site: SiteBundle;
+  latestIndex: LatestIndex;
 }
 
 export function parseNewsImportPayload(payload: unknown) {
-  if (Array.isArray(payload)) {
-    return payload.map((entry) => newsSchema.parse(entry));
-  }
-
-  return newsImportSnapshotSchema.parse(payload).news;
+  return parsePortalBundle(payload).news;
 }
 
 export function parseTaxonomyPayload(payload: unknown) {
   return taxonomyPayloadSchema.parse(payload);
+}
+
+export function parsePortalImportPayload(payload: unknown) {
+  return parsePortalBundle(payload);
+}
+
+function assertUnique(values: string[], label: string) {
+  const duplicates = values.filter((value, index) => values.indexOf(value) !== index);
+
+  if (duplicates.length) {
+    throw new Error(`Duplicate ${label} detected: ${unique(duplicates).join(", ")}`);
+  }
+}
+
+export function validatePortalBundleGraph(
+  bundle: PortalBundle,
+  existing: {
+    heroes: Hero[];
+    news: News[];
+    taxonomy: TaxonomyPayload;
+  },
+) {
+  assertUnique(
+    bundle.heroes.map((hero) => hero.slug),
+    "hero slug",
+  );
+  assertUnique(
+    bundle.news.map((story) => story.slug),
+    "news slug",
+  );
+  assertUnique(
+    bundle.news.map((story) => story.id),
+    "news id",
+  );
+
+  if (bundle.taxonomy) {
+    assertUnique(
+      bundle.taxonomy.tags.map((tag) => tag.slug),
+      "taxonomy tag slug",
+    );
+    assertUnique(
+      bundle.taxonomy.categories.map((category) => category.slug),
+      "taxonomy category slug",
+    );
+  }
+
+  const heroSlugs = new Set([
+    ...existing.heroes.map((hero) => hero.slug),
+    ...bundle.heroes.map((hero) => hero.slug),
+  ]);
+  const newsIds = new Set([
+    ...existing.news.map((story) => story.id),
+    ...bundle.news.map((story) => story.id),
+  ]);
+  const tagSlugs = new Set([
+    ...existing.taxonomy.tags.map((tag) => tag.slug),
+    ...(bundle.taxonomy?.tags.map((tag) => tag.slug) ?? []),
+  ]);
+  const categorySlugs = new Set([
+    ...existing.taxonomy.categories.map((category) => category.slug),
+    ...(bundle.taxonomy?.categories.map((category) => category.slug) ?? []),
+  ]);
+
+  bundle.heroes.forEach((hero) => {
+    const missingTags = hero.tags.filter((tag) => !tagSlugs.has(tag));
+
+    if (missingTags.length) {
+      throw new Error(
+        `Hero ${hero.slug} references missing taxonomy tags: ${missingTags.join(", ")}`,
+      );
+    }
+  });
+
+  bundle.news.forEach((story) => {
+    if (!heroSlugs.has(story.heroSlug)) {
+      throw new Error(`News item ${story.slug} references missing hero ${story.heroSlug}`);
+    }
+
+    if (!categorySlugs.has(story.category)) {
+      throw new Error(
+        `News item ${story.slug} references missing category ${story.category}`,
+      );
+    }
+
+    const missingTags = story.tags.filter((tag) => !tagSlugs.has(tag));
+
+    if (missingTags.length) {
+      throw new Error(
+        `News item ${story.slug} references missing taxonomy tags: ${missingTags.join(", ")}`,
+      );
+    }
+  });
+
+  if (bundle.site) {
+    const missingPriorityHeroes = bundle.site.soft.heroPriority.filter(
+      (heroSlug) => !heroSlugs.has(heroSlug),
+    );
+
+    if (missingPriorityHeroes.length) {
+      throw new Error(
+        `SOFT config references missing heroes: ${missingPriorityHeroes.join(", ")}`,
+      );
+    }
+  }
+
+  if (bundle.latestIndex) {
+    const referencedIds = [
+      ...bundle.latestIndex.featured,
+      ...bundle.latestIndex.trending,
+      ...bundle.latestIndex.spotlight,
+      ...bundle.latestIndex.collections.flatMap((collection) => collection.newsIds),
+    ];
+    const missingIds = unique(
+      referencedIds.filter((storyId) => !newsIds.has(storyId)),
+    );
+
+    if (missingIds.length) {
+      throw new Error(
+        `Latest index references missing news ids: ${missingIds.join(", ")}`,
+      );
+    }
+  }
 }
 
 export function createDuplicateNewsPayload(stories: News[], slug: string) {
@@ -100,16 +224,21 @@ export function createDuplicateNewsPayload(stories: News[], slug: string) {
   });
 }
 
-export async function saveNewsPayload(payload: News) {
+export async function saveNewsPayload(
+  payload: News,
+  options?: { heroSlugs?: Set<string> },
+) {
   const parsed = newsSchema.parse(payload);
-  const hero = await getHeroBySlug(parsed.heroSlug);
+  const heroExists = options?.heroSlugs
+    ? options.heroSlugs.has(parsed.heroSlug)
+    : Boolean(await getHeroBySlug(parsed.heroSlug));
 
-  if (!hero) {
+  if (!heroExists) {
     throw new Error(`Cannot save news item for missing hero: ${parsed.heroSlug}`);
   }
 
   const dayPrefix = parsed.publishedAt.slice(0, 10);
-  const directory = path.join(HERO_ROOT, hero.slug, "news");
+  const directory = path.join(HERO_ROOT, parsed.heroSlug, "news");
   const filePath = path.join(directory, `${dayPrefix}-${parsed.slug}.json`);
 
   await ensureDirectory(directory);
@@ -126,12 +255,26 @@ export async function duplicateNewsBySlug(slug: string) {
   return duplicate;
 }
 
-export async function importNewsBatch(payloads: News[]) {
+export async function importNewsBatch(
+  payloads: News[],
+  options?: { heroSlugs?: Set<string> },
+) {
   const parsed = payloads.map((payload) => newsSchema.parse(payload));
 
-  await Promise.all(parsed.map((story) => saveNewsPayload(story)));
+  await Promise.all(parsed.map((story) => saveNewsPayload(story, options)));
 
   return parsed.length;
+}
+
+async function saveHeroIndex(slugs: string[]) {
+  await ensureDirectory(HERO_ROOT);
+  const orderedSlugs = [...unique(slugs)].sort((left, right) => left.localeCompare(right));
+
+  await fs.writeFile(
+    path.join(HERO_ROOT, "index.json"),
+    createJsonOutput({ heroes: orderedSlugs }),
+    "utf8",
+  );
 }
 
 export async function saveHeroPayload(payload: Hero) {
@@ -146,6 +289,16 @@ export async function saveHeroPayload(payload: Hero) {
   );
 
   return path.join(directory, "hero.json");
+}
+
+export async function importHeroBatch(payloads: Hero[]) {
+  const parsed = payloads.map((payload) => heroSchema.parse(payload));
+  const existingHeroes = await getAllHeroes();
+
+  await Promise.all(parsed.map((hero) => saveHeroPayload(hero)));
+  await saveHeroIndex([...existingHeroes.map((hero) => hero.slug), ...parsed.map((hero) => hero.slug)]);
+
+  return parsed.length;
 }
 
 export async function saveTaxonomyPayload(payload: TaxonomyPayload) {
@@ -171,13 +324,106 @@ export async function saveTaxonomyPayload(payload: TaxonomyPayload) {
   };
 }
 
+export async function saveSiteBundlePayload(payload: SiteBundle) {
+  const parsed = siteBundleSchema.parse(payload);
+
+  await ensureDirectory(SITE_ROOT);
+  await Promise.all([
+    fs.writeFile(
+      path.join(SITE_ROOT, "settings.json"),
+      createJsonOutput(parsed.settings),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(SITE_ROOT, "soft.json"),
+      createJsonOutput(parsed.soft),
+      "utf8",
+    ),
+  ]);
+
+  return {
+    settingsPath: path.join(SITE_ROOT, "settings.json"),
+    softPath: path.join(SITE_ROOT, "soft.json"),
+  };
+}
+
+export async function saveLatestIndexPayload(payload: LatestIndex) {
+  const parsed = latestIndexSchema.parse(payload);
+
+  await ensureDirectory(NEWS_ROOT);
+  await fs.writeFile(
+    path.join(NEWS_ROOT, "latest-index.json"),
+    createJsonOutput(parsed),
+    "utf8",
+  );
+
+  return path.join(NEWS_ROOT, "latest-index.json");
+}
+
 export async function exportPortalSnapshot() {
-  const stories = await getAllNews(true);
+  const [heroes, stories, taxonomy, settings, soft, latestIndex] = await Promise.all([
+    getAllHeroes(),
+    getAllNews(true),
+    getTaxonomy(),
+    getSiteSettings(),
+    getSoftConfig(),
+    getLatestIndex(),
+  ]);
 
   return {
     exportedAt: new Date().toISOString(),
+    heroes,
     news: stories,
+    taxonomy,
+    site: {
+      settings,
+      soft,
+    },
+    latestIndex,
   } satisfies PortalExportSnapshot;
+}
+
+export async function importPortalBundle(payload: PortalBundle) {
+  const existing = await Promise.all([getAllHeroes(), getAllNews(true), getTaxonomy()]);
+  const [heroes, news, taxonomy] = existing;
+
+  validatePortalBundleGraph(payload, { heroes, news, taxonomy });
+  const mergedHeroSlugs = new Set([
+    ...heroes.map((hero) => hero.slug),
+    ...payload.heroes.map((hero) => hero.slug),
+  ]);
+
+  const counts = {
+    heroes: 0,
+    news: 0,
+    tags: payload.taxonomy?.tags.length ?? 0,
+    categories: payload.taxonomy?.categories.length ?? 0,
+    siteSettings: payload.site ? 1 : 0,
+    softConfig: payload.site ? 1 : 0,
+    latestIndex: payload.latestIndex ? 1 : 0,
+  };
+
+  if (payload.heroes.length) {
+    counts.heroes = await importHeroBatch(payload.heroes);
+  }
+
+  if (payload.news.length) {
+    counts.news = await importNewsBatch(payload.news, { heroSlugs: mergedHeroSlugs });
+  }
+
+  if (payload.taxonomy) {
+    await saveTaxonomyPayload(payload.taxonomy);
+  }
+
+  if (payload.site) {
+    await saveSiteBundlePayload(payload.site);
+  }
+
+  if (payload.latestIndex) {
+    await saveLatestIndexPayload(payload.latestIndex);
+  }
+
+  return counts;
 }
 
 export function createQuickDraft(values: {
