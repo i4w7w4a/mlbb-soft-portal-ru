@@ -1,32 +1,78 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import type { Route } from "next";
+import { useEffect, useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { NewsCard } from "@/components/cards/news-card";
 import { EmptyState } from "@/components/feedback/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useDebouncedValue } from "@/hooks/use-debounced-value";
+import {
+  createNewsExplorerSearchParams,
+  getNewsCategoryOptions,
+  type NewsExplorerFilters,
+  parseNewsExplorerFilters,
+} from "@/lib/explorer-filters";
 import type { Hero, News } from "@/lib/content/schemas";
 
 export function NewsFeed({
   news,
   heroes,
-  defaultSoftOnly = false,
+  initialFilters,
 }: {
   news: News[];
   heroes: Hero[];
-  defaultSoftOnly?: boolean;
+  initialFilters: NewsExplorerFilters;
 }) {
-  const [query, setQuery] = useState("");
-  const [heroSlug, setHeroSlug] = useState("all");
-  const [softOnly, setSoftOnly] = useState(defaultSoftOnly);
-  const [category, setCategory] = useState("all");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(initialFilters.query);
+  const [heroSlug, setHeroSlug] = useState(initialFilters.heroSlug);
+  const [softOnly, setSoftOnly] = useState(initialFilters.softOnly);
+  const [category, setCategory] = useState(initialFilters.category);
 
   const categories = useMemo(
-    () => ["all", ...new Set(news.map((story) => story.category))],
+    () => ["all", ...getNewsCategoryOptions(news)],
     [news],
   );
+  const debouncedQuery = useDebouncedValue(query, 220);
+  const filtersFromUrl = useMemo(
+    () =>
+      parseNewsExplorerFilters(searchParams, {
+        heroSlugs: heroes.map((hero) => hero.slug),
+        categories: categories.filter((option) => option !== "all"),
+      }),
+    [categories, heroes, searchParams],
+  );
+
+  useEffect(() => {
+    setQuery(filtersFromUrl.query);
+    setHeroSlug(filtersFromUrl.heroSlug);
+    setSoftOnly(filtersFromUrl.softOnly);
+    setCategory(filtersFromUrl.category);
+  }, [filtersFromUrl]);
+
+  useEffect(() => {
+    const nextParams = createNewsExplorerSearchParams({
+      query: debouncedQuery,
+      heroSlug,
+      category,
+      softOnly,
+    });
+    const nextQuery = nextParams.toString();
+    const currentQuery = searchParams.toString();
+
+    if (nextQuery === currentQuery) {
+      return;
+    }
+
+    const href = nextQuery ? `${pathname}?${nextQuery}` : pathname;
+    router.replace(href as Route, { scroll: false });
+  }, [category, debouncedQuery, heroSlug, pathname, router, searchParams, softOnly]);
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -65,7 +111,7 @@ export function NewsFeed({
     setQuery("");
     setHeroSlug("all");
     setCategory("all");
-    setSoftOnly(defaultSoftOnly);
+    setSoftOnly(false);
   }
 
   return (

@@ -1,5 +1,10 @@
 import { HeroesExplorer } from "@/components/explorers/heroes-explorer";
 import { SectionHeading } from "@/components/layout/section-heading";
+import {
+  getHeroLaneOptions,
+  getHeroRoleOptions,
+  parseHeroExplorerFilters,
+} from "@/lib/explorer-filters";
 import { getAllHeroes } from "@/lib/content/repository";
 import { createMetadata } from "@/lib/seo";
 
@@ -9,8 +14,16 @@ export const metadata = createMetadata({
   path: "/heroes",
 });
 
-export default async function HeroesPage() {
+export default async function HeroesPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const heroes = await getAllHeroes();
+  const initialFilters = parseHeroExplorerFilters(await searchParams, {
+    roles: getHeroRoleOptions(heroes),
+    lanes: getHeroLaneOptions(heroes),
+  });
 
   return (
     <div className="mx-auto flex w-[min(100%-1.5rem,88rem)] flex-col gap-10">
@@ -19,8 +32,7 @@ export default async function HeroesPage() {
         title="A catalog that treats every hero like an editorial world."
         description="Fast filters, premium cards and scalable hero entry points for continuous coverage."
       />
-      <HeroesExplorer heroes={heroes} />
+      <HeroesExplorer heroes={heroes} initialFilters={initialFilters} />
     </div>
   );
 }
-

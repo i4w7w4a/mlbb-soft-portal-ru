@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import type { Route } from "next";
+import { useEffect, useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { EmptyState } from "@/components/feedback/empty-state";
 import { HeroCard } from "@/components/cards/hero-card";
@@ -8,25 +10,72 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type { Hero } from "@/lib/content/schemas";
+import { useDebouncedValue } from "@/hooks/use-debounced-value";
+import {
+  createHeroExplorerSearchParams,
+  getHeroLaneOptions,
+  getHeroRoleOptions,
+  type HeroExplorerFilters,
+  parseHeroExplorerFilters,
+} from "@/lib/explorer-filters";
 
 type HeroRole = Hero["role"][number];
 type HeroLane = Hero["lane"][number];
 
-export function HeroesExplorer({ heroes }: { heroes: Hero[] }) {
-  const [query, setQuery] = useState("");
-  const [role, setRole] = useState("all");
-  const [lane, setLane] = useState("all");
-  const [layout, setLayout] = useState<"grid" | "list">("grid");
-  const [sort, setSort] = useState<"featured" | "alpha" | "release">("featured");
+export function HeroesExplorer({
+  heroes,
+  initialFilters,
+}: {
+  heroes: Hero[];
+  initialFilters: HeroExplorerFilters;
+}) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(initialFilters.query);
+  const [role, setRole] = useState(initialFilters.role);
+  const [lane, setLane] = useState(initialFilters.lane);
+  const [layout, setLayout] = useState<"grid" | "list">(initialFilters.layout);
+  const [sort, setSort] = useState<"featured" | "alpha" | "release">(initialFilters.sort);
 
-  const roles = useMemo(
-    () => ["all", ...new Set(heroes.flatMap((hero) => hero.role))],
-    [heroes],
+  const roles = useMemo(() => ["all", ...getHeroRoleOptions(heroes)], [heroes]);
+  const lanes = useMemo(() => ["all", ...getHeroLaneOptions(heroes)], [heroes]);
+  const debouncedQuery = useDebouncedValue(query, 220);
+  const filtersFromUrl = useMemo(
+    () =>
+      parseHeroExplorerFilters(searchParams, {
+        roles: roles.filter((option) => option !== "all"),
+        lanes: lanes.filter((option) => option !== "all"),
+      }),
+    [lanes, roles, searchParams],
   );
-  const lanes = useMemo(
-    () => ["all", ...new Set(heroes.flatMap((hero) => hero.lane))],
-    [heroes],
-  );
+
+  useEffect(() => {
+    setQuery(filtersFromUrl.query);
+    setRole(filtersFromUrl.role);
+    setLane(filtersFromUrl.lane);
+    setLayout(filtersFromUrl.layout);
+    setSort(filtersFromUrl.sort);
+  }, [filtersFromUrl]);
+
+  useEffect(() => {
+    const nextParams = createHeroExplorerSearchParams({
+      query: debouncedQuery,
+      role,
+      lane,
+      layout,
+      sort,
+    });
+    const nextQuery = nextParams.toString();
+    const currentQuery = searchParams.toString();
+
+    if (nextQuery === currentQuery) {
+      return;
+    }
+
+    const href = nextQuery ? `${pathname}?${nextQuery}` : pathname;
+    router.replace(href as Route, { scroll: false });
+  }, [debouncedQuery, lane, layout, pathname, role, router, searchParams, sort]);
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -52,8 +101,12 @@ export function HeroesExplorer({ heroes }: { heroes: Hero[] }) {
         query.trim() ? `Query: ${query.trim()}` : null,
         role !== "all" ? `Role: ${role}` : null,
         lane !== "all" ? `Lane: ${lane}` : null,
+        layout !== "grid" ? `View: ${layout}` : null,
+        sort !== "featured"
+          ? `Sort: ${sort === "alpha" ? "alphabetical" : "newest release"}`
+          : null,
       ].filter(Boolean) as string[],
-    [lane, query, role],
+    [lane, layout, query, role, sort],
   );
 
   function resetFilters() {
