@@ -1,0 +1,89 @@
+name: Feature Work
+description: Capture new product or engineering work with scope, acceptance criteria, and rollout context.
+title: "[Feature]: "
+labels:
+  - status:backlog
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: State the feature in one clear paragraph.
+      placeholder: Add the capability, user need, and expected product outcome.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Platform
+        - Content
+        - Design
+        - Public
+        - Admin
+        - Quality
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0
+        - P1
+        - P2
+    validations:
+      required: true
+  - type: dropdown
+    id: soft-impact
+    attributes:
+      label: SOFT Impact
+      options:
+        - Core
+        - Supporting
+        - None
+    validations:
+      required: true
+  - type: textarea
+    id: user-outcome
+    attributes:
+      label: User Outcome
+      description: Describe what becomes better for the end user or operator.
+      placeholder: Explain the before/after in product terms.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed Scope
+      description: List the concrete surfaces, flows, or systems that should change.
+      placeholder: Routes, components, repositories, admin flows, content layers, or docs.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Write flat checklist items or bullet points for done-ness.
+      placeholder: |
+        - [ ] Route or flow works end to end
+        - [ ] Empty/error/loading states handled
+        - [ ] SOFT behavior is correct where relevant
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation Plan
+      description: List the commands, checks, or browser flows required before closeout.
+      placeholder: npm test, npm run lint, npm run typecheck, npm run build, manual smoke routes, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and Risks
+      description: Capture blockers, credentials, external services, or sequencing concerns.
+      placeholder: Note blocked items, missing env vars, follow-up issues, or migration risks.
+

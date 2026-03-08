@@ -1,0 +1,76 @@
+name: Bug Report
+description: Report a defect with reproduction steps, severity, and expected behavior.
+title: "[Bug]: "
+labels:
+  - status:backlog
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the bug in one or two sentences.
+      placeholder: What is broken, where, and how bad is it?
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Platform
+        - Content
+        - Design
+        - Public
+        - Admin
+        - Quality
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: Write the smallest sequence that reproduces the issue.
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      placeholder: Describe the correct outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      placeholder: Describe the broken outcome, logs, or visible regression.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Include route, environment, feature flags, browser/device, and related issue or commit if known.
+      placeholder: /heroes, local demo mode, production build, mobile Safari, commit SHA, etc.
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation Needed
+      description: List the commands or checks that should prove the fix.
+      placeholder: Tests, lint, typecheck, build, and manual smoke cases.
+

@@ -1,0 +1,58 @@
+name: Session Kickoff
+description: Prepare a long implementation run with issue links, guardrails, and verification steps.
+title: "[Session]: "
+labels:
+  - status:backlog
+  - ops
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Session Objective
+      description: State the outcome this implementation session should deliver.
+      placeholder: Close issue(s), land a coherent slice, or reduce a blocker to a smaller verified remainder.
+    validations:
+      required: true
+  - type: textarea
+    id: linked-work
+    attributes:
+      label: Linked Work
+      description: List the GitHub issues, PRs, docs, or files that define the session.
+      placeholder: "#13, #25, docs/specs/..., src/app/..., README.md"
+    validations:
+      required: true
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State
+      description: Summarize what is already done, what is blocked, and what is still unknown.
+      placeholder: Mention existing commits, open blockers, external dependencies, and local assumptions.
+    validations:
+      required: true
+  - type: textarea
+    id: execution-plan
+    attributes:
+      label: Execution Plan
+      description: Break the session into concrete steps with intended order.
+      placeholder: |
+        1. Gather repo context
+        2. Implement the change
+        3. Validate
+        4. Push + sync GitHub
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and Closeout
+      description: Define required commands, manual checks, and GitHub updates before ending the session.
+      placeholder: npm test, npm run lint, npm run build, browser smoke, issue comment, close issue, update epic.
+    validations:
+      required: true
+  - type: textarea
+    id: guardrails
+    attributes:
+      label: Guardrails
+      description: Record constraints, no-go areas, or files that must not be disturbed.
+      placeholder: Respect existing worktree changes, avoid destructive git commands, preserve demo mode, etc.
+
