@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Space_Grotesk } from "next/font/google";
 
 import { SoftModeProvider } from "@/components/providers/soft-mode-provider";
+import { createRootMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const displayFont = Sora({
@@ -14,10 +15,7 @@ const bodyFont = Space_Grotesk({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "SOFT Rift",
-  description: "Premium MLBB editorial portal centered on hero universes and the SOFT content layer.",
-};
+export const metadata: Metadata = createRootMetadata();
 
 export default function RootLayout({
   children,

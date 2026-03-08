@@ -11,7 +11,7 @@ import {
   getHeroNews,
   getRelatedHeroes,
 } from "@/lib/content/repository";
-import { createMetadata } from "@/lib/seo";
+import { createHeroMetadata, createMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const heroes = await getAllHeroes();
@@ -33,11 +33,7 @@ export async function generateMetadata({
     });
   }
 
-  return createMetadata({
-    title: hero.seo.title,
-    description: hero.seo.description,
-    path: `/heroes/${hero.slug}`,
-  });
+  return createHeroMetadata(hero);
 }
 
 export default async function HeroPage({
@@ -165,4 +161,3 @@ export default async function HeroPage({
     </div>
   );
 }
-

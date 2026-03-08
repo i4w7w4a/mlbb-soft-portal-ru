@@ -1,13 +1,16 @@
 import { SearchOverview } from "@/components/explorers/search-overview";
 import { SectionHeading } from "@/components/layout/section-heading";
 import { searchContent } from "@/lib/content/repository";
-import { createMetadata } from "@/lib/seo";
+import { createSearchMetadata } from "@/lib/seo";
 
-export const metadata = createMetadata({
-  title: "Search",
-  description: "Global search across MLBB heroes, news and tags.",
-  path: "/search",
-});
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const { q = "" } = await searchParams;
+  return createSearchMetadata(q);
+}
 
 export default async function SearchPage({
   searchParams,

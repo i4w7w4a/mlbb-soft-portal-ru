@@ -54,6 +54,7 @@ src/
    npm run lint
    npm run typecheck
    npm run content:check
+   npm run metadata:check
    npm test
    npm run build
    ```
@@ -77,6 +78,7 @@ The repository layer is in [repository.ts](C:/Users/iwwa/Documents/6_Work/Open_o
 ## Seed and validation scripts
 
 - `npm run content:check` validates the content graph by loading heroes, news, tags, and categories
+- `npm run metadata:check` validates route metadata exports, canonical URLs, OG image coverage, and article metadata across hero/news pages
 - `npm run seed:heroes` runs [import-heroes.ts](C:/Users/iwwa/Documents/6_Work/Open_orche/scripts/import-heroes.ts)
 - The import pipeline first tries `https://mlbb.gg/heroes`, then falls back to [mlbb-gg-heroes.json](C:/Users/iwwa/Documents/6_Work/Open_orche/content/heroes/raw/mlbb-gg-heroes.json)
 

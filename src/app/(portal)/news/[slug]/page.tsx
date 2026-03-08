@@ -15,7 +15,7 @@ import {
   getPreviousNextNews,
   getRelatedNews,
 } from "@/lib/content/repository";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, createNewsMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const news = await getAllNews(true);
@@ -37,11 +37,8 @@ export async function generateMetadata({
     });
   }
 
-  return createMetadata({
-    title: story.seo.title,
-    description: story.seo.description,
-    path: `/news/${story.slug}`,
-  });
+  const hero = await getHeroBySlug(story.heroSlug);
+  return createNewsMetadata(story, hero?.name);
 }
 
 export default async function NewsArticlePage({

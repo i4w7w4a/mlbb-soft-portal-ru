@@ -14,6 +14,7 @@ export const metadata = createMetadata({
   title: "Home",
   description:
     "Spectacular MLBB editorial homepage with SOFT as the central content switch.",
+  path: "/",
 });
 
 export default async function HomePage() {
@@ -190,4 +191,3 @@ export default async function HomePage() {
     </div>
   );
 }
-
