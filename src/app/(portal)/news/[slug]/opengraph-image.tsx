@@ -23,6 +23,8 @@ export default async function OpenGraphImage({
       title: "SOFT Rift",
       description: "Premium MLBB article coverage and SOFT-ranked reads.",
       chips: ["News", "MLBB"],
+      variant: "story",
+      watermark: "ED",
     });
   }
 
@@ -41,5 +43,7 @@ export default async function OpenGraphImage({
     ],
     footerLeft: new Date(story.publishedAt).toLocaleDateString("en-US"),
     footerRight: story.author,
+    variant: "story",
+    watermark: (hero?.name ?? story.heroSlug).slice(0, 2).toUpperCase(),
   });
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { HeroEmblem } from "@/components/media/hero-emblem";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import type { Hero } from "@/lib/content/schemas";
@@ -15,20 +16,29 @@ export function HeroCard({
     <Link href={`/heroes/${hero.slug}`} className="group block cursor-pointer">
       <Card className="relative overflow-hidden border-white/8 transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-cyan-300/25">
         <div
+          className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-500 group-hover:scale-[1.02]"
+          style={{
+            backgroundImage: `url(${hero.cover})`,
+          }}
+        />
+        <div
           className="absolute inset-0 opacity-80"
           style={{
-            background: `radial-gradient(circle at top right, ${hero.accent}40, transparent 32%), linear-gradient(180deg, rgba(5,9,18,0), rgba(5,9,18,0.9))`,
+            background: `radial-gradient(circle at top right, ${hero.accent}38, transparent 28%), linear-gradient(180deg, rgba(5,9,18,0.18), rgba(5,9,18,0.92))`,
           }}
         />
         <div className="relative flex h-full flex-col justify-between gap-6">
           <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <Badge variant={hero.isSoftFeatured ? "soft" : "default"}>
-                {hero.isSoftFeatured ? "SOFT Hero" : hero.role[0]}
-              </Badge>
-              <span className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                {hero.lane.join(" / ")}
-              </span>
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-3">
+                <Badge variant={hero.isSoftFeatured ? "soft" : "default"}>
+                  {hero.isSoftFeatured ? "SOFT Hero" : hero.role[0]}
+                </Badge>
+                <span className="block text-xs uppercase tracking-[0.24em] text-slate-500">
+                  {hero.lane.join(" / ")}
+                </span>
+              </div>
+              <HeroEmblem hero={hero} size={compact ? "sm" : "md"} />
             </div>
             <div className="space-y-2">
               <h3 className="font-display text-2xl text-white">{hero.name}</h3>
@@ -53,4 +63,3 @@ export function HeroCard({
     </Link>
   );
 }
-

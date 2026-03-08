@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Aamon cover art placeholder</title>
+  <desc id="desc">Shard-like cyan motion field for Aamon hero and article surfaces.</desc>
+  <defs>
+    <linearGradient id="aamon-cover-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06111c"/>
+      <stop offset="100%" stop-color="#03070f"/>
+    </linearGradient>
+    <radialGradient id="aamon-cover-aura" cx="70%" cy="24%" r="46%">
+      <stop offset="0%" stop-color="#65e6ff" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#65e6ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="aamon-grid" width="92" height="92" patternUnits="userSpaceOnUse">
+      <path d="M92 0H0V92" fill="none" stroke="#8fefff" stroke-opacity="0.14"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#aamon-cover-bg)"/>
+  <rect width="1600" height="900" fill="url(#aamon-grid)" opacity="0.44"/>
+  <circle cx="1160" cy="212" r="268" fill="url(#aamon-cover-aura)"/>
+  <path d="M256 706 474 214l126 212 118-168 284 478" fill="none" stroke="#d8fdff" stroke-opacity="0.82" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M990 164 1344 364 1118 674" fill="none" stroke="#65e6ff" stroke-opacity="0.38" stroke-width="10" stroke-linecap="round"/>
+  <text x="1156" y="614" fill="#ffffff" fill-opacity="0.08" font-family="Arial, sans-serif" font-size="352" font-weight="700" letter-spacing="-24">AM</text>
+  <rect x="100" y="104" width="176" height="44" rx="22" fill="#65e6ff" fill-opacity="0.14" stroke="#65e6ff" stroke-opacity="0.36"/>
+  <text x="188" y="134" fill="#d9fdff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" text-anchor="middle">SOFT HERO</text>
+  <text x="100" y="786" fill="#d9fdff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">ASSASSIN</text>
+  <text x="284" y="786" fill="#d9fdff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">JUNGLE</text>
+  <text x="100" y="834" fill="#ffffff" fill-opacity="0.42" font-family="Arial, sans-serif" font-size="34" letter-spacing="6">SHARD VELOCITY FIELD</text>
+</svg>

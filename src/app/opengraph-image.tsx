@@ -20,5 +20,7 @@ export default async function OpenGraphImage() {
     chips: ["MLBB", "SOFT", "Editorial hub"],
     footerLeft: settings.siteDescription,
     footerRight: softConfig.label,
+    variant: "portal",
+    watermark: "SOFT",
   });
 }

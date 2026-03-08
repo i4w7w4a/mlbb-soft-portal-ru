@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Kagura cover art placeholder</title>
+  <desc id="desc">Umbrella-circle magenta field for Kagura hero and article surfaces.</desc>
+  <defs>
+    <linearGradient id="kagura-cover-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#170c21"/>
+      <stop offset="100%" stop-color="#04070f"/>
+    </linearGradient>
+    <radialGradient id="kagura-cover-aura" cx="72%" cy="24%" r="42%">
+      <stop offset="0%" stop-color="#f484ff" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#f484ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="kagura-grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#ffe4ff" stroke-opacity="0.11"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#kagura-cover-bg)"/>
+  <rect width="1600" height="900" fill="url(#kagura-grid)" opacity="0.36"/>
+  <circle cx="1130" cy="220" r="252" fill="url(#kagura-cover-aura)"/>
+  <circle cx="1014" cy="404" r="210" fill="none" stroke="#ffe4ff" stroke-opacity="0.24" stroke-width="18"/>
+  <circle cx="1014" cy="404" r="300" fill="none" stroke="#f484ff" stroke-opacity="0.24" stroke-width="12"/>
+  <path d="M254 658c120-194 288-288 516-282" fill="none" stroke="#ffe4ff" stroke-opacity="0.76" stroke-width="18" stroke-linecap="round"/>
+  <path d="M344 744c232-70 494-84 778-14" fill="none" stroke="#f484ff" stroke-opacity="0.38" stroke-width="12" stroke-linecap="round"/>
+  <text x="1118" y="610" fill="#ffffff" fill-opacity="0.08" font-family="Arial, sans-serif" font-size="332" font-weight="700" letter-spacing="-24">KG</text>
+  <rect x="100" y="104" width="196" height="44" rx="22" fill="#f484ff" fill-opacity="0.14" stroke="#f484ff" stroke-opacity="0.36"/>
+  <text x="198" y="134" fill="#ffe4ff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" text-anchor="middle">UMBRA FIELD</text>
+  <text x="100" y="786" fill="#ffe4ff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">MAGE</text>
+  <text x="224" y="786" fill="#ffe4ff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">MID</text>
+  <text x="100" y="834" fill="#ffffff" fill-opacity="0.42" font-family="Arial, sans-serif" font-size="34" letter-spacing="6">SPACING AND DETONATION LINES</text>
+</svg>

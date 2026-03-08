@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Kagura avatar emblem</title>
+  <desc id="desc">Magenta umbrella-ring emblem for Kagura.</desc>
+  <defs>
+    <linearGradient id="kagura-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0e25"/>
+      <stop offset="100%" stop-color="#04070f"/>
+    </linearGradient>
+    <radialGradient id="kagura-glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f484ff" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#f484ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#kagura-bg)"/>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="none" stroke="#f484ff" stroke-opacity="0.22" stroke-width="4"/>
+  <circle cx="256" cy="216" r="152" fill="url(#kagura-glow)"/>
+  <path d="M150 234c46-84 170-112 212 0" fill="none" stroke="#ffe4ff" stroke-opacity="0.84" stroke-width="16" stroke-linecap="round"/>
+  <path d="M170 248h172" stroke="#f484ff" stroke-opacity="0.5" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 248v104" stroke="#ffe4ff" stroke-opacity="0.86" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="256" cy="214" r="82" fill="none" stroke="#f484ff" stroke-opacity="0.34" stroke-width="10"/>
+  <text x="256" y="324" fill="#ffffff" fill-opacity="0.12" font-family="Arial, sans-serif" font-size="150" font-weight="700" letter-spacing="-10" text-anchor="middle">KG</text>
+  <text x="56" y="446" fill="#ffe4ff" fill-opacity="0.8" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">MAGE / MID</text>
+</svg>

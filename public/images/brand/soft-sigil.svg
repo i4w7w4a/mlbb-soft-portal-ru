@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">SOFT Rift sigil</title>
+  <desc id="desc">Layered diamond emblem with cyan glow used as the SOFT brand mark.</desc>
+  <defs>
+    <linearGradient id="soft-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="100%" stop-color="#03070f"/>
+    </linearGradient>
+    <linearGradient id="soft-line" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#65e6ff"/>
+      <stop offset="100%" stop-color="#8ff3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="72" fill="url(#soft-bg)"/>
+  <circle cx="160" cy="160" r="110" fill="#65e6ff" opacity="0.12"/>
+  <path d="M160 48 250 160 160 272 70 160Z" fill="none" stroke="url(#soft-line)" stroke-width="14"/>
+  <path d="M160 86 214 160 160 234 106 160Z" fill="none" stroke="#d7fbff" stroke-opacity="0.7" stroke-width="10"/>
+  <path d="M160 118 190 160 160 202 130 160Z" fill="#65e6ff" fill-opacity="0.18" stroke="#d7fbff" stroke-opacity="0.72" stroke-width="8"/>
+  <path d="M92 160h136" stroke="#65e6ff" stroke-opacity="0.42" stroke-width="6"/>
+  <path d="M160 92v136" stroke="#65e6ff" stroke-opacity="0.24" stroke-width="6"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Fredrinn avatar emblem</title>
+  <desc id="desc">Gold shield-and-impact emblem for Fredrinn.</desc>
+  <defs>
+    <linearGradient id="fredrinn-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a120a"/>
+      <stop offset="100%" stop-color="#05070d"/>
+    </linearGradient>
+    <radialGradient id="fredrinn-glow" cx="50%" cy="36%" r="60%">
+      <stop offset="0%" stop-color="#f5c36b" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#f5c36b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#fredrinn-bg)"/>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="none" stroke="#f5c36b" stroke-opacity="0.22" stroke-width="4"/>
+  <circle cx="256" cy="206" r="148" fill="url(#fredrinn-glow)"/>
+  <path d="M256 124 360 164v88c0 78-54 138-104 164-50-26-104-86-104-164v-88Z" fill="none" stroke="#fff4dd" stroke-opacity="0.85" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M182 238h148M208 286h96" stroke="#f5c36b" stroke-opacity="0.5" stroke-width="12" stroke-linecap="round"/>
+  <text x="256" y="320" fill="#ffffff" fill-opacity="0.12" font-family="Arial, sans-serif" font-size="150" font-weight="700" letter-spacing="-10" text-anchor="middle">FR</text>
+  <text x="56" y="446" fill="#fff4dd" fill-opacity="0.8" font-family="Arial, sans-serif" font-size="28" letter-spacing="4">TANK / FIGHTER</text>
+</svg>

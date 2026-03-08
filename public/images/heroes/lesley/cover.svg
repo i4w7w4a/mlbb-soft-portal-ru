@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Lesley cover art placeholder</title>
+  <desc id="desc">Crosshair and sightline field for Lesley hero and article surfaces.</desc>
+  <defs>
+    <linearGradient id="lesley-cover-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#19130e"/>
+      <stop offset="100%" stop-color="#04070f"/>
+    </linearGradient>
+    <radialGradient id="lesley-cover-aura" cx="72%" cy="24%" r="42%">
+      <stop offset="0%" stop-color="#f0d2a0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f0d2a0" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="lesley-grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#fff0d9" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#lesley-cover-bg)"/>
+  <rect width="1600" height="900" fill="url(#lesley-grid)" opacity="0.3"/>
+  <circle cx="1140" cy="220" r="252" fill="url(#lesley-cover-aura)"/>
+  <circle cx="1098" cy="414" r="188" fill="none" stroke="#fff0d9" stroke-opacity="0.22" stroke-width="16"/>
+  <path d="M1098 144v174m0 192v170M828 414h174m192 0h170" stroke="#fff0d9" stroke-opacity="0.22" stroke-width="18" stroke-linecap="round"/>
+  <path d="M276 702c196-182 440-282 760-320" fill="none" stroke="#f0d2a0" stroke-opacity="0.34" stroke-width="14" stroke-linecap="round"/>
+  <path d="M356 784c268-54 516-42 764 8" fill="none" stroke="#fff0d9" stroke-opacity="0.3" stroke-width="10" stroke-linecap="round"/>
+  <text x="1106" y="610" fill="#ffffff" fill-opacity="0.08" font-family="Arial, sans-serif" font-size="332" font-weight="700" letter-spacing="-24">LS</text>
+  <rect x="100" y="104" width="204" height="44" rx="22" fill="#f0d2a0" fill-opacity="0.14" stroke="#f0d2a0" stroke-opacity="0.36"/>
+  <text x="202" y="134" fill="#fff0d9" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" text-anchor="middle">LONG SIGHT</text>
+  <text x="100" y="786" fill="#fff0d9" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">MARKSMAN / ASSASSIN</text>
+  <text x="454" y="786" fill="#fff0d9" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">GOLD</text>
+  <text x="100" y="834" fill="#ffffff" fill-opacity="0.42" font-family="Arial, sans-serif" font-size="34" letter-spacing="6">PRECISION AND PICK-OFF WINDOWS</text>
+</svg>

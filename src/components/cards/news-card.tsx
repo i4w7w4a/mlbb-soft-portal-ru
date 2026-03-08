@@ -17,11 +17,17 @@ export function NewsCard({
     <Link href={`/news/${story.slug}`} className="group block cursor-pointer">
       <Card className="relative overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-white/20">
         <div
+          className="absolute inset-0 bg-cover bg-center opacity-35 transition-transform duration-500 group-hover:scale-[1.02]"
+          style={{
+            backgroundImage: `url(${story.cover})`,
+          }}
+        />
+        <div
           className="absolute inset-0 opacity-90"
           style={{
             background: story.isSoft
-              ? "radial-gradient(circle at top right, rgba(101,230,255,0.18), transparent 36%)"
-              : "radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 28%)",
+              ? "radial-gradient(circle at top right, rgba(101,230,255,0.22), transparent 34%), linear-gradient(180deg, rgba(6,11,20,0.2), rgba(6,11,20,0.92))"
+              : "radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent 24%), linear-gradient(180deg, rgba(6,11,20,0.18), rgba(6,11,20,0.92))",
           }}
         />
         <div className="relative space-y-5">
@@ -49,4 +55,3 @@ export function NewsCard({
     </Link>
   );
 }
-

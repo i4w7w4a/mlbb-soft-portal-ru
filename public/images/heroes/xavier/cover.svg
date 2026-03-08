@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Xavier cover art placeholder</title>
+  <desc id="desc">Light-beam geometry for Xavier hero and article surfaces.</desc>
+  <defs>
+    <linearGradient id="xavier-cover-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091728"/>
+      <stop offset="100%" stop-color="#04070f"/>
+    </linearGradient>
+    <radialGradient id="xavier-cover-aura" cx="72%" cy="24%" r="42%">
+      <stop offset="0%" stop-color="#76e7ff" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#76e7ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="xavier-grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#e4fdff" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#xavier-cover-bg)"/>
+  <rect width="1600" height="900" fill="url(#xavier-grid)" opacity="0.34"/>
+  <circle cx="1160" cy="220" r="252" fill="url(#xavier-cover-aura)"/>
+  <path d="M352 742 714 176l232 298 226-182 132 152" fill="none" stroke="#e4fdff" stroke-opacity="0.8" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M250 640h414m110-132h420" stroke="#76e7ff" stroke-opacity="0.28" stroke-width="16" stroke-linecap="round"/>
+  <text x="1128" y="610" fill="#ffffff" fill-opacity="0.08" font-family="Arial, sans-serif" font-size="332" font-weight="700" letter-spacing="-24">XV</text>
+  <rect x="100" y="104" width="206" height="44" rx="22" fill="#76e7ff" fill-opacity="0.14" stroke="#76e7ff" stroke-opacity="0.36"/>
+  <text x="203" y="134" fill="#e4fdff" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" text-anchor="middle">LIGHT VECTOR</text>
+  <text x="100" y="786" fill="#e4fdff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">MAGE</text>
+  <text x="224" y="786" fill="#e4fdff" fill-opacity="0.82" font-family="Arial, sans-serif" font-size="26" letter-spacing="4">MID</text>
+  <text x="100" y="834" fill="#ffffff" fill-opacity="0.42" font-family="Arial, sans-serif" font-size="34" letter-spacing="6">VISION CONTROL AND MAP LASERS</text>
+</svg>

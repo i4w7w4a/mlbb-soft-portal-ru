@@ -23,6 +23,8 @@ export default async function OpenGraphImage({
       title: "SOFT Rift",
       description: "Premium MLBB hero intelligence and editorial coverage.",
       chips: ["Hero", "MLBB"],
+      variant: "hero",
+      watermark: "HR",
     });
   }
 
@@ -34,5 +36,7 @@ export default async function OpenGraphImage({
     chips: [...hero.role, ...hero.lane, hero.isSoftFeatured ? "SOFT" : "Hero"],
     footerLeft: hero.specialty.join(" / "),
     footerRight: `${hero.releaseYear} release`,
+    variant: "hero",
+    watermark: hero.name.slice(0, 2).toUpperCase(),
   });
 }

@@ -62,7 +62,22 @@ export default async function NewsArticlePage({
 
   return (
     <div className="mx-auto flex w-[min(100%-1.5rem,74rem)] flex-col gap-10">
-      <Card className="space-y-6 p-8 md:p-10">
+      <Card className="relative overflow-hidden space-y-6 p-8 md:p-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{
+            backgroundImage: `url(${story.cover})`,
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: story.isSoft
+              ? "linear-gradient(180deg, rgba(5,9,18,0.16), rgba(5,9,18,0.94)), radial-gradient(circle at 86% 18%, rgba(101,230,255,0.3), transparent 28%)"
+              : "linear-gradient(180deg, rgba(5,9,18,0.16), rgba(5,9,18,0.94)), radial-gradient(circle at 86% 18%, rgba(255,255,255,0.14), transparent 24%)",
+          }}
+        />
+        <div className="relative space-y-6">
         <div className="flex flex-wrap gap-3">
           <Badge variant={story.isSoft ? "soft" : "default"}>
             {story.isSoft ? "SOFT" : story.category}
@@ -80,6 +95,7 @@ export default async function NewsArticlePage({
           <span>{new Date(story.publishedAt).toLocaleDateString("en-US")}</span>
           <span>{story.readingTime} min read</span>
           <span>{story.author}</span>
+        </div>
         </div>
       </Card>
 

@@ -12,6 +12,7 @@ Premium Mobile Legends: Bang Bang editorial portal built with `Next.js App Route
 - Admin news management supports duplicate, export, and bulk import flows from the UI, including re-importing exported snapshots
 - Admin hero management supports editing hero JSON plus tag/category taxonomy vocabularies from the UI
 - Hero import pipeline with `mlbb.gg` fetch attempt and local raw fallback seed
+- Branded local SVG asset kit for the demo hero set plus SOFT-aligned Open Graph image templates
 - `gh-aw` repository bootstrap with planning and issue-maintenance workflows
 
 ## Project structure
