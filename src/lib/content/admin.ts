@@ -2,14 +2,28 @@ import { promises as fs } from "fs";
 import path from "path";
 import { z } from "zod";
 
-import { heroSchema, newsSchema, type Hero, type News } from "@/lib/content/schemas";
+import {
+  heroSchema,
+  newsSchema,
+  taxonomyCategorySchema,
+  taxonomyTagSchema,
+  type Hero,
+  type News,
+  type TaxonomyCategory,
+  type TaxonomyTag,
+} from "@/lib/content/schemas";
 import { getAllNews, getHeroBySlug } from "@/lib/content/repository";
 import { slugify } from "@/lib/utils";
 
 const HERO_ROOT = path.join(process.cwd(), "content", "heroes");
+const TAXONOMY_ROOT = path.join(process.cwd(), "content", "taxonomy");
 const newsImportSnapshotSchema = z.object({
   exportedAt: z.string().optional(),
   news: z.array(newsSchema),
+});
+const taxonomyPayloadSchema = z.object({
+  tags: z.array(taxonomyTagSchema),
+  categories: z.array(taxonomyCategorySchema),
 });
 
 function createJsonOutput(value: unknown) {
@@ -43,12 +57,21 @@ export interface PortalExportSnapshot {
   news: News[];
 }
 
+export interface TaxonomyPayload {
+  tags: TaxonomyTag[];
+  categories: TaxonomyCategory[];
+}
+
 export function parseNewsImportPayload(payload: unknown) {
   if (Array.isArray(payload)) {
     return payload.map((entry) => newsSchema.parse(entry));
   }
 
   return newsImportSnapshotSchema.parse(payload).news;
+}
+
+export function parseTaxonomyPayload(payload: unknown) {
+  return taxonomyPayloadSchema.parse(payload);
 }
 
 export function createDuplicateNewsPayload(stories: News[], slug: string) {
@@ -123,6 +146,29 @@ export async function saveHeroPayload(payload: Hero) {
   );
 
   return path.join(directory, "hero.json");
+}
+
+export async function saveTaxonomyPayload(payload: TaxonomyPayload) {
+  const parsed = parseTaxonomyPayload(payload);
+
+  await ensureDirectory(TAXONOMY_ROOT);
+  await Promise.all([
+    fs.writeFile(
+      path.join(TAXONOMY_ROOT, "tags.json"),
+      createJsonOutput({ tags: parsed.tags }),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(TAXONOMY_ROOT, "categories.json"),
+      createJsonOutput({ categories: parsed.categories }),
+      "utf8",
+    ),
+  ]);
+
+  return {
+    tagsPath: path.join(TAXONOMY_ROOT, "tags.json"),
+    categoriesPath: path.join(TAXONOMY_ROOT, "categories.json"),
+  };
 }
 
 export async function exportPortalSnapshot() {

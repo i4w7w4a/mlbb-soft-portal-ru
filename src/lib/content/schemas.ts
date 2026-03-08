@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import { slugify, unique } from "@/lib/utils";
 
-const heroRoleValues = [
+export const heroRoleValues = [
   "Assassin",
   "Mage",
   "Tank",
@@ -11,8 +11,10 @@ const heroRoleValues = [
   "Support",
 ] as const;
 
-const laneValues = ["Jungle", "Mid", "Gold", "EXP", "Roam"] as const;
-const newsStatusValues = ["draft", "published"] as const;
+export const laneValues = ["Jungle", "Mid", "Gold", "EXP", "Roam"] as const;
+export const heroDifficultyValues = ["Low", "Medium", "High"] as const;
+export const newsStatusValues = ["draft", "published"] as const;
+export const taxonomyTagKindValues = ["role", "lane", "topic", "product"] as const;
 
 const normalizedString = z.string().trim().min(1);
 
@@ -54,7 +56,7 @@ export const heroSchema = z
     tags: z.array(normalizedSlug).default([]).transform(unique),
     faction: normalizedString.optional(),
     signature: normalizedString.optional(),
-    difficulty: z.enum(["Low", "Medium", "High"]).default("Medium"),
+    difficulty: z.enum(heroDifficultyValues).default("Medium"),
     releaseYear: z.number().int().min(2016).max(2030),
     accent: normalizedString,
     seo: seoSchema,
@@ -91,7 +93,7 @@ export const newsSchema = z.object({
 export const taxonomyTagSchema = z.object({
   slug: normalizedSlug,
   label: normalizedString,
-  kind: z.enum(["role", "lane", "topic", "product"]),
+  kind: z.enum(taxonomyTagKindValues),
 });
 
 export const taxonomyCategorySchema = z.object({

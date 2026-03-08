@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   createDuplicateNewsPayload,
   parseNewsImportPayload,
+  parseTaxonomyPayload,
 } from "@/lib/content/admin";
 import { newsSchema, type News } from "@/lib/content/schemas";
 
@@ -65,4 +66,14 @@ test("createDuplicateNewsPayload increments copy suffixes safely", () => {
   assert.equal(duplicate.id, "2026-03-08-aamon-patch-analysis-copy-2");
   assert.equal(duplicate.status, "draft");
   assert.ok(duplicate.publishedAt.endsWith("Z"));
+});
+
+test("parseTaxonomyPayload validates tags and categories together", () => {
+  const taxonomy = parseTaxonomyPayload({
+    tags: [{ slug: "soft-focus", label: "Soft Focus", kind: "topic" }],
+    categories: [{ slug: "meta-watch", label: "Meta Watch" }],
+  });
+
+  assert.equal(taxonomy.tags[0]?.slug, "soft-focus");
+  assert.equal(taxonomy.categories[0]?.label, "Meta Watch");
 });
