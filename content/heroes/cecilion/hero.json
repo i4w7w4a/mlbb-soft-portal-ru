@@ -1,0 +1,34 @@
+{
+  "id": "cecilion",
+  "slug": "cecilion",
+  "name": "Cecilion",
+  "title": "Embrace of Night",
+  "role": [
+    "Mage"
+  ],
+  "lane": [
+    "Mid"
+  ],
+  "specialty": [
+    "Poke"
+  ],
+  "excerpt": "Cecilion rewards teams that stretch fights into his range architecture and never ask him to cash damage too early.",
+  "avatar": "/images/heroes/cecilion/avatar.svg",
+  "cover": "/images/heroes/cecilion/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": true,
+  "tags": [
+    "mage",
+    "mid",
+    "soft"
+  ],
+  "faction": "Castle Aberleen",
+  "signature": "Long-range pressure that keeps narrowing safe terrain.",
+  "difficulty": "Medium",
+  "releaseYear": 2020,
+  "accent": "#E1B04B",
+  "seo": {
+    "title": "Cecilion MLBB News, Guides and Updates",
+    "description": "Cecilion rewards teams that stretch fights into his range architecture and never ask him to cash damage too early."
+  }
+}

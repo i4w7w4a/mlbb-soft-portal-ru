@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-09-miya-crit-route-draft",
+  "slug": "miya-crit-route-draft",
+  "title": "Miya Crit Route Draft",
+  "excerpt": "Draft notes for testing a faster crit threshold without giving away too much lane insurance.",
+  "heroSlug": "miya",
+  "cover": "/images/heroes/miya/cover.svg",
+  "status": "draft",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "build-breakdown",
+  "tags": [
+    "build",
+    "marksman",
+    "gold"
+  ],
+  "author": "Lab Notes",
+  "publishedAt": "2026-03-09T13:00:00.000Z",
+  "readingTime": 4,
+  "focus": "This build branch buys an earlier spike only if the lane remains stable without outside rescue.",
+  "points": [
+    "Check whether the route survives two-wave pressure.",
+    "Compare objective damage against the safer baseline.",
+    "Reject the setup if it only works when already ahead."
+  ],
+  "angle": "A faster curve matters only if it does not outsource lane stability to the rest of the draft.",
+  "quote": "The build is interesting only if the map can trust it.",
+  "seo": {
+    "title": "Miya Crit Route Draft - MLBB Portal",
+    "description": "Draft notes for testing a faster crit threshold without giving away too much lane insurance."
+  },
+  "contentMarkdown": "# Miya Crit Route Draft\n\nThis build branch buys an earlier spike only if the lane remains stable without outside rescue.\n\n## What to watch\n\n- Check whether the route survives two-wave pressure.\n- Compare objective damage against the safer baseline.\n- Reject the setup if it only works when already ahead.\n\n## Draft focus\n\nA faster curve matters only if it does not outsource lane stability to the rest of the draft.\n\n> The build is interesting only if the map can trust it.\n\nMore on Miya: keep this read connected to marksman gold structures, not just isolated mechanics."
+}

@@ -2,38 +2,58 @@
   "featured": [
     "2026-03-08-fredrinn-frontline-reset",
     "2026-03-09-xavier-soft-signal-lanes",
-    "2026-03-10-kagura-editorial-control"
+    "2026-03-10-kagura-editorial-control",
+    "2026-03-04-miya-gold-lane-reset-windows",
+    "2026-03-05-tigreal-second-engage-doctrine",
+    "2026-03-06-angela-soft-anchor-protocol",
+    "2026-03-08-cecilion-soft-burst-cadence"
   ],
   "trending": [
     "2026-03-08-aamon-patch-analysis",
-    "2026-03-08-lesley-gold-lane-pressure",
-    "2026-03-07-esmeralda-anti-burst-guide",
-    "2026-03-09-fredrinn-jungle-routing"
+    "2026-03-08-cecilion-soft-burst-cadence",
+    "2026-03-06-angela-soft-anchor-protocol",
+    "2026-03-05-tigreal-second-engage-doctrine",
+    "2026-03-04-miya-gold-lane-reset-windows",
+    "2026-03-08-lesley-gold-lane-pressure"
   ],
   "spotlight": [
+    "2026-03-06-angela-soft-anchor-protocol",
+    "2026-03-08-cecilion-soft-burst-cadence",
+    "2026-03-07-tigreal-soft-initiation-map",
     "2026-03-09-xavier-soft-signal-lanes"
   ],
   "collections": [
     {
       "slug": "today-in-meta",
       "title": "Today In Meta",
-      "excerpt": "The stories shifting draft priorities right now.",
+      "excerpt": "The stories shifting draft priorities and lane pressure right now.",
       "newsIds": [
         "2026-03-08-aamon-patch-analysis",
-        "2026-03-08-fredrinn-frontline-reset",
+        "2026-03-05-tigreal-second-engage-doctrine",
+        "2026-03-04-miya-gold-lane-reset-windows",
         "2026-03-08-lesley-gold-lane-pressure"
       ]
     },
     {
       "slug": "soft-critical-path",
       "title": "SOFT Critical Path",
-      "excerpt": "The sharpest premium reads from the SOFT layer.",
+      "excerpt": "Premium reads where timing, atmosphere, and meta leverage converge.",
       "newsIds": [
-        "2026-03-09-xavier-soft-signal-lanes",
-        "2026-03-10-kagura-editorial-control",
-        "2026-03-07-esmeralda-soft-wave-management"
+        "2026-03-06-angela-soft-anchor-protocol",
+        "2026-03-08-cecilion-soft-burst-cadence",
+        "2026-03-07-tigreal-soft-initiation-map",
+        "2026-03-09-xavier-soft-signal-lanes"
+      ]
+    },
+    {
+      "slug": "roam-command",
+      "title": "Roam Command",
+      "excerpt": "Operator reads for engage timing, map compression, and support routing.",
+      "newsIds": [
+        "2026-03-05-tigreal-second-engage-doctrine",
+        "2026-03-07-angela-roam-pocket-lanes",
+        "2026-03-05-chou-angle-denial-guide"
       ]
     }
   ]
 }
-

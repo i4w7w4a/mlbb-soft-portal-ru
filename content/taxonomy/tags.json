@@ -1,23 +1,99 @@
 {
   "tags": [
-    { "slug": "assassin", "label": "Assassin", "kind": "role" },
-    { "slug": "mage", "label": "Mage", "kind": "role" },
-    { "slug": "tank", "label": "Tank", "kind": "role" },
-    { "slug": "marksman", "label": "Marksman", "kind": "role" },
-    { "slug": "fighter", "label": "Fighter", "kind": "role" },
-    { "slug": "jungle", "label": "Jungle", "kind": "lane" },
-    { "slug": "mid", "label": "Mid", "kind": "lane" },
-    { "slug": "gold", "label": "Gold", "kind": "lane" },
-    { "slug": "exp", "label": "EXP", "kind": "lane" },
-    { "slug": "roam", "label": "Roam", "kind": "lane" },
-    { "slug": "meta", "label": "Meta", "kind": "topic" },
-    { "slug": "patch", "label": "Patch", "kind": "topic" },
-    { "slug": "guide", "label": "Guide", "kind": "topic" },
-    { "slug": "build", "label": "Build", "kind": "topic" },
-    { "slug": "spotlight", "label": "Spotlight", "kind": "topic" },
-    { "slug": "drafting", "label": "Drafting", "kind": "topic" },
-    { "slug": "rotations", "label": "Rotations", "kind": "topic" },
-    { "slug": "soft", "label": "SOFT", "kind": "product" }
+    {
+      "slug": "assassin",
+      "label": "Assassin",
+      "kind": "role"
+    },
+    {
+      "slug": "mage",
+      "label": "Mage",
+      "kind": "role"
+    },
+    {
+      "slug": "tank",
+      "label": "Tank",
+      "kind": "role"
+    },
+    {
+      "slug": "marksman",
+      "label": "Marksman",
+      "kind": "role"
+    },
+    {
+      "slug": "fighter",
+      "label": "Fighter",
+      "kind": "role"
+    },
+    {
+      "slug": "support",
+      "label": "Support",
+      "kind": "role"
+    },
+    {
+      "slug": "jungle",
+      "label": "Jungle",
+      "kind": "lane"
+    },
+    {
+      "slug": "mid",
+      "label": "Mid",
+      "kind": "lane"
+    },
+    {
+      "slug": "gold",
+      "label": "Gold",
+      "kind": "lane"
+    },
+    {
+      "slug": "exp",
+      "label": "EXP",
+      "kind": "lane"
+    },
+    {
+      "slug": "roam",
+      "label": "Roam",
+      "kind": "lane"
+    },
+    {
+      "slug": "meta",
+      "label": "Meta",
+      "kind": "topic"
+    },
+    {
+      "slug": "patch",
+      "label": "Patch",
+      "kind": "topic"
+    },
+    {
+      "slug": "guide",
+      "label": "Guide",
+      "kind": "topic"
+    },
+    {
+      "slug": "build",
+      "label": "Build",
+      "kind": "topic"
+    },
+    {
+      "slug": "spotlight",
+      "label": "Spotlight",
+      "kind": "topic"
+    },
+    {
+      "slug": "drafting",
+      "label": "Drafting",
+      "kind": "topic"
+    },
+    {
+      "slug": "rotations",
+      "label": "Rotations",
+      "kind": "topic"
+    },
+    {
+      "slug": "soft",
+      "label": "SOFT",
+      "kind": "product"
+    }
   ]
 }
-

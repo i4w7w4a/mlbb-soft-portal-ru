@@ -1,0 +1,34 @@
+{
+  "id": "angela",
+  "slug": "angela",
+  "name": "Angela",
+  "title": "Bunnylove",
+  "role": [
+    "Support"
+  ],
+  "lane": [
+    "Roam"
+  ],
+  "specialty": [
+    "Guard"
+  ],
+  "excerpt": "Angela spikes when teams route her global attachment around the right tempo carrier instead of treating every rescue as equal.",
+  "avatar": "/images/heroes/angela/avatar.svg",
+  "cover": "/images/heroes/angela/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": true,
+  "tags": [
+    "support",
+    "roam",
+    "soft"
+  ],
+  "faction": "Laboratory 1718",
+  "signature": "Global attachment that turns one ally into the map's pressure axis.",
+  "difficulty": "Low",
+  "releaseYear": 2018,
+  "accent": "#B03E3E",
+  "seo": {
+    "title": "Angela MLBB News, Guides and Updates",
+    "description": "Angela spikes when teams route her global attachment around the right tempo carrier instead of treating every rescue as equal."
+  }
+}

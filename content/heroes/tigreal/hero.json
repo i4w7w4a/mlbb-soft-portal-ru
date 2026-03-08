@@ -1,0 +1,34 @@
+{
+  "id": "tigreal",
+  "slug": "tigreal",
+  "name": "Tigreal",
+  "title": "Warrior of Dawn",
+  "role": [
+    "Tank"
+  ],
+  "lane": [
+    "Roam"
+  ],
+  "specialty": [
+    "Crowd Control"
+  ],
+  "excerpt": "Tigreal amplifies every clean engage pattern when roam timing turns his first touch into a full positional collapse.",
+  "avatar": "/images/heroes/tigreal/avatar.svg",
+  "cover": "/images/heroes/tigreal/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": true,
+  "tags": [
+    "tank",
+    "roam",
+    "meta"
+  ],
+  "faction": "Moniyan Empire",
+  "signature": "Second-engage geometry that breaks formation cleanly.",
+  "difficulty": "Low",
+  "releaseYear": 2016,
+  "accent": "#E1B04B",
+  "seo": {
+    "title": "Tigreal MLBB News, Guides and Updates",
+    "description": "Tigreal amplifies every clean engage pattern when roam timing turns his first touch into a full positional collapse."
+  }
+}

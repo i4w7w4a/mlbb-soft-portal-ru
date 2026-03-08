@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-04-miya-gold-lane-reset-windows",
+  "slug": "miya-gold-lane-reset-windows",
+  "title": "Miya Gold-Lane Reset Windows",
+  "excerpt": "How Miya's safest plate-to-objective sequence changes when her team protects one extra beat.",
+  "heroSlug": "miya",
+  "cover": "/images/heroes/miya/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": true,
+  "category": "meta-watch",
+  "tags": [
+    "meta",
+    "marksman",
+    "gold"
+  ],
+  "author": "Meta Desk",
+  "publishedAt": "2026-03-04T09:00:00.000Z",
+  "readingTime": 4,
+  "focus": "Miya spikes when one clean lane reset becomes the trigger for the next objective cycle.",
+  "points": [
+    "Crash the wave only when river control can be claimed immediately.",
+    "Use the reset to return on tempo, not to chase extra lane damage.",
+    "Protect the second firing angle after peel tools are traded."
+  ],
+  "angle": "Her value rises the moment a reset changes map ownership instead of just lane comfort.",
+  "quote": "Treat the first clean reset as a macro trigger, not a shopping trip.",
+  "seo": {
+    "title": "Miya Gold-Lane Reset Windows - MLBB Portal",
+    "description": "How Miya's safest plate-to-objective sequence changes when her team protects one extra beat."
+  },
+  "contentMarkdown": "# Miya Gold-Lane Reset Windows\n\nMiya spikes when one clean lane reset becomes the trigger for the next objective cycle.\n\n## What to watch\n\n- Crash the wave only when river control can be claimed immediately.\n- Use the reset to return on tempo, not to chase extra lane damage.\n- Protect the second firing angle after peel tools are traded.\n\n## Why it matters\n\nHer value rises the moment a reset changes map ownership instead of just lane comfort.\n\n> Treat the first clean reset as a macro trigger, not a shopping trip.\n\nMore on Miya: keep this read connected to marksman gold structures, not just isolated mechanics."
+}

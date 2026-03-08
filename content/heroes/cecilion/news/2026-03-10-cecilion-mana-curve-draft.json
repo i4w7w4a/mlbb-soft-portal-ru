@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-10-cecilion-mana-curve-draft",
+  "slug": "cecilion-mana-curve-draft",
+  "title": "Cecilion Mana Curve Draft",
+  "excerpt": "Draft notes on whether Cecilion can afford a greedier mana curve before minute six.",
+  "heroSlug": "cecilion",
+  "cover": "/images/heroes/cecilion/cover.svg",
+  "status": "draft",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "build-breakdown",
+  "tags": [
+    "build",
+    "mage",
+    "mid"
+  ],
+  "author": "Lab Notes",
+  "publishedAt": "2026-03-10T15:30:00.000Z",
+  "readingTime": 4,
+  "focus": "A greedier curve only survives if it does not surrender early river authorship.",
+  "points": [
+    "Check the first three rotation contests closely.",
+    "Separate theoretical scaling from actual lane loss.",
+    "Reject any route that makes him dead weight early."
+  ],
+  "angle": "Scaling is only premium when the road to it keeps the map intact.",
+  "quote": "The curve matters only if the map can survive the wait.",
+  "seo": {
+    "title": "Cecilion Mana Curve Draft - MLBB Portal",
+    "description": "Draft notes on whether Cecilion can afford a greedier mana curve before minute six."
+  },
+  "contentMarkdown": "# Cecilion Mana Curve Draft\n\nA greedier curve only survives if it does not surrender early river authorship.\n\n## What to watch\n\n- Check the first three rotation contests closely.\n- Separate theoretical scaling from actual lane loss.\n- Reject any route that makes him dead weight early.\n\n## Draft focus\n\nScaling is only premium when the road to it keeps the map intact.\n\n> The curve matters only if the map can survive the wait.\n\nMore on Cecilion: keep this read connected to mage mid structures, not just isolated mechanics."
+}

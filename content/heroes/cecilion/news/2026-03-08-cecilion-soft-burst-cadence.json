@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-08-cecilion-soft-burst-cadence",
+  "slug": "cecilion-soft-burst-cadence",
+  "title": "Cecilion SOFT Burst Cadence",
+  "excerpt": "The premium read on how Cecilion layers tempo, mana, and threat so the enemy enters late.",
+  "heroSlug": "cecilion",
+  "cover": "/images/heroes/cecilion/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": true,
+  "category": "editorial",
+  "tags": [
+    "soft",
+    "mage",
+    "mid"
+  ],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-08T08:10:00.000Z",
+  "readingTime": 5,
+  "focus": "Cecilion is at his most oppressive when every cast makes the enemy later to the next safe step.",
+  "points": [
+    "Spend mana to preserve initiative, not vanity volume.",
+    "Use cadence to keep approach windows shrinking.",
+    "Make every spell announce a tax on the next step forward."
+  ],
+  "angle": "SOFT favors Cecilion because he turns time itself into advantage.",
+  "quote": "His burst is strongest when the enemy has already been paying for the fight.",
+  "seo": {
+    "title": "Cecilion SOFT Burst Cadence - MLBB Portal",
+    "description": "The premium read on how Cecilion layers tempo, mana, and threat so the enemy enters late."
+  },
+  "contentMarkdown": "# Cecilion SOFT Burst Cadence\n\nCecilion is at his most oppressive when every cast makes the enemy later to the next safe step.\n\n## What to watch\n\n- Spend mana to preserve initiative, not vanity volume.\n- Use cadence to keep approach windows shrinking.\n- Make every spell announce a tax on the next step forward.\n\n## SOFT angle\n\nSOFT favors Cecilion because he turns time itself into advantage.\n\n> His burst is strongest when the enemy has already been paying for the fight.\n\nMore on Cecilion: keep this read connected to mage mid structures, not just isolated mechanics."
+}

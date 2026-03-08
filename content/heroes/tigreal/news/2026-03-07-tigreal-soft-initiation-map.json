@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-07-tigreal-soft-initiation-map",
+  "slug": "tigreal-soft-initiation-map",
+  "title": "Tigreal SOFT Initiation Map",
+  "excerpt": "A premium route map for the angles Tigreal should threaten before the enemy even sees the engage.",
+  "heroSlug": "tigreal",
+  "cover": "/images/heroes/tigreal/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": false,
+  "category": "editorial",
+  "tags": [
+    "soft",
+    "rotations",
+    "tank"
+  ],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-07T12:10:00.000Z",
+  "readingTime": 5,
+  "focus": "The best Tigreal paths win geometry before they ever spend hard crowd control.",
+  "points": [
+    "Threaten the cut-off, not just the dash path.",
+    "Time movement with the arriving lane, not after it.",
+    "Make fog and wall shape carry half the setup."
+  ],
+  "angle": "SOFT favors Tigreal because his route can author the fight before the button press exists.",
+  "quote": "The engage starts where the enemy loses safe geometry.",
+  "seo": {
+    "title": "Tigreal SOFT Initiation Map - MLBB Portal",
+    "description": "A premium route map for the angles Tigreal should threaten before the enemy even sees the engage."
+  },
+  "contentMarkdown": "# Tigreal SOFT Initiation Map\n\nThe best Tigreal paths win geometry before they ever spend hard crowd control.\n\n## What to watch\n\n- Threaten the cut-off, not just the dash path.\n- Time movement with the arriving lane, not after it.\n- Make fog and wall shape carry half the setup.\n\n## SOFT angle\n\nSOFT favors Tigreal because his route can author the fight before the button press exists.\n\n> The engage starts where the enemy loses safe geometry.\n\nMore on Tigreal: keep this read connected to tank roam structures, not just isolated mechanics."
+}

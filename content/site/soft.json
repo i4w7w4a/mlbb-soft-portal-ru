@@ -9,6 +9,12 @@
     "Elevate the interface atmosphere without harming readability.",
     "Bias discovery toward featured SOFT articles and heroes."
   ],
-  "heroPriority": ["xavier", "fredrinn", "aamon", "kagura"]
+  "heroPriority": [
+    "xavier",
+    "angela",
+    "cecilion",
+    "tigreal",
+    "aamon",
+    "kagura"
+  ]
 }
-

@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-07-chou-rotation-pick-pressure",
+  "slug": "chou-rotation-pick-pressure",
+  "title": "Chou Rotation Pick Pressure",
+  "excerpt": "Why Chou's value rises when the map rewards fast picks over long front-to-back setups.",
+  "heroSlug": "chou",
+  "cover": "/images/heroes/chou/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "meta-watch",
+  "tags": [
+    "rotations",
+    "fighter",
+    "roam"
+  ],
+  "author": "Meta Desk",
+  "publishedAt": "2026-03-07T17:15:00.000Z",
+  "readingTime": 4,
+  "focus": "Chou becomes more defensible when a single removed target immediately converts into territory.",
+  "points": [
+    "Look for pick windows that cash into turtle, lord, or tower.",
+    "Avoid drafts asking Chou to be the durable first engager every fight.",
+    "Protect the follow-up lane behind the removal."
+  ],
+  "angle": "His volatility is acceptable only when the map knows what to do with the pick next.",
+  "quote": "A clean pick matters only if the map cashes it instantly.",
+  "seo": {
+    "title": "Chou Rotation Pick Pressure - MLBB Portal",
+    "description": "Why Chou's value rises when the map rewards fast picks over long front-to-back setups."
+  },
+  "contentMarkdown": "# Chou Rotation Pick Pressure\n\nChou becomes more defensible when a single removed target immediately converts into territory.\n\n## What to watch\n\n- Look for pick windows that cash into turtle, lord, or tower.\n- Avoid drafts asking Chou to be the durable first engager every fight.\n- Protect the follow-up lane behind the removal.\n\n## Why it matters\n\nHis volatility is acceptable only when the map knows what to do with the pick next.\n\n> A clean pick matters only if the map cashes it instantly.\n\nMore on Chou: keep this read connected to fighter roam structures, not just isolated mechanics."
+}

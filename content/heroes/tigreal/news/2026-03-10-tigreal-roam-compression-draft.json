@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-10-tigreal-roam-compression-draft",
+  "slug": "tigreal-roam-compression-draft",
+  "title": "Tigreal Roam Compression Draft",
+  "excerpt": "Draft notes on when Tigreal's lane-compression value justifies early priority.",
+  "heroSlug": "tigreal",
+  "cover": "/images/heroes/tigreal/cover.svg",
+  "status": "draft",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "hero-guide",
+  "tags": [
+    "guide",
+    "tank",
+    "roam"
+  ],
+  "author": "Lab Notes",
+  "publishedAt": "2026-03-10T09:15:00.000Z",
+  "readingTime": 4,
+  "focus": "This draft is testing whether Tigreal should be framed as map compression first and engage tank second.",
+  "points": [
+    "Check if lanes truly gain tempo from his path.",
+    "Track earlier enemy rotations forced by his presence.",
+    "Ignore highlight bias and look at repeated map effect."
+  ],
+  "angle": "If the compression thesis holds, his editorial tier rises. If not, he stays a situational stabilizer.",
+  "quote": "The question is whether his gravity changes the map before the combo begins.",
+  "seo": {
+    "title": "Tigreal Roam Compression Draft - MLBB Portal",
+    "description": "Draft notes on when Tigreal's lane-compression value justifies early priority."
+  },
+  "contentMarkdown": "# Tigreal Roam Compression Draft\n\nThis draft is testing whether Tigreal should be framed as map compression first and engage tank second.\n\n## What to watch\n\n- Check if lanes truly gain tempo from his path.\n- Track earlier enemy rotations forced by his presence.\n- Ignore highlight bias and look at repeated map effect.\n\n## Draft focus\n\nIf the compression thesis holds, his editorial tier rises. If not, he stays a situational stabilizer.\n\n> The question is whether his gravity changes the map before the combo begins.\n\nMore on Tigreal: keep this read connected to tank roam structures, not just isolated mechanics."
+}

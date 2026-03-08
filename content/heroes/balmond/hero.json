@@ -1,0 +1,34 @@
+{
+  "id": "balmond",
+  "slug": "balmond",
+  "name": "Balmond",
+  "title": "Bloody Beast",
+  "role": [
+    "Fighter"
+  ],
+  "lane": [
+    "Jungle"
+  ],
+  "specialty": [
+    "Damage"
+  ],
+  "excerpt": "Balmond stays relevant when his route trims wasted motion and converts brute force into repeatable river pressure.",
+  "avatar": "/images/heroes/balmond/avatar.svg",
+  "cover": "/images/heroes/balmond/cover.svg",
+  "isFeatured": false,
+  "isSoftFeatured": false,
+  "tags": [
+    "fighter",
+    "jungle",
+    "patch"
+  ],
+  "faction": "Orc Legion",
+  "signature": "Sustain-heavy jungle pressure that wins the second collision.",
+  "difficulty": "Low",
+  "releaseYear": 2016,
+  "accent": "#3A3A3A",
+  "seo": {
+    "title": "Balmond MLBB News, Guides and Updates",
+    "description": "Balmond stays relevant when his route trims wasted motion and converts brute force into repeatable river pressure."
+  }
+}

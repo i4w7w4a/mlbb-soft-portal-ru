@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-04-balmond-jungle-sustain-check",
+  "slug": "balmond-jungle-sustain-check",
+  "title": "Balmond Jungle Sustain Check",
+  "excerpt": "Why Balmond still matters when the jungle fight becomes a durability and reset contest.",
+  "heroSlug": "balmond",
+  "cover": "/images/heroes/balmond/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "patch-analysis",
+  "tags": [
+    "patch",
+    "fighter",
+    "jungle"
+  ],
+  "author": "Systems Desk",
+  "publishedAt": "2026-03-04T15:00:00.000Z",
+  "readingTime": 4,
+  "focus": "Balmond is strongest when the map demands repeated contact instead of a single burst answer.",
+  "points": [
+    "Stay in the corridor long enough to force bad enemy cooldowns.",
+    "Value objective setup over vanity chase paths.",
+    "Use health advantage to claim space before damage lands."
+  ],
+  "angle": "He is not a speed jungler; he is a stability jungler with better second-contact value than he gets credit for.",
+  "quote": "Balmond matters when the fight refuses to end on first contact.",
+  "seo": {
+    "title": "Balmond Jungle Sustain Check - MLBB Portal",
+    "description": "Why Balmond still matters when the jungle fight becomes a durability and reset contest."
+  },
+  "contentMarkdown": "# Balmond Jungle Sustain Check\n\nBalmond is strongest when the map demands repeated contact instead of a single burst answer.\n\n## What to watch\n\n- Stay in the corridor long enough to force bad enemy cooldowns.\n- Value objective setup over vanity chase paths.\n- Use health advantage to claim space before damage lands.\n\n## Why it matters\n\nHe is not a speed jungler; he is a stability jungler with better second-contact value than he gets credit for.\n\n> Balmond matters when the fight refuses to end on first contact.\n\nMore on Balmond: keep this read connected to fighter jungle structures, not just isolated mechanics."
+}

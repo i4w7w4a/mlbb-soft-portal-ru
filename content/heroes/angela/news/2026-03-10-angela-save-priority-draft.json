@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-10-angela-save-priority-draft",
+  "slug": "angela-save-priority-draft",
+  "title": "Angela Save Priority Draft",
+  "excerpt": "Draft notes on which classes deserve first-claim on Angela's rescue budget in coordinated play.",
+  "heroSlug": "angela",
+  "cover": "/images/heroes/angela/cover.svg",
+  "status": "draft",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "news",
+  "tags": [
+    "drafting",
+    "support",
+    "roam"
+  ],
+  "author": "Lab Notes",
+  "publishedAt": "2026-03-10T11:50:00.000Z",
+  "readingTime": 3,
+  "focus": "This draft ranks Angela pairings by map leverage instead of clip value.",
+  "points": [
+    "Track which anchors convert rescue into territory.",
+    "Measure whether assassin pairings win fast or burn reliability.",
+    "Keep data on who preserves Angela's agency after first contact."
+  ],
+  "angle": "If the pairing cannot buy tempo, it may be spectacular but not editorially strong.",
+  "quote": "The rescue matters only if it buys the map something real.",
+  "seo": {
+    "title": "Angela Save Priority Draft - MLBB Portal",
+    "description": "Draft notes on which classes deserve first-claim on Angela's rescue budget in coordinated play."
+  },
+  "contentMarkdown": "# Angela Save Priority Draft\n\nThis draft ranks Angela pairings by map leverage instead of clip value.\n\n## What to watch\n\n- Track which anchors convert rescue into territory.\n- Measure whether assassin pairings win fast or burn reliability.\n- Keep data on who preserves Angela's agency after first contact.\n\n## Draft focus\n\nIf the pairing cannot buy tempo, it may be spectacular but not editorially strong.\n\n> The rescue matters only if it buys the map something real.\n\nMore on Angela: keep this read connected to support roam structures, not just isolated mechanics."
+}

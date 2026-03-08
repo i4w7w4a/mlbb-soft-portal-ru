@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-07-angela-roam-pocket-lanes",
+  "slug": "angela-roam-pocket-lanes",
+  "title": "Angela Pocket-Lane Decision Tree",
+  "excerpt": "When Angela should pocket the gold side and when she should tilt mid-river instead.",
+  "heroSlug": "angela",
+  "cover": "/images/heroes/angela/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "hero-guide",
+  "tags": [
+    "guide",
+    "support",
+    "roam"
+  ],
+  "author": "Guide Desk",
+  "publishedAt": "2026-03-07T14:20:00.000Z",
+  "readingTime": 4,
+  "focus": "Angela's route is only correct if protection converts into tempo rather than passive survival.",
+  "points": [
+    "Pocket a lane only when it unlocks tower or objective pressure.",
+    "Rotate away the moment value becomes merely defensive.",
+    "Keep the global threat believable from mid-river."
+  ],
+  "angle": "Healing matters only when it turns into territory, timing, or both.",
+  "quote": "Do not confuse keeping someone alive with creating a winning position.",
+  "seo": {
+    "title": "Angela Pocket-Lane Decision Tree - MLBB Portal",
+    "description": "When Angela should pocket the gold side and when she should tilt mid-river instead."
+  },
+  "contentMarkdown": "# Angela Pocket-Lane Decision Tree\n\nAngela's route is only correct if protection converts into tempo rather than passive survival.\n\n## What to watch\n\n- Pocket a lane only when it unlocks tower or objective pressure.\n- Rotate away the moment value becomes merely defensive.\n- Keep the global threat believable from mid-river.\n\n## Why it matters\n\nHealing matters only when it turns into territory, timing, or both.\n\n> Do not confuse keeping someone alive with creating a winning position.\n\nMore on Angela: keep this read connected to support roam structures, not just isolated mechanics."
+}

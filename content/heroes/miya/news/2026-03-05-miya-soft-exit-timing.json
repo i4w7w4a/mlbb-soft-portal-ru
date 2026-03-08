@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-05-miya-soft-exit-timing",
+  "slug": "miya-soft-exit-timing",
+  "title": "Miya SOFT Exit Timing",
+  "excerpt": "A premium read on when Miya should break contact first and re-enter second to preserve full uptime.",
+  "heroSlug": "miya",
+  "cover": "/images/heroes/miya/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": false,
+  "category": "editorial",
+  "tags": [
+    "soft",
+    "rotations",
+    "marksman"
+  ],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-05T11:30:00.000Z",
+  "readingTime": 5,
+  "focus": "The premium Miya pattern is patience: leave early enough to keep the second damage window alive.",
+  "points": [
+    "Do not mirror the frontline's first step into vision.",
+    "Keep one firing lane untouched for the re-entry.",
+    "Spend mobility on shape, not on panic pursuit."
+  ],
+  "angle": "SOFT mode elevates Miya because patient carries create cleaner second entries than flashy first ones.",
+  "quote": "Her best damage starts after the fight has already lost its shape.",
+  "seo": {
+    "title": "Miya SOFT Exit Timing - MLBB Portal",
+    "description": "A premium read on when Miya should break contact first and re-enter second to preserve full uptime."
+  },
+  "contentMarkdown": "# Miya SOFT Exit Timing\n\nThe premium Miya pattern is patience: leave early enough to keep the second damage window alive.\n\n## What to watch\n\n- Do not mirror the frontline's first step into vision.\n- Keep one firing lane untouched for the re-entry.\n- Spend mobility on shape, not on panic pursuit.\n\n## SOFT angle\n\nSOFT mode elevates Miya because patient carries create cleaner second entries than flashy first ones.\n\n> Her best damage starts after the fight has already lost its shape.\n\nMore on Miya: keep this read connected to marksman gold structures, not just isolated mechanics."
+}

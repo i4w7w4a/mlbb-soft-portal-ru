@@ -1,0 +1,33 @@
+{
+  "id": "chou",
+  "slug": "chou",
+  "name": "Chou",
+  "title": "Kung Fu Boy",
+  "role": [
+    "Fighter"
+  ],
+  "lane": [
+    "Roam"
+  ],
+  "specialty": [
+    "Chase"
+  ],
+  "excerpt": "Chou stays dangerous when his roam path isolates one target without forcing the rest of the map to play short-handed.",
+  "avatar": "/images/heroes/chou/avatar.svg",
+  "cover": "/images/heroes/chou/cover.svg",
+  "isFeatured": false,
+  "isSoftFeatured": false,
+  "tags": [
+    "fighter",
+    "roam",
+    "guide"
+  ],
+  "signature": "Single-target displacement that rewrites fight geometry on contact.",
+  "difficulty": "High",
+  "releaseYear": 2016,
+  "accent": "#3A3A3A",
+  "seo": {
+    "title": "Chou MLBB News, Guides and Updates",
+    "description": "Chou stays dangerous when his roam path isolates one target without forcing the rest of the map to play short-handed."
+  }
+}

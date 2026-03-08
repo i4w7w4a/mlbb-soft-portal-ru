@@ -1,0 +1,34 @@
+{
+  "id": "miya",
+  "slug": "miya",
+  "name": "Miya",
+  "title": "Moonlight Archer",
+  "role": [
+    "Marksman"
+  ],
+  "lane": [
+    "Gold"
+  ],
+  "specialty": [
+    "Finisher"
+  ],
+  "excerpt": "Miya turns disciplined gold-lane spacing into relentless reset pressure once her firing rhythm comes online.",
+  "avatar": "/images/heroes/miya/avatar.svg",
+  "cover": "/images/heroes/miya/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": false,
+  "tags": [
+    "marksman",
+    "gold",
+    "build"
+  ],
+  "faction": "Moonlit Forest",
+  "signature": "Second-entry DPS that punishes over-rotated peel.",
+  "difficulty": "Medium",
+  "releaseYear": 2016,
+  "accent": "#B03E3E",
+  "seo": {
+    "title": "Miya MLBB News, Guides and Updates",
+    "description": "Miya turns disciplined gold-lane spacing into relentless reset pressure once her firing rhythm comes online."
+  }
+}

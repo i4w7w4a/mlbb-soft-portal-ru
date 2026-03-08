@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-05-chou-angle-denial-guide",
+  "slug": "chou-angle-denial-guide",
+  "title": "Chou Angle Denial Guide",
+  "excerpt": "The real Chou skill test is denying the target every clean angle before the kick matters.",
+  "heroSlug": "chou",
+  "cover": "/images/heroes/chou/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "hero-guide",
+  "tags": [
+    "guide",
+    "fighter",
+    "roam"
+  ],
+  "author": "Guide Desk",
+  "publishedAt": "2026-03-05T16:35:00.000Z",
+  "readingTime": 4,
+  "focus": "Chou is best when the geometry is solved before the combo starts.",
+  "points": [
+    "Pressure safe sidesteps before commit range.",
+    "Use lane state and walls to choose the exit line.",
+    "Reject picks that strand your own damage line."
+  ],
+  "angle": "The highest-value Chou plays feel effortless because the map was prepared early.",
+  "quote": "His best engage is the one the target already lost.",
+  "seo": {
+    "title": "Chou Angle Denial Guide - MLBB Portal",
+    "description": "The real Chou skill test is denying the target every clean angle before the kick matters."
+  },
+  "contentMarkdown": "# Chou Angle Denial Guide\n\nChou is best when the geometry is solved before the combo starts.\n\n## What to watch\n\n- Pressure safe sidesteps before commit range.\n- Use lane state and walls to choose the exit line.\n- Reject picks that strand your own damage line.\n\n## Why it matters\n\nThe highest-value Chou plays feel effortless because the map was prepared early.\n\n> His best engage is the one the target already lost.\n\nMore on Chou: keep this read connected to fighter roam structures, not just isolated mechanics."
+}

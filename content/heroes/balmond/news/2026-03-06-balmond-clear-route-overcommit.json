@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-06-balmond-clear-route-overcommit",
+  "slug": "balmond-clear-route-overcommit",
+  "title": "Balmond Clear Route Overcommit",
+  "excerpt": "The exact moment Balmond loses tempo by over-chasing after first clear.",
+  "heroSlug": "balmond",
+  "cover": "/images/heroes/balmond/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "hero-guide",
+  "tags": [
+    "guide",
+    "fighter",
+    "jungle"
+  ],
+  "author": "Guide Desk",
+  "publishedAt": "2026-03-06T08:45:00.000Z",
+  "readingTime": 5,
+  "focus": "His biggest mistake is turning a healthy clear into a low-value chase that misses the next lane crash.",
+  "points": [
+    "Abort pursuit when it costs the next objective setup.",
+    "Route toward the lane that can actually convert your presence.",
+    "Let the threat of execute move the map for you."
+  ],
+  "angle": "The clean Balmond line is simple: finish camps, appear on time, and make the enemy solve a bad corridor.",
+  "quote": "His power is tempo with armor on it, not freestyle pursuit.",
+  "seo": {
+    "title": "Balmond Clear Route Overcommit - MLBB Portal",
+    "description": "The exact moment Balmond loses tempo by over-chasing after first clear."
+  },
+  "contentMarkdown": "# Balmond Clear Route Overcommit\n\nHis biggest mistake is turning a healthy clear into a low-value chase that misses the next lane crash.\n\n## What to watch\n\n- Abort pursuit when it costs the next objective setup.\n- Route toward the lane that can actually convert your presence.\n- Let the threat of execute move the map for you.\n\n## Why it matters\n\nThe clean Balmond line is simple: finish camps, appear on time, and make the enemy solve a bad corridor.\n\n> His power is tempo with armor on it, not freestyle pursuit.\n\nMore on Balmond: keep this read connected to fighter jungle structures, not just isolated mechanics."
+}

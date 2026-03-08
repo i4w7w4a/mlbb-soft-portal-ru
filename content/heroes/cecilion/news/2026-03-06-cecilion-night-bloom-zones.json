@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-06-cecilion-night-bloom-zones",
+  "slug": "cecilion-night-bloom-zones",
+  "title": "Cecilion Night-Bloom Zones",
+  "excerpt": "A map-level breakdown of how Cecilion's range should shape space before damage totals matter.",
+  "heroSlug": "cecilion",
+  "cover": "/images/heroes/cecilion/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "meta-watch",
+  "tags": [
+    "meta",
+    "mage",
+    "mid"
+  ],
+  "author": "Meta Desk",
+  "publishedAt": "2026-03-06T18:00:00.000Z",
+  "readingTime": 5,
+  "focus": "Cecilion wins space first and HP second by making every corridor more expensive to enter.",
+  "points": [
+    "Cast to shape exits, not just to trim health bars.",
+    "Tell side lanes which terrain is now closed.",
+    "Stay far enough away to keep threat geometric."
+  ],
+  "angle": "He becomes premium when long-range pressure is treated as structure rather than fireworks.",
+  "quote": "Cecilion wins space first and HP second.",
+  "seo": {
+    "title": "Cecilion Night-Bloom Zones - MLBB Portal",
+    "description": "A map-level breakdown of how Cecilion's range should shape space before damage totals matter."
+  },
+  "contentMarkdown": "# Cecilion Night-Bloom Zones\n\nCecilion wins space first and HP second by making every corridor more expensive to enter.\n\n## What to watch\n\n- Cast to shape exits, not just to trim health bars.\n- Tell side lanes which terrain is now closed.\n- Stay far enough away to keep threat geometric.\n\n## Why it matters\n\nHe becomes premium when long-range pressure is treated as structure rather than fireworks.\n\n> Cecilion wins space first and HP second.\n\nMore on Cecilion: keep this read connected to mage mid structures, not just isolated mechanics."
+}

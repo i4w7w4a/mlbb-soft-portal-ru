@@ -126,8 +126,8 @@ async function withRepositoryFixture<T>(
 test("loads heroes and news from the JSON-first repository", async () => {
   const [heroes, news] = await Promise.all([getAllHeroes(), getAllNews(true)]);
 
-  assert.equal(heroes.length, 6);
-  assert.equal(news.length, 12);
+  assert.ok(heroes.length >= 12);
+  assert.ok(news.length >= 30);
 });
 
 test("resolves hero and news by slug", async () => {

@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-10-balmond-objective-lock-draft",
+  "slug": "balmond-objective-lock-draft",
+  "title": "Balmond Objective Lock Draft",
+  "excerpt": "Draft notes on when to keep Balmond as a denial jungler instead of forcing skirmish chaos.",
+  "heroSlug": "balmond",
+  "cover": "/images/heroes/balmond/cover.svg",
+  "status": "draft",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "news",
+  "tags": [
+    "drafting",
+    "fighter",
+    "jungle"
+  ],
+  "author": "Lab Notes",
+  "publishedAt": "2026-03-10T10:20:00.000Z",
+  "readingTime": 3,
+  "focus": "This draft is testing Balmond as an objective-lock answer rather than a flexible skirmish pick.",
+  "points": [
+    "Only trust the route if lanes reach pits on time.",
+    "Track matchups where certainty is real, not imagined.",
+    "Separate queue comfort from draft leverage."
+  ],
+  "angle": "If the draft cannot guarantee territory, Balmond becomes honest but limited.",
+  "quote": "Only publish the thesis if objective control is actually repeatable.",
+  "seo": {
+    "title": "Balmond Objective Lock Draft - MLBB Portal",
+    "description": "Draft notes on when to keep Balmond as a denial jungler instead of forcing skirmish chaos."
+  },
+  "contentMarkdown": "# Balmond Objective Lock Draft\n\nThis draft is testing Balmond as an objective-lock answer rather than a flexible skirmish pick.\n\n## What to watch\n\n- Only trust the route if lanes reach pits on time.\n- Track matchups where certainty is real, not imagined.\n- Separate queue comfort from draft leverage.\n\n## Draft focus\n\nIf the draft cannot guarantee territory, Balmond becomes honest but limited.\n\n> Only publish the thesis if objective control is actually repeatable.\n\nMore on Balmond: keep this read connected to fighter jungle structures, not just isolated mechanics."
+}

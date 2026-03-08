@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-10-chou-roam-economy-draft",
+  "slug": "chou-roam-economy-draft",
+  "title": "Chou Roam Economy Draft",
+  "excerpt": "Draft notes on whether Chou can afford delayed durability without collapsing mid-game reliability.",
+  "heroSlug": "chou",
+  "cover": "/images/heroes/chou/cover.svg",
+  "status": "draft",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "build-breakdown",
+  "tags": [
+    "build",
+    "fighter",
+    "roam"
+  ],
+  "author": "Lab Notes",
+  "publishedAt": "2026-03-10T14:05:00.000Z",
+  "readingTime": 3,
+  "focus": "A greedier Chou route only works if the second setup stays alive after the first threat.",
+  "points": [
+    "Check whether earlier damage converts into real pick value.",
+    "Track how often delayed tankiness kills the second engage.",
+    "Reject the route if it only works while snowballing."
+  ],
+  "angle": "A sharper first threat is worthless if the hero disappears after spending it.",
+  "quote": "The route graduates only if Chou still has a second setup.",
+  "seo": {
+    "title": "Chou Roam Economy Draft - MLBB Portal",
+    "description": "Draft notes on whether Chou can afford delayed durability without collapsing mid-game reliability."
+  },
+  "contentMarkdown": "# Chou Roam Economy Draft\n\nA greedier Chou route only works if the second setup stays alive after the first threat.\n\n## What to watch\n\n- Check whether earlier damage converts into real pick value.\n- Track how often delayed tankiness kills the second engage.\n- Reject the route if it only works while snowballing.\n\n## Draft focus\n\nA sharper first threat is worthless if the hero disappears after spending it.\n\n> The route graduates only if Chou still has a second setup.\n\nMore on Chou: keep this read connected to fighter roam structures, not just isolated mechanics."
+}
