@@ -4,7 +4,14 @@ export function hasSupabaseEnv() {
   );
 }
 
+export function hasSupabaseAdminEnv() {
+  return Boolean(
+    process.env.NEXT_PUBLIC_SUPABASE_URL &&
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY &&
+      process.env.SUPABASE_SERVICE_ROLE_KEY,
+  );
+}
+
 export function isLocalAdminDemoEnabled() {
   return process.env.NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_DEMO === "true";
 }
-

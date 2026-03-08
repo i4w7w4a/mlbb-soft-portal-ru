@@ -130,3 +130,54 @@ test("media repository links local assets to content references and surfaces mis
     await rm(fixture.root, { recursive: true, force: true });
   }
 });
+
+test("media repository merges remote Supabase assets into the library snapshot", async () => {
+  const fixture = await createFixtureRoot();
+
+  try {
+    const repository = createMediaRepository({
+      contentRoot: fixture.contentRoot,
+      publicRoot: fixture.publicRoot,
+      remoteAssetsLoader: async () => ({
+        assets: [
+          {
+            id: "supabase:heroes:alpha/cover.svg",
+            bucket: "heroes",
+            fileName: "cover.svg",
+            extension: "svg",
+            publicPath: "/images/heroes/alpha/cover.svg",
+            relativePath: "images/heroes/alpha/cover.svg",
+            storagePath: "alpha/cover.svg",
+            status: "available",
+            source: "supabase",
+            previewUrl: "https://example.com/storage/v1/object/sign/heroes/alpha/cover.svg",
+            sizeBytes: 512,
+            modifiedAt: "2026-03-08T11:00:00.000Z",
+          },
+        ],
+        source: {
+          id: "supabase",
+          label: "Supabase Storage",
+          status: "active",
+          description: "Remote assets loaded for the test fixture.",
+          detail: "1 remote asset discovered.",
+        },
+      }),
+    });
+
+    const snapshot = await repository.getLibrarySnapshot();
+    const remoteCover = snapshot.assets.find(
+      (asset) =>
+        asset.publicPath === "/images/heroes/alpha/cover.svg" &&
+        asset.source === "supabase",
+    );
+
+    assert.equal(snapshot.totals.available, 3);
+    assert.equal(snapshot.totals.missing, 0);
+    assert.equal(remoteCover?.usageCount, 2);
+    assert.equal(remoteCover?.storagePath, "alpha/cover.svg");
+    assert.equal(snapshot.sources[1]?.status, "active");
+  } finally {
+    await rm(fixture.root, { recursive: true, force: true });
+  }
+});

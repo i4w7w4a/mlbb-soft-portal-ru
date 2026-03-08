@@ -229,15 +229,15 @@ export function MediaManager({
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="soft">Media graph</Badge>
-              <Badge>Local-first</Badge>
+              <Badge>Dual-source</Badge>
             </div>
             <div>
               <p className="font-display text-3xl text-white">
-                Operate the asset layer without waiting for remote storage.
+                Operate the asset layer across local files and remote buckets.
               </p>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-                This surface tracks every local image, every content reference, and the
-                runway buckets that will matter once Storage is wired in.
+                This surface tracks the local image graph, remote Supabase bucket
+                mirrors, and the content references that still need coverage.
               </p>
             </div>
           </div>
