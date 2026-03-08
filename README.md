@@ -83,6 +83,7 @@ The repository layer is in [repository.ts](C:/Users/iwwa/Documents/6_Work/Open_o
 - `npm run metadata:check` validates route metadata exports, canonical URLs, OG image coverage, and article metadata across hero/news pages
 - `npm run seed:heroes` runs [import-heroes.ts](C:/Users/iwwa/Documents/6_Work/Open_orche/scripts/import-heroes.ts)
 - The import pipeline first tries `https://mlbb.gg/heroes`, then falls back to [mlbb-gg-heroes.json](C:/Users/iwwa/Documents/6_Work/Open_orche/content/heroes/raw/mlbb-gg-heroes.json)
+- Successful remote hero imports also persist [mlbb-gg-heroes.remote.html](C:/Users/iwwa/Documents/6_Work/Open_orche/content/heroes/raw/mlbb-gg-heroes.remote.html) and [mlbb-gg-heroes.remote.json](C:/Users/iwwa/Documents/6_Work/Open_orche/content/heroes/raw/mlbb-gg-heroes.remote.json) for parser audits and future fallback work
 
 ## gh-aw setup
 

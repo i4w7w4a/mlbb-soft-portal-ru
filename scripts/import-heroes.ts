@@ -4,7 +4,8 @@ import path from "path";
 import { loadHeroSeedsWithFallback } from "@/lib/content/import-heroes";
 
 async function main() {
-  const heroes = await loadHeroSeedsWithFallback();
+  const report = await loadHeroSeedsWithFallback();
+  const heroes = report.heroes;
   const contentRoot = path.join(process.cwd(), "content", "heroes");
 
   for (const hero of heroes) {
@@ -23,7 +24,27 @@ async function main() {
     "utf8",
   );
 
-  console.log(`Imported ${heroes.length} heroes.`);
+  console.log(`Imported ${heroes.length} heroes from ${report.source}.`);
+
+  if (report.snapshotPaths.length) {
+    console.log(`Saved remote snapshots:\n- ${report.snapshotPaths.join("\n- ")}`);
+  }
+
+  if (report.diagnostics.length) {
+    const groupedDiagnostics = report.diagnostics.reduce<Record<string, number>>((acc, diagnostic) => {
+      const key = `${diagnostic.level}:${diagnostic.code}`;
+      acc[key] = (acc[key] ?? 0) + 1;
+      return acc;
+    }, {});
+
+    console.log("Diagnostics summary:");
+
+    for (const [key, count] of Object.entries(groupedDiagnostics).sort((left, right) =>
+      left[0].localeCompare(right[0]),
+    )) {
+      console.log(`- ${key} x${count}`);
+    }
+  }
 }
 
 main().catch((error) => {
