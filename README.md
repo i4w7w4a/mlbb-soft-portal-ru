@@ -101,6 +101,7 @@ Notes:
 - `issue-arborist` is already `engine: codex` upstream at this pinned SHA.
 - `issue-monster` is upstream Copilot-oriented at this pinned SHA because its assignment logic targets the Copilot agent path specifically.
 - `issue-arborist` requires the imported `shared/jqschema.md` helper file to compile.
+- Without `OPENAI_API_KEY` or `CODEX_API_KEY`, all Codex-backed gh-aw workflows stay dormant in GitHub Actions. The per-workflow audit and manual fallback path live in [gh-aw-no-api-audit.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/gh-aw-no-api-audit.md).
 
 Current missing repo secrets reported by `gh aw init`:
 
@@ -115,6 +116,7 @@ Current missing repo secrets reported by `gh aw init`:
 - Current `gh` token does **not** include `read:project`, so GitHub Project V2 automation cannot be fully provisioned until the token is refreshed with project scopes.
 - Labels and issue/workflow artifacts can still be created with the current token.
 - Manual delivery protocol for future long sessions: [github-session-protocol.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/github-session-protocol.md)
+- No-API gh-aw workflow audit: [gh-aw-no-api-audit.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/gh-aw-no-api-audit.md)
 
 ## Spec docs
 
