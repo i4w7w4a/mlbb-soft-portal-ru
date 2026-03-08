@@ -1,11 +1,16 @@
 import { promises as fs } from "fs";
 import path from "path";
+import { z } from "zod";
 
 import { heroSchema, newsSchema, type Hero, type News } from "@/lib/content/schemas";
 import { getAllNews, getHeroBySlug } from "@/lib/content/repository";
 import { slugify } from "@/lib/utils";
 
 const HERO_ROOT = path.join(process.cwd(), "content", "heroes");
+const newsImportSnapshotSchema = z.object({
+  exportedAt: z.string().optional(),
+  news: z.array(newsSchema),
+});
 
 function createJsonOutput(value: unknown) {
   return `${JSON.stringify(value, null, 2)}\n`;
@@ -13,6 +18,63 @@ function createJsonOutput(value: unknown) {
 
 async function ensureDirectory(targetPath: string) {
   await fs.mkdir(targetPath, { recursive: true });
+}
+
+function createUniqueCopyValue(source: string, taken: Set<string>) {
+  const base = `${source}-copy`;
+
+  if (!taken.has(base)) {
+    return base;
+  }
+
+  let suffix = 2;
+  let candidate = `${base}-${suffix}`;
+
+  while (taken.has(candidate)) {
+    suffix += 1;
+    candidate = `${base}-${suffix}`;
+  }
+
+  return candidate;
+}
+
+export interface PortalExportSnapshot {
+  exportedAt: string;
+  news: News[];
+}
+
+export function parseNewsImportPayload(payload: unknown) {
+  if (Array.isArray(payload)) {
+    return payload.map((entry) => newsSchema.parse(entry));
+  }
+
+  return newsImportSnapshotSchema.parse(payload).news;
+}
+
+export function createDuplicateNewsPayload(stories: News[], slug: string) {
+  const existing = stories.find((story) => story.slug === slug);
+
+  if (!existing) {
+    throw new Error(`Cannot duplicate missing news item: ${slug}`);
+  }
+
+  const duplicateSlug = createUniqueCopyValue(
+    existing.slug,
+    new Set(stories.map((story) => story.slug)),
+  );
+  const duplicateId = createUniqueCopyValue(
+    existing.id,
+    new Set(stories.map((story) => story.id)),
+  );
+
+  return newsSchema.parse({
+    ...existing,
+    id: duplicateId,
+    slug: duplicateSlug,
+    title: `${existing.title} Copy`,
+    status: "draft",
+    publishedAt: new Date().toISOString(),
+  });
 }
 
 export async function saveNewsPayload(payload: News) {
@@ -35,20 +97,7 @@ export async function saveNewsPayload(payload: News) {
 
 export async function duplicateNewsBySlug(slug: string) {
   const stories = await getAllNews(true);
-  const existing = stories.find((story) => story.slug === slug);
-
-  if (!existing) {
-    throw new Error(`Cannot duplicate missing news item: ${slug}`);
-  }
-
-  const duplicate = newsSchema.parse({
-    ...existing,
-    id: `${existing.id}-copy`,
-    slug: `${existing.slug}-copy`,
-    title: `${existing.title} Copy`,
-    status: "draft",
-    publishedAt: new Date().toISOString(),
-  });
+  const duplicate = createDuplicateNewsPayload(stories, slug);
 
   await saveNewsPayload(duplicate);
   return duplicate;
@@ -82,7 +131,7 @@ export async function exportPortalSnapshot() {
   return {
     exportedAt: new Date().toISOString(),
     news: stories,
-  };
+  } satisfies PortalExportSnapshot;
 }
 
 export function createQuickDraft(values: {

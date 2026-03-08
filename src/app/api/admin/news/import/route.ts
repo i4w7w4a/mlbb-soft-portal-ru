@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 
-import { importNewsBatch } from "@/lib/content/admin";
-import { newsSchema } from "@/lib/content/schemas";
+import { importNewsBatch, parseNewsImportPayload } from "@/lib/content/admin";
 
 export async function POST(request: Request) {
   try {
-    const payload = (await request.json()) as unknown[];
-    const stories = payload.map((entry) => newsSchema.parse(entry));
+    const payload = (await request.json()) as unknown;
+    const stories = parseNewsImportPayload(payload);
     const imported = await importNewsBatch(stories);
     return NextResponse.json({ ok: true, imported });
   } catch (error) {
@@ -16,4 +15,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
