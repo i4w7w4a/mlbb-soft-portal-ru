@@ -1,0 +1,14 @@
+{
+  "siteName": "SOFT Rift",
+  "siteTagline": "A premium editorial portal for Mobile Legends hero intelligence.",
+  "siteDescription": "Dark-first MLBB editorial portal centered on hero universes, fast-moving meta coverage, and the SOFT premium content layer.",
+  "defaultOgImage": "/images/site/og-soft-rift.svg",
+  "primaryNav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Heroes", "href": "/heroes" },
+    { "label": "News", "href": "/news" },
+    { "label": "SOFT", "href": "/soft" },
+    { "label": "Search", "href": "/search" }
+  ]
+}
+

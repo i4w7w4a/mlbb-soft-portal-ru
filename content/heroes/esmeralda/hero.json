@@ -1,0 +1,25 @@
+{
+  "id": "esmeralda",
+  "slug": "esmeralda",
+  "name": "Esmeralda",
+  "title": "Astrologer",
+  "role": ["Mage", "Tank"],
+  "lane": ["EXP", "Mid"],
+  "specialty": ["Shield", "Regen"],
+  "excerpt": "Esmeralda turns enemy shields into her own advantage and stretches fights into controlled pressure.",
+  "avatar": "/images/heroes/esmeralda/avatar.svg",
+  "cover": "/images/heroes/esmeralda/cover.svg",
+  "isFeatured": false,
+  "isSoftFeatured": true,
+  "tags": ["mage", "exp", "meta"],
+  "faction": "Azrya Woodlands",
+  "signature": "Absorb, kite and grind lanes into favorable tempo.",
+  "difficulty": "Medium",
+  "releaseYear": 2019,
+  "accent": "#8cb6ff",
+  "seo": {
+    "title": "Esmeralda MLBB News, Guides and Updates",
+    "description": "Latest MLBB news, soft-featured analysis and guides for Esmeralda."
+  }
+}
+

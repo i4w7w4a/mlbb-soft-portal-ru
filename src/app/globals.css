@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050913;
+  --foreground: #f7fbff;
+  --surface: rgba(12, 19, 31, 0.84);
+  --surface-strong: rgba(5, 9, 18, 0.96);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --soft-glow: #65e6ff;
+  --accent-gold: #f5c36b;
+  --accent-magenta: #f484ff;
+  --muted: #9eb1c9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+[data-soft-mode="on"] {
+  --surface: rgba(6, 17, 28, 0.88);
+  --panel-border: rgba(101, 230, 255, 0.18);
+  --foreground: #f4feff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(101, 230, 255, 0.25);
+  color: white;
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.article-shell h1,
+.article-shell h2,
+.article-shell h3 {
+  font-family: var(--font-display), sans-serif;
+  color: white;
+  letter-spacing: -0.03em;
+}
+
+.article-shell h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: 1.25rem;
+}
+
+.article-shell h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-shell p,
+.article-shell li,
+.article-shell blockquote {
+  color: #d6dfed;
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.article-shell p + p {
+  margin-top: 1.25rem;
+}
+
+.article-shell ul {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.article-shell li + li {
+  margin-top: 0.45rem;
+}
+
+.article-shell blockquote {
+  margin: 1.75rem 0;
+  border-left: 2px solid rgba(101, 230, 255, 0.5);
+  padding-left: 1.25rem;
+  color: #e9faff;
+}
+
+.article-shell code {
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.4rem;
+  font-size: 0.95rem;
+}
+
+.article-shell pre {
+  overflow-x: auto;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1rem 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}

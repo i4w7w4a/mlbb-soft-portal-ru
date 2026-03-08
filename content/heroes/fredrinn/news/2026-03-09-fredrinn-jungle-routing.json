@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-09-fredrinn-jungle-routing",
+  "slug": "fredrinn-jungle-routing",
+  "title": "Fredrinn Jungle Routing",
+  "excerpt": "A routing sequence that preserves objective timing while keeping Fredrinn's threat visible in every river fight.",
+  "heroSlug": "fredrinn",
+  "cover": "/images/heroes/fredrinn/cover.svg",
+  "status": "draft",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "build-breakdown",
+  "tags": ["jungle", "tank", "guide"],
+  "author": "Rift Lab",
+  "publishedAt": "2026-03-09T09:00:00.000Z",
+  "readingTime": 4,
+  "seo": {
+    "title": "Fredrinn Jungle Routing - MLBB Portal",
+    "description": "A route breakdown for Fredrinn jungle players."
+  },
+  "contentMarkdown": "# Route for presence\n\nFredrinn is strongest when the enemy feels him before the fight actually starts. Your pathing should preserve that threat."
+}
+

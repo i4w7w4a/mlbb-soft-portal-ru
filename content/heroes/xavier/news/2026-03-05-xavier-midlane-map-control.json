@@ -1,0 +1,21 @@
+{
+  "id": "2026-03-05-xavier-midlane-map-control",
+  "slug": "xavier-midlane-map-control",
+  "title": "Xavier Midlane Map Control",
+  "excerpt": "A practical primer on using Xavier to shape river fights before they begin.",
+  "heroSlug": "xavier",
+  "cover": "/images/heroes/xavier/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "hero-guide",
+  "tags": ["mage", "mid", "guide"],
+  "author": "Rift Lab",
+  "publishedAt": "2026-03-05T10:45:00.000Z",
+  "readingTime": 5,
+  "seo": {
+    "title": "Xavier Midlane Map Control - MLBB Portal",
+    "description": "A guide to Xavier's river and map-control patterns."
+  },
+  "contentMarkdown": "# Own the line of sight\n\nXavier is not only a finisher. He is a lane architect. Put him where his geometry changes the enemy route map."
+}

@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-10-kagura-editorial-control",
+  "slug": "kagura-editorial-control",
+  "title": "Kagura Editorial Control",
+  "excerpt": "Kagura's premium value lies in how she controls space before the burst even lands.",
+  "heroSlug": "kagura",
+  "cover": "/images/heroes/kagura/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": true,
+  "category": "editorial",
+  "tags": ["mage", "soft", "spotlight"],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-10T11:20:00.000Z",
+  "readingTime": 6,
+  "seo": {
+    "title": "Kagura Editorial Control - MLBB Portal",
+    "description": "SOFT editorial on Kagura's spacing, threat and control."
+  },
+  "contentMarkdown": "# Threat starts before contact\n\nKagura's strongest games are authored through threat geometry. The umbrella narrows choices, then punishes panic.\n\n## SOFT read\n\nHer premium value is informational: she makes the map feel smaller for the enemy."
+}
+

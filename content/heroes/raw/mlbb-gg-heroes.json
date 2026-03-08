@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "aamon",
+    "name": "Aamon",
+    "title": "Duke of Shards",
+    "role": ["Assassin"],
+    "lane": ["Jungle"]
+  },
+  {
+    "slug": "esmeralda",
+    "name": "Esmeralda",
+    "title": "Astrologer",
+    "role": ["Mage", "Tank"],
+    "lane": ["EXP", "Mid"]
+  },
+  {
+    "slug": "fredrinn",
+    "name": "Fredrinn",
+    "title": "Rogue Appraiser",
+    "role": ["Tank", "Fighter"],
+    "lane": ["Jungle", "Roam"]
+  },
+  {
+    "slug": "kagura",
+    "name": "Kagura",
+    "title": "Onmyouji Master",
+    "role": ["Mage"],
+    "lane": ["Mid"]
+  },
+  {
+    "slug": "lesley",
+    "name": "Lesley",
+    "title": "Deadly Sniper",
+    "role": ["Marksman", "Assassin"],
+    "lane": ["Gold"]
+  },
+  {
+    "slug": "xavier",
+    "name": "Xavier",
+    "title": "Defier of Light",
+    "role": ["Mage"],
+    "lane": ["Mid"]
+  }
+]

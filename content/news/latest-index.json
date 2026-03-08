@@ -1,0 +1,39 @@
+{
+  "featured": [
+    "2026-03-08-fredrinn-frontline-reset",
+    "2026-03-09-xavier-soft-signal-lanes",
+    "2026-03-10-kagura-editorial-control"
+  ],
+  "trending": [
+    "2026-03-08-aamon-patch-analysis",
+    "2026-03-08-lesley-gold-lane-pressure",
+    "2026-03-07-esmeralda-anti-burst-guide",
+    "2026-03-09-fredrinn-jungle-routing"
+  ],
+  "spotlight": [
+    "2026-03-09-xavier-soft-signal-lanes"
+  ],
+  "collections": [
+    {
+      "slug": "today-in-meta",
+      "title": "Today In Meta",
+      "excerpt": "The stories shifting draft priorities right now.",
+      "newsIds": [
+        "2026-03-08-aamon-patch-analysis",
+        "2026-03-08-fredrinn-frontline-reset",
+        "2026-03-08-lesley-gold-lane-pressure"
+      ]
+    },
+    {
+      "slug": "soft-critical-path",
+      "title": "SOFT Critical Path",
+      "excerpt": "The sharpest premium reads from the SOFT layer.",
+      "newsIds": [
+        "2026-03-09-xavier-soft-signal-lanes",
+        "2026-03-10-kagura-editorial-control",
+        "2026-03-07-esmeralda-soft-wave-management"
+      ]
+    }
+  ]
+}
+

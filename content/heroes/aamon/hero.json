@@ -1,0 +1,25 @@
+{
+  "id": "aamon",
+  "slug": "aamon",
+  "name": "Aamon",
+  "title": "Duke of Shards",
+  "role": ["Assassin"],
+  "lane": ["Jungle"],
+  "specialty": ["Chase", "Burst"],
+  "excerpt": "Aamon thrives in the seam between invisibility, tempo and lethal shard resets.",
+  "avatar": "/images/heroes/aamon/avatar.svg",
+  "cover": "/images/heroes/aamon/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": true,
+  "tags": ["assassin", "jungle", "meta"],
+  "faction": "House Paxley",
+  "signature": "Mid-fight vanish into burst execution.",
+  "difficulty": "High",
+  "releaseYear": 2021,
+  "accent": "#65e6ff",
+  "seo": {
+    "title": "Aamon MLBB News, Guides and Updates",
+    "description": "Latest MLBB news, build updates and patch analysis for Aamon."
+  }
+}
+

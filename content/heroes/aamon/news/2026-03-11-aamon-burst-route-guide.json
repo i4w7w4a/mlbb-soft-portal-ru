@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-11-aamon-burst-route-guide",
+  "slug": "aamon-burst-route-guide",
+  "title": "Aamon Burst Route Guide",
+  "excerpt": "A two-window jungle route that preserves burst uptime without sacrificing lane influence.",
+  "heroSlug": "aamon",
+  "cover": "/images/heroes/aamon/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "hero-guide",
+  "tags": ["guide", "jungle", "assassin"],
+  "author": "Rift Lab",
+  "publishedAt": "2026-03-11T07:30:00.000Z",
+  "readingTime": 5,
+  "seo": {
+    "title": "Aamon Burst Route Guide - MLBB Portal",
+    "description": "A practical route guide for Aamon players."
+  },
+  "contentMarkdown": "# Route with intention\n\nAamon's cleanest route is not the fastest route. It is the route that keeps concealment timing aligned with the first side-lane overstep.\n\n## Core idea\n\nStart from the side that gives you the stronger level-four reveal into river control. Your first burst window matters more than raw clear speed."
+}
+

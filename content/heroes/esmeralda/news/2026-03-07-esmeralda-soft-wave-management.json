@@ -1,0 +1,21 @@
+{
+  "id": "2026-03-07-esmeralda-soft-wave-management",
+  "slug": "esmeralda-soft-wave-management",
+  "title": "Esmeralda SOFT Wave Management",
+  "excerpt": "Why Esmeralda's real advantage is tempo discipline rather than visible lane dominance.",
+  "heroSlug": "esmeralda",
+  "cover": "/images/heroes/esmeralda/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": false,
+  "category": "editorial",
+  "tags": ["soft", "rotations", "meta", "exp"],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-07T17:45:00.000Z",
+  "readingTime": 6,
+  "seo": {
+    "title": "Esmeralda SOFT Wave Management - MLBB Portal",
+    "description": "SOFT editorial on Esmeralda's lane tempo and rotation value."
+  },
+  "contentMarkdown": "# Tempo before spectacle\n\nEsmeralda's best games do not always look flashy. They look inevitable. Wave control buys her the one resource she needs most: time.\n\n## SOFT read\n\nA stable Esmeralda lane creates hidden pressure because everyone else gets to move first."
+}

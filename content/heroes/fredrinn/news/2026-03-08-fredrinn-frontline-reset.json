@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-08-fredrinn-frontline-reset",
+  "slug": "fredrinn-frontline-reset",
+  "title": "Fredrinn Frontline Reset",
+  "excerpt": "Fredrinn is back at the center of disciplined frontline drafting after another round of macro-friendly adjustments.",
+  "heroSlug": "fredrinn",
+  "cover": "/images/heroes/fredrinn/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": true,
+  "category": "meta-watch",
+  "tags": ["tank", "meta", "patch", "soft"],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-08T14:15:00.000Z",
+  "readingTime": 5,
+  "seo": {
+    "title": "Fredrinn Frontline Reset - MLBB Portal",
+    "description": "Why Fredrinn's draft value is rising again."
+  },
+  "contentMarkdown": "# The return of controllable frontlines\n\nFredrinn gives teams a dependable way to absorb chaos and still threaten backline collapse. His value is less about raw durability and more about controlled punishment.\n\n## Draft angle\n\nPick him when your comp needs one stable center of gravity."
+}
+

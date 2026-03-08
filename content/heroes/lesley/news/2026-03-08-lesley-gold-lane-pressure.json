@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-08-lesley-gold-lane-pressure",
+  "slug": "lesley-gold-lane-pressure",
+  "title": "Lesley Gold Lane Pressure",
+  "excerpt": "Lesley remains dangerous when gold lane setups preserve clarity and distance for every trade.",
+  "heroSlug": "lesley",
+  "cover": "/images/heroes/lesley/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": true,
+  "category": "meta-watch",
+  "tags": ["marksman", "gold", "meta"],
+  "author": "Rift Lab",
+  "publishedAt": "2026-03-08T08:05:00.000Z",
+  "readingTime": 4,
+  "seo": {
+    "title": "Lesley Gold Lane Pressure - MLBB Portal",
+    "description": "A meta watch on Lesley's gold lane pressure."
+  },
+  "contentMarkdown": "# Win with distance\n\nLesley does not need noisy dominance. She needs disciplined spacing, vision respect and enough gold lane control to choose the moment."
+}
+

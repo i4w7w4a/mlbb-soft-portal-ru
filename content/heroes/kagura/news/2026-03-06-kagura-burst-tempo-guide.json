@@ -1,0 +1,21 @@
+{
+  "id": "2026-03-06-kagura-burst-tempo-guide",
+  "slug": "kagura-burst-tempo-guide",
+  "title": "Kagura Burst Tempo Guide",
+  "excerpt": "How to space Kagura's windows so your burst feels inevitable rather than hopeful.",
+  "heroSlug": "kagura",
+  "cover": "/images/heroes/kagura/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "hero-guide",
+  "tags": ["guide", "mage", "mid"],
+  "author": "Field Notes",
+  "publishedAt": "2026-03-06T09:10:00.000Z",
+  "readingTime": 5,
+  "seo": {
+    "title": "Kagura Burst Tempo Guide - MLBB Portal",
+    "description": "A practical guide to Kagura's tempo and burst windows."
+  },
+  "contentMarkdown": "# Sequence before burst\n\nKagura succeeds when each repositioning step closes off the next escape route. That is tempo, not just mechanics."
+}

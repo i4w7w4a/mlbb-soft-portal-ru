@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-10-lesley-build-breakpoints",
+  "slug": "lesley-build-breakpoints",
+  "title": "Lesley Build Breakpoints",
+  "excerpt": "A cleaner look at where Lesley's damage really becomes reliable in this patch.",
+  "heroSlug": "lesley",
+  "cover": "/images/heroes/lesley/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": false,
+  "category": "build-breakdown",
+  "tags": ["build", "marksman", "patch"],
+  "author": "Field Notes",
+  "publishedAt": "2026-03-10T16:40:00.000Z",
+  "readingTime": 3,
+  "seo": {
+    "title": "Lesley Build Breakpoints - MLBB Portal",
+    "description": "Build breakpoints and power curve notes for Lesley."
+  },
+  "contentMarkdown": "# Reliability over greed\n\nLesley scales hard, but not every item path reaches useful pressure soon enough. Build for clarity, not fantasy."
+}
+

@@ -1,0 +1,25 @@
+{
+  "id": "fredrinn",
+  "slug": "fredrinn",
+  "name": "Fredrinn",
+  "title": "Rogue Appraiser",
+  "role": ["Tank", "Fighter"],
+  "lane": ["Jungle", "Roam"],
+  "specialty": ["Damage", "Chase"],
+  "excerpt": "Fredrinn anchors drafts by converting pressure into frontloaded impact and late-fight threat.",
+  "avatar": "/images/heroes/fredrinn/avatar.svg",
+  "cover": "/images/heroes/fredrinn/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": true,
+  "tags": ["tank", "jungle", "meta"],
+  "faction": "Los Pecados",
+  "signature": "Collapse windows through durable burst and engage timing.",
+  "difficulty": "Medium",
+  "releaseYear": 2022,
+  "accent": "#f5c36b",
+  "seo": {
+    "title": "Fredrinn MLBB News, Guides and Updates",
+    "description": "Latest MLBB frontline meta analysis, guides and updates for Fredrinn."
+  }
+}
+

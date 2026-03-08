@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-07-esmeralda-anti-burst-guide",
+  "slug": "esmeralda-anti-burst-guide",
+  "title": "Esmeralda Anti-Burst Guide",
+  "excerpt": "How to absorb high-volatility comps and turn their engage into sustained lane control.",
+  "heroSlug": "esmeralda",
+  "cover": "/images/heroes/esmeralda/cover.svg",
+  "status": "published",
+  "isSoft": false,
+  "isFeatured": true,
+  "category": "hero-guide",
+  "tags": ["guide", "meta", "exp"],
+  "author": "Field Notes",
+  "publishedAt": "2026-03-07T12:30:00.000Z",
+  "readingTime": 4,
+  "seo": {
+    "title": "Esmeralda Anti-Burst Guide - MLBB Portal",
+    "description": "A lane and teamfight survival guide for Esmeralda."
+  },
+  "contentMarkdown": "# Stretch the fight\n\nEsmeralda wins by turning the enemy's first clean idea into a long, ugly exchange. Her value climbs when the opponent commits too much too early.\n\n## Lane principle\n\nHold space first. Conversion comes after you survive the first spike."
+}
+

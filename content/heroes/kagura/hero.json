@@ -1,0 +1,25 @@
+{
+  "id": "kagura",
+  "slug": "kagura",
+  "name": "Kagura",
+  "title": "Onmyouji Master",
+  "role": ["Mage"],
+  "lane": ["Mid"],
+  "specialty": ["Burst", "Control"],
+  "excerpt": "Kagura brings layered threat: zone control, evasive spacing and sudden umbrella-led execution.",
+  "avatar": "/images/heroes/kagura/avatar.svg",
+  "cover": "/images/heroes/kagura/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": true,
+  "tags": ["mage", "mid", "guide"],
+  "faction": "Cadia Riverlands",
+  "signature": "Create tempo with spacing traps and burst detonation.",
+  "difficulty": "High",
+  "releaseYear": 2016,
+  "accent": "#f484ff",
+  "seo": {
+    "title": "Kagura MLBB News, Guides and Updates",
+    "description": "Latest MLBB guides, editorial analysis and meta updates for Kagura."
+  }
+}
+

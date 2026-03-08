@@ -1,0 +1,25 @@
+{
+  "id": "lesley",
+  "slug": "lesley",
+  "name": "Lesley",
+  "title": "Deadly Sniper",
+  "role": ["Marksman", "Assassin"],
+  "lane": ["Gold"],
+  "specialty": ["Finisher", "Range"],
+  "excerpt": "Lesley weaponizes long-range pressure, stealth rotations and precise resets in gold lane macro.",
+  "avatar": "/images/heroes/lesley/avatar.svg",
+  "cover": "/images/heroes/lesley/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": false,
+  "tags": ["marksman", "gold", "build"],
+  "faction": "Imperial Capital",
+  "signature": "Punish mispositioning with high-clarity execution windows.",
+  "difficulty": "Medium",
+  "releaseYear": 2017,
+  "accent": "#f0d2a0",
+  "seo": {
+    "title": "Lesley MLBB News, Guides and Updates",
+    "description": "Latest MLBB gold lane guides, build updates and news for Lesley."
+  }
+}
+

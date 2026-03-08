@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-08-aamon-patch-analysis",
+  "slug": "aamon-patch-analysis",
+  "title": "Aamon Patch Analysis",
+  "excerpt": "Why the latest tempo tweaks make Aamon spike earlier in coordinated jungle paths.",
+  "heroSlug": "aamon",
+  "cover": "/images/heroes/aamon/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": false,
+  "category": "patch-analysis",
+  "tags": ["patch", "meta", "assassin", "soft"],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-08T10:00:00.000Z",
+  "readingTime": 4,
+  "seo": {
+    "title": "Aamon Patch Analysis - MLBB Portal",
+    "description": "Meta impact and patch notes for Aamon."
+  },
+  "contentMarkdown": "# A sharper jungle breakpoint\n\nAamon benefits when the map gives him room to delay first commit until vision is broken. The current patch rewards measured second-entry timing more than raw all-in speed.\n\n## What changed\n\n- Creep tempo lets him stabilize earlier in disciplined rotations.\n- Mid support windows matter more than isolated mechanics.\n- SOFT verdict: his value rises when drafts can protect his first vanish cycle.\n\n> Draft him when your side lane pressure buys a second wave of map darkness."
+}
+

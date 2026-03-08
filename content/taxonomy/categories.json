@@ -1,0 +1,11 @@
+{
+  "categories": [
+    { "slug": "patch-analysis", "label": "Patch Analysis" },
+    { "slug": "hero-guide", "label": "Hero Guide" },
+    { "slug": "meta-watch", "label": "Meta Watch" },
+    { "slug": "editorial", "label": "Editorial" },
+    { "slug": "build-breakdown", "label": "Build Breakdown" },
+    { "slug": "news", "label": "News" }
+  ]
+}
+

@@ -1,0 +1,24 @@
+{
+  "id": "xavier",
+  "slug": "xavier",
+  "name": "Xavier",
+  "title": "Defier of Light",
+  "role": ["Mage"],
+  "lane": ["Mid"],
+  "specialty": ["Guard", "Damage"],
+  "excerpt": "Xavier defines long-range certainty: zoning, tempo denial and map-wide punishment.",
+  "avatar": "/images/heroes/xavier/avatar.svg",
+  "cover": "/images/heroes/xavier/cover.svg",
+  "isFeatured": true,
+  "isSoftFeatured": true,
+  "tags": ["mage", "mid", "soft"],
+  "faction": "Forsaken Light",
+  "signature": "Own vision lines and punish overextension from any angle.",
+  "difficulty": "Medium",
+  "releaseYear": 2022,
+  "accent": "#76e7ff",
+  "seo": {
+    "title": "Xavier MLBB News, Guides and Updates",
+    "description": "Latest MLBB SOFT coverage, lane theory and updates for Xavier."
+  }
+}

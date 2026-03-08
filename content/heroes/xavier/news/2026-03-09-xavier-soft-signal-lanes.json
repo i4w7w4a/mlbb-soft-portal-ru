@@ -1,0 +1,22 @@
+{
+  "id": "2026-03-09-xavier-soft-signal-lanes",
+  "slug": "xavier-soft-signal-lanes",
+  "title": "Xavier SOFT Signal Lanes",
+  "excerpt": "Xavier is the cleanest example of what SOFT coverage values: information, certainty and map-wide leverage.",
+  "heroSlug": "xavier",
+  "cover": "/images/heroes/xavier/cover.svg",
+  "status": "published",
+  "isSoft": true,
+  "isFeatured": true,
+  "category": "editorial",
+  "tags": ["soft", "mage", "spotlight", "mid"],
+  "author": "SOFT Desk",
+  "publishedAt": "2026-03-09T13:50:00.000Z",
+  "readingTime": 6,
+  "seo": {
+    "title": "Xavier SOFT Signal Lanes - MLBB Portal",
+    "description": "SOFT editorial on Xavier's control of map signal and lane certainty."
+  },
+  "contentMarkdown": "# Certainty is pressure\n\nXavier is premium because he turns information into denial. His beam is the endpoint of a much larger story: lane signal, threat declaration and disciplined map geometry.\n\n## SOFT read\n\nWhen Xavier is strong, every careless path feels taxed."
+}
+
