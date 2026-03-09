@@ -11,7 +11,8 @@
     "test": "tsx --test src/**/*.test.ts",
     "content:check": "tsx scripts/validate-content.ts",
     "metadata:check": "tsx scripts/validate-metadata.ts",
-    "seed:heroes": "tsx scripts/import-heroes.ts"
+    "seed:heroes": "tsx scripts/import-heroes.ts",
+    "supabase:check": "tsx scripts/verify-supabase-live.ts"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",
