@@ -1,6 +1,6 @@
 # SOFT Rift
 
-Premium Mobile Legends: Bang Bang editorial portal built with `Next.js App Router`, `TypeScript`, `Tailwind CSS v4`, `Motion`, `Zod`, `Supabase` integration surfaces, and a JSON-first content layer.
+Premium Mobile Legends: Bang Bang editorial portal built with `Next.js App Router`, `TypeScript`, `Tailwind CSS v4`, `Motion`, `Zod`, and a JSON-first content layer with a local/dev-only admin surface.
 
 ## What is included
 
@@ -58,7 +58,6 @@ src/
    npm run typecheck
    npm run content:check
    npm run metadata:check
-   npm run supabase:check
    npm test
    npm run build
    ```
@@ -75,19 +74,19 @@ The repository layer is in [repository.ts](C:/Users/iwwa/Documents/6_Work/Open_o
 
 ## Admin behavior
 
-- When Supabase env vars are configured, `/admin` expects a Supabase session.
-- When env vars are missing and `NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_DEMO=true`, the admin shell stays accessible in local demo mode.
+- `/admin` is intended to run in local/dev-only mode by default.
+- `NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_DEMO` defaults to local mode; set it to `false` only when intentionally testing the optional external-auth path.
 - The quick editor supports both form mode and JSON mode and saves directly into the JSON content layer through local API routes.
-- The live magic-link flow returns through `/api/auth/callback` and exchanges the auth code for a server cookie-backed session.
+- Supabase auth/storage code remains in the repo only as an optional future integration path.
 
 ## Seed and validation scripts
 
 - `npm run content:check` validates the content graph by loading heroes, news, tags, and categories
 - `npm run metadata:check` validates route metadata exports, canonical URLs, OG image coverage, and article metadata across hero/news pages
-- `npm run supabase:check` verifies live Supabase env vars, auth-admin access, and the required Storage buckets for the production admin path
 - `npm run seed:heroes` runs [import-heroes.ts](C:/Users/iwwa/Documents/6_Work/Open_orche/scripts/import-heroes.ts)
 - The import pipeline first tries `https://mlbb.gg/heroes`, then falls back to [mlbb-gg-heroes.json](C:/Users/iwwa/Documents/6_Work/Open_orche/content/heroes/raw/mlbb-gg-heroes.json)
 - Successful remote hero imports also persist [mlbb-gg-heroes.remote.html](C:/Users/iwwa/Documents/6_Work/Open_orche/content/heroes/raw/mlbb-gg-heroes.remote.html) and [mlbb-gg-heroes.remote.json](C:/Users/iwwa/Documents/6_Work/Open_orche/content/heroes/raw/mlbb-gg-heroes.remote.json) for parser audits and future fallback work
+- `npm run supabase:check` remains available only if you later decide to enable the optional Supabase path
 
 ## gh-aw setup
 
@@ -128,4 +127,4 @@ Current missing repo secrets reported by `gh aw init`:
 - [architecture.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/specs/architecture.md)
 - [soft-system.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/specs/soft-system.md)
 - [definition-of-done.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/specs/definition-of-done.md)
-- [supabase-live-verification.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/supabase-live-verification.md)
+- [supabase-live-verification.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/supabase-live-verification.md) (optional future integration)

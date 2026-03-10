@@ -17,5 +17,5 @@ export function getPublicSiteUrl() {
 }
 
 export function isLocalAdminDemoEnabled() {
-  return process.env.NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_DEMO === "true";
+  return process.env.NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_DEMO !== "false";
 }

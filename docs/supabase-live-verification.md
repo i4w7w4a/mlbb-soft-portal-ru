@@ -1,6 +1,6 @@
-# Supabase Live Verification
+# Supabase Live Verification (Optional)
 
-This runbook is the execution path for GitHub issue `#25` once real Supabase credentials are available.
+This runbook is retained only for a future optional Supabase integration. It is not required for the current local/dev-only admin architecture.
 
 ## Required Environment
 

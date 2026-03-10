@@ -179,13 +179,13 @@ export function MediaManager({
         <Card className="border-amber-300/20 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.16),transparent_44%),linear-gradient(180deg,rgba(40,22,7,0.96),rgba(18,10,4,0.98))] text-amber-50">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-2">
-              <p className="font-display text-2xl">Local fallback is driving media ops</p>
+              <p className="font-display text-2xl">Local-first media ops are active</p>
               <p className="max-w-3xl text-sm leading-6 text-amber-100/80">
-                Supabase Storage is not available in this environment yet, so the media
-                screen tracks `public/images` and content-linked references directly.
+                The portal is designed to work directly against `public/images` and
+                content-linked references. Remote storage adapters remain optional.
               </p>
             </div>
-            <Badge variant="highlight">Fallback active</Badge>
+            <Badge variant="highlight">Local mode</Badge>
           </div>
         </Card>
       ) : null}
@@ -229,15 +229,15 @@ export function MediaManager({
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="soft">Media graph</Badge>
-              <Badge>Dual-source</Badge>
+              <Badge>Local-first</Badge>
             </div>
             <div>
               <p className="font-display text-3xl text-white">
-                Operate the asset layer across local files and remote buckets.
+                Operate the asset layer from the repo-native library outward.
               </p>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-                This surface tracks the local image graph, remote Supabase bucket
-                mirrors, and the content references that still need coverage.
+                This surface tracks the local image graph first, then overlays optional
+                remote mirrors and the content references that still need coverage.
               </p>
             </div>
           </div>

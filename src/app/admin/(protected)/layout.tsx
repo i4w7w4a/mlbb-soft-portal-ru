@@ -10,7 +10,7 @@ export default async function ProtectedAdminLayout({
   children: React.ReactNode;
 }) {
   const session = await getAdminSession();
-  const demoMode = !hasSupabaseEnv() && isLocalAdminDemoEnabled();
+  const demoMode = isLocalAdminDemoEnabled() || !hasSupabaseEnv();
 
   if (!demoMode && !session) {
     redirect("/admin/login");

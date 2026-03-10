@@ -11,8 +11,8 @@ export default async function AdminMediaPage() {
         <p className="font-display text-3xl text-white">Media management</p>
         <p className="text-sm leading-6 text-slate-400">
           Browse the live asset graph, inspect which hero and story surfaces depend on
-          each file, and operate the local plus Supabase-backed media layer from one
-          admin surface.
+          each file, and operate the local media layer from one admin surface. Optional
+          remote adapters can be layered in later without changing the authoring model.
         </p>
       </Card>
       <MediaManager snapshot={snapshot} />

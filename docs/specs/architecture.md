@@ -4,7 +4,8 @@
 
 - `Next.js App Router` renders all public routes and the admin shell from a single repository.
 - `JSON-first content` lives in `/content` and is loaded through a typed repository layer under `src/lib/content`.
-- `Supabase Auth` is the authentication boundary for `/admin`; the UI falls back to setup guidance when env vars are missing.
+- `/admin` is intentionally local/dev-only by default and writes into the JSON-first content layer without requiring an external backend.
+- `Supabase Auth` and `Supabase Storage` remain optional future adapters, not required runtime dependencies.
 - `SOFT` is implemented as both content metadata (`isSoft`, `isSoftFeatured`) and UI state (global mode, ranking bias, visual atmosphere).
 
 ## Route Map
@@ -31,4 +32,3 @@
 - Public pages prefer server components; client code is only used for interactivity, filtering, motion, and admin authoring.
 - Motion respects `prefers-reduced-motion`.
 - All critical navigation and filtering affordances stay keyboard accessible.
-

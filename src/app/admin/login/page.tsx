@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -29,6 +30,7 @@ function getCallbackMessage(errorCode: string | null) {
 export default function AdminLoginPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState<string | null>(null);
+  const localMode = isLocalAdminDemoEnabled() || !hasSupabaseEnv();
   const [callbackMessage] = useState<string | null>(() =>
     typeof window === "undefined"
       ? null
@@ -36,11 +38,9 @@ export default function AdminLoginPage() {
   );
 
   async function handleLogin() {
-    if (!hasSupabaseEnv()) {
+    if (localMode) {
       setMessage(
-        isLocalAdminDemoEnabled()
-          ? "Local admin demo mode is enabled. Open /admin directly."
-          : "Supabase env vars are missing.",
+        "Local admin mode is active. Open /admin directly and continue editing the JSON-first content layer.",
       );
       return;
     }
@@ -72,14 +72,30 @@ export default function AdminLoginPage() {
           <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Admin login</p>
           <h1 className="font-display text-4xl text-white">Access the editorial operator layer.</h1>
           <p className="text-sm leading-6 text-slate-300">
-            Use Supabase Auth for sign-in. If local demo mode is enabled, the protected admin routes remain available without a session.
+            Local admin mode is the default development path. Supabase sign-in stays
+            available only as an optional future integration.
           </p>
         </div>
+        {localMode ? (
+          <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-4 text-sm leading-6 text-cyan-50">
+            <p>External auth is not required for day-to-day work in this repository.</p>
+            <div className="mt-3">
+              <Link
+                href="/admin"
+                className="inline-flex h-10 items-center justify-center rounded-full border border-cyan-300/30 px-4 text-sm font-medium text-cyan-50 transition-colors hover:border-cyan-200/50 hover:text-white"
+              >
+                Open local admin
+              </Link>
+            </div>
+          </div>
+        ) : null}
         <div className="space-y-3">
           <Label htmlFor="email">Email</Label>
           <Input id="email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
         </div>
-        <Button onClick={() => void handleLogin()}>Send magic link</Button>
+        <Button onClick={() => void handleLogin()} disabled={localMode}>
+          Send magic link
+        </Button>
         {message ? <p className="text-sm text-cyan-100">{message}</p> : null}
         {!message && callbackMessage ? (
           <p className="text-sm text-rose-200">{callbackMessage}</p>

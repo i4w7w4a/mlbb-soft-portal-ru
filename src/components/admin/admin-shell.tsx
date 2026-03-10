@@ -30,7 +30,7 @@ export function AdminShell({
           </div>
           {demoMode ? (
             <div className="rounded-2xl border border-amber-300/20 bg-amber-300/10 px-4 py-3 text-sm text-amber-100">
-              Local demo mode is enabled because Supabase env vars are missing.
+              Local admin mode is enabled. Supabase is optional and not required for daily development.
             </div>
           ) : null}
           <nav className="space-y-2">
