@@ -1,0 +1,17 @@
+[Unit]
+Description=SOFT Rift Next.js portal
+After=network.target
+
+[Service]
+Type=simple
+User=mlbb
+Group=mlbb
+WorkingDirectory=/var/www/mlbb-soft-rift/current
+Environment=NODE_ENV=production
+EnvironmentFile=/var/www/mlbb-soft-rift/current/.env.production
+ExecStart=/usr/bin/node /var/www/mlbb-soft-rift/current/server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

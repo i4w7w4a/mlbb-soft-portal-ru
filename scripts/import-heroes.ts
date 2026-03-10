@@ -2,11 +2,12 @@ import { promises as fs } from "fs";
 import path from "path";
 
 import { loadHeroSeedsWithFallback } from "@/lib/content/import-heroes";
+import { getContentRoot } from "@/lib/content/paths";
 
 async function main() {
   const report = await loadHeroSeedsWithFallback();
   const heroes = report.heroes;
-  const contentRoot = path.join(process.cwd(), "content", "heroes");
+  const contentRoot = path.join(getContentRoot(), "heroes");
 
   for (const hero of heroes) {
     const heroDirectory = path.join(contentRoot, hero.slug);

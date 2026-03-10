@@ -5,6 +5,7 @@
 - `Next.js App Router` renders all public routes and the admin shell from a single repository.
 - `JSON-first content` lives in `/content` and is loaded through a typed repository layer under `src/lib/content`.
 - `/admin` is intentionally local/dev-only by default and writes into the JSON-first content layer without requiring an external backend.
+- `MLBB_CONTENT_ROOT` can relocate that JSON content layer onto a persistent server directory so admin edits survive redeploys.
 - `Supabase Auth` and `Supabase Storage` remain optional future adapters, not required runtime dependencies.
 - `SOFT` is implemented as both content metadata (`isSoft`, `isSoftFeatured`) and UI state (global mode, ranking bias, visual atmosphere).
 

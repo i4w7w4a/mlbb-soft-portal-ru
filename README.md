@@ -62,6 +62,12 @@ src/
    npm run build
    ```
 
+5. Prepare a self-hosted server bundle when you are ready to upload to a VPS:
+
+   ```bash
+   npm run deploy:bundle
+   ```
+
 ## Content model
 
 - Hero records live in `content/heroes/<slug>/hero.json`
@@ -77,6 +83,7 @@ The repository layer is in [repository.ts](C:/Users/iwwa/Documents/6_Work/Open_o
 - `/admin` is intended to run in local/dev-only mode by default.
 - `NEXT_PUBLIC_ENABLE_LOCAL_ADMIN_DEMO` defaults to local mode; set it to `false` only when intentionally testing the optional external-auth path.
 - The quick editor supports both form mode and JSON mode and saves directly into the JSON content layer through local API routes.
+- Use `MLBB_CONTENT_ROOT` on a server when you want admin edits to survive redeploys outside the release directory.
 - Supabase auth/storage code remains in the repo only as an optional future integration path.
 
 ## Seed and validation scripts
@@ -121,6 +128,7 @@ Current missing repo secrets reported by `gh aw init`:
 - Labels and issue/workflow artifacts can still be created with the current token.
 - Manual delivery protocol for future long sessions: [github-session-protocol.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/github-session-protocol.md)
 - No-API gh-aw workflow audit: [gh-aw-no-api-audit.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/gh-aw-no-api-audit.md)
+- Self-host deployment runbook: [deploy-self-hosted.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/deploy-self-hosted.md)
 
 ## Spec docs
 

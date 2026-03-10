@@ -1,12 +1,12 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
+import { getContentRoot } from "@/lib/content/paths";
 import { createContentRepository } from "@/lib/content/repository";
 import { createSupabaseAdmin } from "@/lib/supabase/admin";
 import { hasSupabaseAdminEnv, hasSupabaseEnv } from "@/lib/supabase/config";
 
 const DEFAULT_PUBLIC_ROOT = path.join(process.cwd(), "public");
-const DEFAULT_CONTENT_ROOT = path.join(process.cwd(), "content");
 
 export const mediaBucketValues = [
   "heroes",
@@ -381,7 +381,7 @@ export function createMediaRepository(options?: {
   remoteAssetsLoader?: () => Promise<RemoteAssetsResult>;
 }) {
   const publicRoot = options?.publicRoot ?? DEFAULT_PUBLIC_ROOT;
-  const contentRoot = options?.contentRoot ?? DEFAULT_CONTENT_ROOT;
+  const contentRoot = options?.contentRoot ?? getContentRoot();
   const imageRoot = path.join(publicRoot, "images");
   const contentRepository = createContentRepository({ contentRoot });
 

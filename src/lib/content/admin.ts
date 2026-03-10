@@ -26,12 +26,14 @@ import {
   getSoftConfig,
   getTaxonomy,
 } from "@/lib/content/repository";
+import { getContentRoot } from "@/lib/content/paths";
 import { slugify, unique } from "@/lib/utils";
 
-const HERO_ROOT = path.join(process.cwd(), "content", "heroes");
-const TAXONOMY_ROOT = path.join(process.cwd(), "content", "taxonomy");
-const SITE_ROOT = path.join(process.cwd(), "content", "site");
-const NEWS_ROOT = path.join(process.cwd(), "content", "news");
+const CONTENT_ROOT = getContentRoot();
+const HERO_ROOT = path.join(CONTENT_ROOT, "heroes");
+const TAXONOMY_ROOT = path.join(CONTENT_ROOT, "taxonomy");
+const SITE_ROOT = path.join(CONTENT_ROOT, "site");
+const NEWS_ROOT = path.join(CONTENT_ROOT, "news");
 
 function createJsonOutput(value: unknown) {
   return `${JSON.stringify(value, null, 2)}\n`;

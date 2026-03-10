@@ -18,9 +18,8 @@ import {
   type TaxonomyCategory,
   type TaxonomyTag,
 } from "@/lib/content/schemas";
+import { getContentRoot } from "@/lib/content/paths";
 import { rankSearchContent } from "@/lib/search";
-
-const DEFAULT_CONTENT_ROOT = path.join(process.cwd(), "content");
 
 async function readJson<T>(filePath: string): Promise<T> {
   const raw = await fs.readFile(filePath, "utf8");
@@ -44,7 +43,7 @@ function sortByPublishedDate(news: News[]) {
 }
 
 export function createContentRepository(options?: { contentRoot?: string }) {
-  const contentRoot = options?.contentRoot ?? DEFAULT_CONTENT_ROOT;
+  const contentRoot = options?.contentRoot ?? getContentRoot();
   const heroRoot = path.join(contentRoot, "heroes");
 
   const loadTaxonomy = cache(async () => {

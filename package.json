@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy:bundle": "npm run build && tsx scripts/build-server-bundle.ts",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
