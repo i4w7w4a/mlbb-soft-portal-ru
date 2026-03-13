@@ -19,7 +19,7 @@
 #   gh aw compile
 # For more information: https://github.com/githubnext/gh-aw/blob/main/.github/aw/github-agentic-workflows.md
 #
-# Daily workflow that analyzes recent issues and links related issues as sub-issues
+# Manual/reference workflow that analyzes recent issues and links related issues as sub-issues
 #
 # Resolved workflow manifest:
 #   Imports:
@@ -27,9 +27,6 @@
 
 name: "Issue Arborist"
 "on":
-  schedule:
-  - cron: "15 22 * * *"
-    # Friendly format: daily (scattered)
   workflow_dispatch:
 
 permissions:
@@ -707,7 +704,7 @@ jobs:
           Your discussion should include:
           
           ```markdown
-          ## 🌳 Issue Arborist Daily Report
+          ## 🌳 Issue Arborist Report
           
           **Date**: [Current Date]
           **Issues Analyzed**: 100 (open issues only)
@@ -1163,7 +1160,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         env:
           WORKFLOW_NAME: "Issue Arborist"
-          WORKFLOW_DESCRIPTION: "Daily workflow that analyzes recent issues and links related issues as sub-issues"
+          WORKFLOW_DESCRIPTION: "Manual/reference workflow that analyzes recent issues and links related issues as sub-issues"
         with:
           script: |
             const { setupGlobals } = require('/tmp/gh-aw/actions/setup_globals.cjs');

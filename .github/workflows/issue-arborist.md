@@ -1,8 +1,7 @@
 ---
-description: Daily workflow that analyzes recent issues and links related issues as sub-issues
+description: Manual/reference workflow that analyzes recent issues and links related issues as sub-issues
 name: Issue Arborist
 on:
-  schedule: daily
   workflow_dispatch:
 permissions:
   contents: read
@@ -165,7 +164,7 @@ Create a discussion summarizing your analysis with:
 Your discussion should include:
 
 ```markdown
-## 🌳 Issue Arborist Daily Report
+## 🌳 Issue Arborist Report
 
 **Date**: [Current Date]
 **Issues Analyzed**: 100 (open issues only)

@@ -19,13 +19,10 @@
 #   gh aw compile
 # For more information: https://github.com/githubnext/gh-aw/blob/main/.github/aw/github-agentic-workflows.md
 #
-# Scheduled workflow that recursively closes parent issues when all sub-issues are 100% complete
+# Manual/reference workflow that recursively closes parent issues when all sub-issues are 100% complete
 
 name: "Sub-Issue Closer"
 "on":
-  schedule:
-  - cron: "40 10 * * *"
-    # Friendly format: daily (scattered)
   workflow_dispatch:
 
 permissions:
@@ -544,10 +541,8 @@ jobs:
           
           ## Important Notes
           
-          - This is a scheduled workflow that runs daily (fuzzy scheduling)
-          - It complements the existing event-triggered auto-close-parent-issues.yml workflow
-          - The event-triggered workflow runs when a sub-issue is closed
-          - This scheduled workflow catches any issues that were missed or changed outside the normal flow
+          - This workflow is currently retained as a manual/reference workflow until gh-aw automation is reactivated
+          - If automation is restored later, recompile it in release mode before re-enabling schedules in GitHub Actions
           - Use the GitHub MCP server tools to query issues and their relationships
           - Be careful with recursive processing to avoid infinite loops
           - Always verify the completion status before closing an issue
@@ -972,7 +967,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         env:
           WORKFLOW_NAME: "Sub-Issue Closer"
-          WORKFLOW_DESCRIPTION: "Scheduled workflow that recursively closes parent issues when all sub-issues are 100% complete"
+          WORKFLOW_DESCRIPTION: "Manual/reference workflow that recursively closes parent issues when all sub-issues are 100% complete"
         with:
           script: |
             const { setupGlobals } = require('/tmp/gh-aw/actions/setup_globals.cjs');

@@ -23,9 +23,6 @@
 
 name: "Issue Monster"
 "on":
-  schedule:
-  - cron: "39 */1 * * *"
-    # Friendly format: every 1h (scattered)
   # skip-if-match: # Skip-if-match processed as search check in pre-activation job
     # max: 9
     # query: is:pr is:open is:draft author:app/copilot-swe-agent
@@ -466,7 +463,7 @@ jobs:
           
           ## Your Mission
           
-          Find up to three issues that need work and assign them to the Copilot agent for resolution. You work methodically, processing up to three separate issues at a time every hour, ensuring they are completely different in topic to avoid conflicts.
+          Find up to three issues that need work and assign them to the Copilot agent for resolution. You work methodically, processing up to three separate issues at a time per run, ensuring they are completely different in topic to avoid conflicts.
           
           ## Current Context
           

@@ -3,7 +3,6 @@ name: Issue Monster
 description: The Cookie Monster of issues - assigns issues to Copilot agents one at a time
 on:
   workflow_dispatch:
-  schedule: every 1h
   skip-if-match:
     query: "is:pr is:open is:draft author:app/copilot-swe-agent"
     max: 9
@@ -245,7 +244,7 @@ You are the **Issue Monster** - the Cookie Monster of issues! You love eating (r
 
 ## Your Mission
 
-Find up to three issues that need work and assign them to the Copilot agent for resolution. You work methodically, processing up to three separate issues at a time every hour, ensuring they are completely different in topic to avoid conflicts.
+Find up to three issues that need work and assign them to the Copilot agent for resolution. You work methodically, processing up to three separate issues at a time per run, ensuring they are completely different in topic to avoid conflicts.
 
 ## Current Context
 

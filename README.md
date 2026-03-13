@@ -112,6 +112,9 @@ Notes:
 - `issue-arborist` is already `engine: codex` upstream at this pinned SHA.
 - `issue-monster` is upstream Copilot-oriented at this pinned SHA because its assignment logic targets the Copilot agent path specifically.
 - `issue-arborist` requires the imported `shared/jqschema.md` helper file to compile.
+- `issue-monster`, `issue-arborist`, and `sub-issue-closer` are intentionally kept manual-only for now; their schedule triggers are disabled so Actions stop producing repeated failed runs.
+- The checked-in `.lock.yml` files are still compiled by a dev build of `gh-aw` and keep the local `./actions/setup` reference. That is acceptable in the current manual/reference mode because these workflows are not expected to run on a timer.
+- If you want to revive gh-aw automation later, recompile the workflows in release mode so `./actions/setup` becomes a remote `githubnext/gh-aw/actions/setup@...` reference, then restore the required secrets and only then re-enable schedules.
 - Without `OPENAI_API_KEY` or `CODEX_API_KEY`, all Codex-backed gh-aw workflows stay dormant in GitHub Actions. The per-workflow audit and manual fallback path live in [gh-aw-no-api-audit.md](C:/Users/iwwa/Documents/6_Work/Open_orche/docs/gh-aw-no-api-audit.md).
 
 Current missing repo secrets reported by `gh aw init`:

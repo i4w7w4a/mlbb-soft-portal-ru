@@ -1,8 +1,7 @@
 ---
-description: Scheduled workflow that recursively closes parent issues when all sub-issues are 100% complete
+description: Manual/reference workflow that recursively closes parent issues when all sub-issues are 100% complete
 name: Sub-Issue Closer
 on:
-  schedule: daily
   workflow_dispatch:
 permissions:
   contents: read
@@ -134,10 +133,8 @@ During processing, maintain clear logging:
 
 ## Important Notes
 
-- This is a scheduled workflow that runs daily (fuzzy scheduling)
-- It complements the existing event-triggered auto-close-parent-issues.yml workflow
-- The event-triggered workflow runs when a sub-issue is closed
-- This scheduled workflow catches any issues that were missed or changed outside the normal flow
+- This workflow is currently retained as a manual/reference workflow until gh-aw automation is reactivated
+- If automation is restored later, recompile it in release mode before re-enabling schedules in GitHub Actions
 - Use the GitHub MCP server tools to query issues and their relationships
 - Be careful with recursive processing to avoid infinite loops
 - Always verify the completion status before closing an issue
