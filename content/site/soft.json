@@ -1,13 +1,13 @@
 {
   "slug": "soft",
   "label": "SOFT",
-  "headline": "The premium signal layer for meta-defining stories.",
-  "description": "SOFT curates the sharpest MLBB intelligence: meta breakpoints, hero spikes, patch implications, and high-value editorials.",
-  "ctaLabel": "Enter SOFT",
+  "headline": "Премиальный слой сигналов для материалов, которые двигают мету.",
+  "description": "SOFT отбирает самые точные MLBB-разборы: переломные точки меты, пики силы героев, последствия патчей и материалы с высокой игровой ценностью.",
+  "ctaLabel": "Войти в SOFT",
   "manifesto": [
-    "Promote hero stories with immediate competitive impact.",
-    "Elevate the interface atmosphere without harming readability.",
-    "Bias discovery toward featured SOFT articles and heroes."
+    "Поднимать материалы о героях с немедленным соревновательным весом.",
+    "Усиливать атмосферу интерфейса, не жертвуя читаемостью.",
+    "Смещать поиск к избранным SOFT-материалам и героям."
   ],
   "heroPriority": [
     "xavier",

@@ -45,13 +45,13 @@
 
 | ID | Status | Task | Check |
 | --- | --- | --- | --- |
-| RU-030 | todo | Translate `content/site/settings.json` | Site navigation and description are Russian |
-| RU-031 | todo | Translate `content/site/soft.json` | SOFT headline, description, CTA and manifesto are Russian |
-| RU-032 | todo | Translate `content/taxonomy/categories.json` | Category labels are Russian |
-| RU-033 | todo | Translate `content/taxonomy/tags.json` | Tag labels are Russian, slugs unchanged |
-| RU-034 | todo | Translate `content/news/latest-index.json` | Collection titles and excerpts are Russian |
-| RU-035 | todo | Run content validation | `npm run content:check` passes |
-| RU-036 | todo | Commit site and taxonomy translation batch | Git commit exists |
+| RU-030 | done | Translate `content/site/settings.json` | Site navigation and description are Russian |
+| RU-031 | done | Translate `content/site/soft.json` | SOFT headline, description, CTA and manifesto are Russian |
+| RU-032 | done | Translate `content/taxonomy/categories.json` | Category labels are Russian |
+| RU-033 | done | Translate `content/taxonomy/tags.json` | Tag labels are Russian, slugs unchanged |
+| RU-034 | done | Translate `content/news/latest-index.json` | Collection titles and excerpts are Russian |
+| RU-035 | done | Run content validation | `npm run content:check` passes |
+| RU-036 | done | Commit site and taxonomy translation batch | Git commit exists |
 
 ## 4. Hero Content
 

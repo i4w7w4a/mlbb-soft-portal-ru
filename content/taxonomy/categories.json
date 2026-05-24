@@ -1,11 +1,11 @@
 {
   "categories": [
-    { "slug": "patch-analysis", "label": "Patch Analysis" },
-    { "slug": "hero-guide", "label": "Hero Guide" },
-    { "slug": "meta-watch", "label": "Meta Watch" },
-    { "slug": "editorial", "label": "Editorial" },
-    { "slug": "build-breakdown", "label": "Build Breakdown" },
-    { "slug": "news", "label": "News" }
+    { "slug": "patch-analysis", "label": "Разбор патча" },
+    { "slug": "hero-guide", "label": "Гайд по герою" },
+    { "slug": "meta-watch", "label": "Наблюдение за метой" },
+    { "slug": "editorial", "label": "Редакционный разбор" },
+    { "slug": "build-breakdown", "label": "Разбор билда" },
+    { "slug": "news", "label": "Материалы" }
   ]
 }
 

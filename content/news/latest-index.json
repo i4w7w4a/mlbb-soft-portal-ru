@@ -25,8 +25,8 @@
   "collections": [
     {
       "slug": "today-in-meta",
-      "title": "Today In Meta",
-      "excerpt": "The stories shifting draft priorities and lane pressure right now.",
+      "title": "Сегодня в мете",
+      "excerpt": "Материалы, которые прямо сейчас меняют приоритеты драфта и давление на линиях.",
       "newsIds": [
         "2026-03-08-aamon-patch-analysis",
         "2026-03-05-tigreal-second-engage-doctrine",
@@ -36,8 +36,8 @@
     },
     {
       "slug": "soft-critical-path",
-      "title": "SOFT Critical Path",
-      "excerpt": "Premium reads where timing, atmosphere, and meta leverage converge.",
+      "title": "Критический путь SOFT",
+      "excerpt": "Премиальные разборы, где сходятся тайминг, атмосфера и рычаги влияния на мету.",
       "newsIds": [
         "2026-03-06-angela-soft-anchor-protocol",
         "2026-03-08-cecilion-soft-burst-cadence",
@@ -47,8 +47,8 @@
     },
     {
       "slug": "roam-command",
-      "title": "Roam Command",
-      "excerpt": "Operator reads for engage timing, map compression, and support routing.",
+      "title": "Роум-командование",
+      "excerpt": "Операторские разборы тайминга инициации, сжатия карты и маршрутов поддержки.",
       "newsIds": [
         "2026-03-05-tigreal-second-engage-doctrine",
         "2026-03-07-angela-roam-pocket-lanes",

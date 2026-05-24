@@ -2,47 +2,47 @@
   "tags": [
     {
       "slug": "assassin",
-      "label": "Assassin",
+      "label": "Убийца",
       "kind": "role"
     },
     {
       "slug": "mage",
-      "label": "Mage",
+      "label": "Маг",
       "kind": "role"
     },
     {
       "slug": "tank",
-      "label": "Tank",
+      "label": "Танк",
       "kind": "role"
     },
     {
       "slug": "marksman",
-      "label": "Marksman",
+      "label": "Стрелок",
       "kind": "role"
     },
     {
       "slug": "fighter",
-      "label": "Fighter",
+      "label": "Боец",
       "kind": "role"
     },
     {
       "slug": "support",
-      "label": "Support",
+      "label": "Поддержка",
       "kind": "role"
     },
     {
       "slug": "jungle",
-      "label": "Jungle",
+      "label": "Лес",
       "kind": "lane"
     },
     {
       "slug": "mid",
-      "label": "Mid",
+      "label": "Мид",
       "kind": "lane"
     },
     {
       "slug": "gold",
-      "label": "Gold",
+      "label": "Голд",
       "kind": "lane"
     },
     {
@@ -52,42 +52,42 @@
     },
     {
       "slug": "roam",
-      "label": "Roam",
+      "label": "Роум",
       "kind": "lane"
     },
     {
       "slug": "meta",
-      "label": "Meta",
+      "label": "Мета",
       "kind": "topic"
     },
     {
       "slug": "patch",
-      "label": "Patch",
+      "label": "Патч",
       "kind": "topic"
     },
     {
       "slug": "guide",
-      "label": "Guide",
+      "label": "Гайд",
       "kind": "topic"
     },
     {
       "slug": "build",
-      "label": "Build",
+      "label": "Билд",
       "kind": "topic"
     },
     {
       "slug": "spotlight",
-      "label": "Spotlight",
+      "label": "Фокус",
       "kind": "topic"
     },
     {
       "slug": "drafting",
-      "label": "Drafting",
+      "label": "Драфт",
       "kind": "topic"
     },
     {
       "slug": "rotations",
-      "label": "Rotations",
+      "label": "Ротации",
       "kind": "topic"
     },
     {
