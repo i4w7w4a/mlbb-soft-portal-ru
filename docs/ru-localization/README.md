@@ -18,6 +18,32 @@
 - [glossary.md](glossary.md) - терминология MLBB, SOFT и UI.
 - [qa-checklist.md](qa-checklist.md) - критерии проверки перед завершением.
 - [decisions.md](decisions.md) - журнал решений, чтобы не возвращаться к одному и тому же туману.
+- [working-prompt.md](working-prompt.md) - текущий полный промпт работы над русской версией.
+- [operating-rules.md](operating-rules.md) - правила администрирования задач, сайта и репозитория.
+
+## Current Operating Mode
+
+С 2026-05-24 основная рабочая папка:
+
+```text
+C:\Users\iwwa\Documents\2_MLBB\site-ru
+```
+
+Английская папка:
+
+```text
+C:\Users\iwwa\Documents\2_MLBB\site
+```
+
+используется только как эталон и не редактируется без прямого запроса.
+
+Русский dev server:
+
+```text
+http://127.0.0.1:3001
+```
+
+Английский dev server на `3000` остановлен, чтобы не смешивать контексты.
 
 ## Целевая архитектура русской версии
 

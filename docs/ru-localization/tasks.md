@@ -25,16 +25,21 @@
 | RU-013 | done | Remove or replace remote origin in Russian copy | `git remote -v` shows Russian repo only |
 | RU-014 | done | Create GitHub repository | `https://github.com/i4w7w4a/mlbb-soft-portal-ru` exists |
 | RU-015 | done | Run baseline checks in Russian copy before edits | `typecheck`, `lint`, `test`, `content:check`, `metadata:check`, and `build` pass |
+| RU-016 | done | Stop English dev server | Port `3000` has no listener |
+| RU-017 | done | Make `site-ru` the active working root | All new work happens in `C:\Users\iwwa\Documents\2_MLBB\site-ru` |
+| RU-018 | done | Keep Russian dev server separate | `http://127.0.0.1:3001` returns 200 |
+| RU-019 | done | Create process control documents | `working-prompt.md` and `operating-rules.md` exist |
 
 ## 2. Translation Policy
 
 | ID | Status | Task | Check |
 | --- | --- | --- | --- |
-| RU-020 | todo | Finalize Russian style rules | `glossary.md` updated |
+| RU-020 | doing | Finalize Russian style rules | `glossary.md` updated |
 | RU-021 | todo | Confirm whether title is `SOFT Rift` or `SOFT Rift RU` | Decision recorded |
-| RU-022 | todo | Decide whether admin UI must be fully translated | Decision recorded |
+| RU-022 | done | Decide whether admin UI must be fully translated | Full Russian version includes admin UI |
 | RU-023 | todo | Decide if slugs stay English | Decision recorded |
 | RU-024 | todo | Define allowed English exceptions | QA checklist updated |
+| RU-025 | doing | Enforce operating rules before edits | `operating-rules.md` followed |
 
 ## 3. Site and Taxonomy Content
 
@@ -46,6 +51,7 @@
 | RU-033 | todo | Translate `content/taxonomy/tags.json` | Tag labels are Russian, slugs unchanged |
 | RU-034 | todo | Translate `content/news/latest-index.json` | Collection titles and excerpts are Russian |
 | RU-035 | todo | Run content validation | `npm run content:check` passes |
+| RU-036 | todo | Commit site and taxonomy translation batch | Git commit exists |
 
 ## 4. Hero Content
 
@@ -96,6 +102,7 @@
 | RU-086 | todo | Translate SOFT page UI | SOFT hub reads naturally |
 | RU-087 | todo | Translate search UI | Search input, suggestions and results are Russian |
 | RU-088 | todo | Translate loading and error states | Route loading/error pages are Russian |
+| RU-089 | todo | Commit public UI translation batch | Git commit exists |
 
 ## 7. Admin UI Translation
 
@@ -107,6 +114,7 @@
 | RU-093 | todo | Translate heroes manager | Forms and taxonomy controls are Russian |
 | RU-094 | todo | Translate media manager | Upload/delete/status text is Russian |
 | RU-095 | todo | Translate admin login/local mode messages | Login page is Russian |
+| RU-096 | todo | Commit admin UI translation batch | Git commit exists |
 
 ## 8. SEO, Metadata, and HTML
 

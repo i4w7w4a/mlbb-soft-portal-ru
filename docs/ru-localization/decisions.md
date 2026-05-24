@@ -14,13 +14,16 @@
 | 2026-05-24 | D-006 | Use `mlbb-soft-portal-ru` as the Russian repository name | User approved proceeding with the default |
 | 2026-05-24 | D-007 | Create the Russian repository as public | It mirrors the currently public English source repository |
 | 2026-05-24 | D-008 | Baseline Russian copy before translating any text | Translation work should start from a known-good build |
+| 2026-05-24 | D-009 | Switch active development fully to `site-ru` | User asked to move entirely to the Russian version |
+| 2026-05-24 | D-010 | Stop the English dev server on port `3000` | Prevent context mixing during Russian work |
+| 2026-05-24 | D-011 | Translate admin UI as part of the Russian version | User asked for a full Russian version, not only public pages |
+| 2026-05-24 | D-012 | Use process documents as the control system | Tasks, prompt and rules must guide every batch of work |
 
 ## Open Questions
 
 | ID | Question | Needed Before |
 | --- | --- | --- |
 | Q-002 | Should the public site title be `SOFT Rift` or `SOFT Rift RU`? | SEO and settings translation |
-| Q-003 | Should admin UI be fully translated or only public site first? | Admin translation phase |
 | Q-004 | Should hero names stay official English spellings? | Hero content phase |
 | Q-005 | What domain/site URL will Russian version use? | Canonical URLs and metadata |
 
