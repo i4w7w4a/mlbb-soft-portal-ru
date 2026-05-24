@@ -34,11 +34,11 @@
 
 | ID | Status | Task | Check |
 | --- | --- | --- | --- |
-| RU-020 | doing | Finalize Russian style rules | `glossary.md` updated |
+| RU-020 | done | Finalize Russian style rules | `glossary.md` updated |
 | RU-021 | todo | Confirm whether title is `SOFT Rift` or `SOFT Rift RU` | Decision recorded |
 | RU-022 | done | Decide whether admin UI must be fully translated | Full Russian version includes admin UI |
-| RU-023 | todo | Decide if slugs stay English | Decision recorded |
-| RU-024 | todo | Define allowed English exceptions | QA checklist updated |
+| RU-023 | done | Decide if slugs stay English | Slugs and IDs stay English unless the full graph is deliberately migrated |
+| RU-024 | done | Define allowed English exceptions | Exceptions are documented in `qa-checklist.md` |
 | RU-025 | doing | Enforce operating rules before edits | `operating-rules.md` followed |
 
 ## 3. Site and Taxonomy Content
@@ -57,9 +57,9 @@
 
 | ID | Status | Task | Check |
 | --- | --- | --- | --- |
-| RU-040 | todo | Translate Aamon hero profile | Hero page reads naturally |
-| RU-041 | todo | Translate Angela hero profile | Hero page reads naturally |
-| RU-042 | todo | Translate Balmond hero profile | Hero page reads naturally |
+| RU-040 | done | Translate Aamon hero profile | Hero page returns 200 with Russian SEO title |
+| RU-041 | done | Translate Angela hero profile | Hero page returns 200 with Russian SEO title |
+| RU-042 | done | Translate Balmond hero profile | Hero page returns 200 with Russian SEO title |
 | RU-043 | todo | Translate Cecilion hero profile | Hero page reads naturally |
 | RU-044 | todo | Translate Chou hero profile | Hero page reads naturally |
 | RU-045 | todo | Translate Esmeralda hero profile | Hero page reads naturally |
@@ -70,6 +70,7 @@
 | RU-050 | todo | Translate Tigreal hero profile | Hero page reads naturally |
 | RU-051 | todo | Translate Xavier hero profile | Hero page reads naturally |
 | RU-052 | todo | Run content validation after hero batch | `npm run content:check` passes |
+| RU-053 | done | Commit first hero profile translation batch | Aamon, Angela, and Balmond batch committed |
 
 ## 5. News Content
 

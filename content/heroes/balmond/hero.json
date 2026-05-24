@@ -2,7 +2,7 @@
   "id": "balmond",
   "slug": "balmond",
   "name": "Balmond",
-  "title": "Bloody Beast",
+  "title": "Кровавый зверь",
   "role": [
     "Fighter"
   ],
@@ -10,9 +10,9 @@
     "Jungle"
   ],
   "specialty": [
-    "Damage"
+    "Урон"
   ],
-  "excerpt": "Balmond stays relevant when his route trims wasted motion and converts brute force into repeatable river pressure.",
+  "excerpt": "Balmond остается актуальным, когда его маршрут убирает лишние движения и превращает грубую силу в повторяемое давление на реке.",
   "avatar": "/images/heroes/balmond/avatar.svg",
   "cover": "/images/heroes/balmond/cover.svg",
   "isFeatured": false,
@@ -22,13 +22,13 @@
     "jungle",
     "patch"
   ],
-  "faction": "Orc Legion",
-  "signature": "Sustain-heavy jungle pressure that wins the second collision.",
+  "faction": "Легион орков",
+  "signature": "Лесное давление через выживаемость, которое выигрывает второе столкновение.",
   "difficulty": "Low",
   "releaseYear": 2016,
   "accent": "#3A3A3A",
   "seo": {
-    "title": "Balmond MLBB News, Guides and Updates",
-    "description": "Balmond stays relevant when his route trims wasted motion and converts brute force into repeatable river pressure."
+    "title": "Balmond в MLBB: материалы, гайды и обновления",
+    "description": "Balmond остается актуальным, когда маршрут превращает грубую силу в стабильное давление на реке."
   }
 }

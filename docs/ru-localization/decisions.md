@@ -18,13 +18,14 @@
 | 2026-05-24 | D-010 | Stop the English dev server on port `3000` | Prevent context mixing during Russian work |
 | 2026-05-24 | D-011 | Translate admin UI as part of the Russian version | User asked for a full Russian version, not only public pages |
 | 2026-05-24 | D-012 | Use process documents as the control system | Tasks, prompt and rules must guide every batch of work |
+| 2026-05-24 | D-013 | Keep official hero names in English spelling | Hero names are product identifiers familiar to MLBB players |
+| 2026-05-24 | D-014 | Keep enum fields in English until UI mapping is added | `role`, `lane`, and `difficulty` are schema values, not display translations |
 
 ## Open Questions
 
 | ID | Question | Needed Before |
 | --- | --- | --- |
 | Q-002 | Should the public site title be `SOFT Rift` or `SOFT Rift RU`? | SEO and settings translation |
-| Q-004 | Should hero names stay official English spellings? | Hero content phase |
 | Q-005 | What domain/site URL will Russian version use? | Canonical URLs and metadata |
 
 ## Process Notes

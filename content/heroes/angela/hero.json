@@ -2,7 +2,7 @@
   "id": "angela",
   "slug": "angela",
   "name": "Angela",
-  "title": "Bunnylove",
+  "title": "Кроличье сердце",
   "role": [
     "Support"
   ],
@@ -10,9 +10,9 @@
     "Roam"
   ],
   "specialty": [
-    "Guard"
+    "Защита"
   ],
-  "excerpt": "Angela spikes when teams route her global attachment around the right tempo carrier instead of treating every rescue as equal.",
+  "excerpt": "Angela становится опасной, когда команда привязывает ее глобальную поддержку к правильному носителю темпа, а не тратит каждое спасение одинаково.",
   "avatar": "/images/heroes/angela/avatar.svg",
   "cover": "/images/heroes/angela/cover.svg",
   "isFeatured": true,
@@ -22,13 +22,13 @@
     "roam",
     "soft"
   ],
-  "faction": "Laboratory 1718",
-  "signature": "Global attachment that turns one ally into the map's pressure axis.",
+  "faction": "Лаборатория 1718",
+  "signature": "Глобальная привязка, превращающая одного союзника в ось давления на всей карте.",
   "difficulty": "Low",
   "releaseYear": 2018,
   "accent": "#B03E3E",
   "seo": {
-    "title": "Angela MLBB News, Guides and Updates",
-    "description": "Angela spikes when teams route her global attachment around the right tempo carrier instead of treating every rescue as equal."
+    "title": "Angela в MLBB: материалы, гайды и обновления",
+    "description": "Angela раскрывается, когда команда направляет ее глобальную поддержку в правильного носителя темпа."
   }
 }

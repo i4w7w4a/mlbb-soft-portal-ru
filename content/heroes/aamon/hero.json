@@ -2,24 +2,24 @@
   "id": "aamon",
   "slug": "aamon",
   "name": "Aamon",
-  "title": "Duke of Shards",
+  "title": "Герцог осколков",
   "role": ["Assassin"],
   "lane": ["Jungle"],
-  "specialty": ["Chase", "Burst"],
-  "excerpt": "Aamon thrives in the seam between invisibility, tempo and lethal shard resets.",
+  "specialty": ["Преследование", "Взрывной урон"],
+  "excerpt": "Aamon раскрывается там, где невидимость, темп и смертельные сбросы осколков сходятся в одно окно давления.",
   "avatar": "/images/heroes/aamon/avatar.svg",
   "cover": "/images/heroes/aamon/cover.svg",
   "isFeatured": true,
   "isSoftFeatured": true,
   "tags": ["assassin", "jungle", "meta"],
-  "faction": "House Paxley",
-  "signature": "Mid-fight vanish into burst execution.",
+  "faction": "Дом Паксли",
+  "signature": "Исчезновение в середине боя с переходом в мгновенную казнь.",
   "difficulty": "High",
   "releaseYear": 2021,
   "accent": "#65e6ff",
   "seo": {
-    "title": "Aamon MLBB News, Guides and Updates",
-    "description": "Latest MLBB news, build updates and patch analysis for Aamon."
+    "title": "Aamon в MLBB: материалы, гайды и обновления",
+    "description": "Свежие MLBB-материалы, обновления билдов и разборы патчей для Aamon."
   }
 }
 
